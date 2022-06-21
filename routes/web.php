@@ -75,16 +75,6 @@ Route::post('pasakums/post', [KomentarsController::class, 'store'])->middleware(
 Route::get('pasakums/{id}/pieteikties', [LietotajsPasakumsController::class, 'store'])->middleware(['auth']);
 Route::post('pasakums/add_image', [AttelsController::class, 'store'])->middleware(['auth']);
 
-Route::get('/test', function () {
-    return 'Test page22!';
-});
-
-Route::get('/testthing', function () {
-    return 'Testthing!';
-});
-Route::get('/testing', function () {
-    return 'Testing!';
-});
 
 Route::get('language/{locale}', function ($locale) {
     app()->setLocale($locale);
