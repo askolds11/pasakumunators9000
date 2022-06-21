@@ -28,5 +28,8 @@ Route::get('/test', function () {
 Route::get('/testthing', function () {
     return 'Testthing!';
 });
+Route::get('/testing', function () {
+    return 'Testing!';
+});
 
 require __DIR__.'/auth.php';
