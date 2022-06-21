@@ -86,4 +86,9 @@ Route::get('/testing', function () {
     return 'Testing!';
 });
 
+Route::get('language/{locale}', function ($locale) {
+    app()->setLocale($locale);
+    session()->put('locale', $locale);
+    return redirect()->back();
+});
 require __DIR__.'/auth.php';

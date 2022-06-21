@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="lv">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,14 +22,14 @@
     -->
         <ul class="nav-links">
             <li><a href="{{ url('/mainpage') }}">{{__('layout.JAUNUMI')}}</a></li> <!-- Ved uz jaunumi *****tehniski, šī pati lapa -->
-            <li><a href="{{ url('/filter') }}">{{__('layout.FILTRĒT')}}</a></li></li> <!-- Ved uz filtrēšanas lapu, proti, lapa, kurā lietotājs būs spējīgs meklēt sev tīkamus  -->
+            <li><a href="{{ url('/filter') }}">{{__('layout.FILTRĒT')}}</a></li> <!-- Ved uz filtrēšanas lapu, proti, lapa, kurā lietotājs būs spējīgs meklēt sev tīkamus  -->
             <li><a href="{{ url('/new_pasakums') }}">{{__('layout.PIEVIENOT PASĀKUMU')}}</a></li>
             <li><a href="{{ url('/adminpanel') }}" >{{__('layout.ADMINA PANELIS')}}</a>
             
             </li>
             <li id="lang-lv-eng">
-                <a href="" id="LV">LV</a>
-                <a href="" id="ENG">ENG</a>
+                <a href="{{ url('language/lv') }}" id="LV">LV</a>
+                <a href="{{ url('language/en') }}" id="ENG">ENG</a>
 
             </li>
            
