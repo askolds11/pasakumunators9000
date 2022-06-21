@@ -28,5 +28,8 @@ Route::get('/test', function () {
 Route::get('/test3', function () {
     return 'Test page223333455!';
 });
+Route::get('/test2', function () {
+    return 'Test page223333!';
+});
 
 require __DIR__.'/auth.php';
