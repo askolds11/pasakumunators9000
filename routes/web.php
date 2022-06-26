@@ -31,5 +31,9 @@ Route::get('/testthing', function () {
 Route::get('/testing', function () {
     return 'Testing!';
 });
+Route::get('/mainpage', function () {
+    return view('mainpage');
+});
+
 
 require __DIR__.'/auth.php';
