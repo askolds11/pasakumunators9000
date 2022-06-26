@@ -32,5 +32,4 @@ Route::get('/testing', function () {
     return 'Testing!';
 });
 
-aaa
 require __DIR__.'/auth.php';
