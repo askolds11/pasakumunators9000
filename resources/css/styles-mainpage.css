@@ -1,0 +1,28 @@
+/* id # and class . */
+@font-face {
+    font-family: 'Roboto';
+    src: url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+    font-size: 14px;
+}
+body {
+    font-family: 'Roboto';
+    color: black;
+    font-size: 14px;
+    min-width: 500px;
+    background-color: rgba(234, 234, 234, 1);
+}
+  
+
+#header-project-name{
+    color: black;
+    background-color: rgba(110, 218, 109, 1);
+    border: 1px solid red;
+    height: 100px;
+    
+
+}
+#header-project-name p{
+    text-align: center;
+    margin-top: 40px;
+    font-size: 50px;
+}
