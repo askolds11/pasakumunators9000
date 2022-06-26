@@ -31,6 +31,5 @@ Route::get('/testthing', function () {
 Route::get('/testing', function () {
     return 'Testing!';
 });
-fagg
 
 require __DIR__.'/auth.php';
