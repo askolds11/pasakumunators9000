@@ -24,16 +24,15 @@
         <label for="">Nosaukums text</label><br>
         <input type="text" id="" name=""><br>
         <label for="">Apraksts text</label><br>
-        <textarea name="message" rows="10" cols="30">
-        </textarea><br>
+        <textarea name="message" rows="10" cols="30"></textarea><br>
         <label for="">Datums date</label><br>
-        <input type="text" id="" name=""><br>
+        <input type="date" id="" name=""><br>
         <label for="">Norises ilgums time</label><br>
         <input type="text" id="" name=""><br>
         <label for="">Norises vieta text</label><br>
         <input type="text" id="" name=""><br>
         <label for="">Cena skaitlis</label><br>
-        <input type="text" id="" name=""><br>
+        <input type="number" id="" name=""><br>
         <label for="">Veidotajs foreign id</label><br>
         <input type="text" id="" name=""><br>
         <label for="">Kategorija foreign id</label><br>

@@ -43,7 +43,7 @@ pārējām projekta funkcijām.
     </nav>
   
     
-    <section id="pasakums-preview">
+    <div id="pasakums-preview">
         <h3 id="tituls-pasakums">TITULS</h3>
             <div id="saturs-par-pasakumu">
                 <p>
@@ -53,8 +53,8 @@ pārējām projekta funkcijām.
                 <button id="atteli-button">Attēli</button> <!-- Parādītu attēlus dotajam projektam -->
             </div>
     
-    </section>
-    <section id="komentari">
+    </div>
+    <div id="komentari">
         <h3 id="tituls-komentari">KOMENTĀRI</h3>
         <div id="saturs-par-komentariem">
             <ul>
@@ -63,7 +63,7 @@ pārējām projekta funkcijām.
                 <li id="pirmais-preview-koments" class="preview-komentari">1.komentars</li>
             </ul>
         </div>
-    </section>
+    </div>
     
     
 
@@ -84,7 +84,7 @@ pārējām projekta funkcijām.
 
 
 
-    
+
     <footer id="footer">
         <p>Veidoja: Askolds Bērziņš, Johans Justs Eris, Aleksejs Romaņuks</p>
         <p>&copy Copyright AskoldsJustsAleksejs inc.</p>
