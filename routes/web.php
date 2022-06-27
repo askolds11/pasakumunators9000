@@ -49,6 +49,10 @@ Route::get('/new_pasakums', function () {
     return view('new_pasakums');
 });
 
+// LIETOTĀJA REĢISTRĀCIJAS LAPA (BŪS JĀMAINA)
+Route::get('/register_user', function () {
+    return view('register_user');
+});
 
 
 require __DIR__.'/auth.php';

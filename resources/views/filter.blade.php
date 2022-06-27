@@ -19,6 +19,19 @@
     <header id="header-project-name">
         <p>Pasākumunators9000</p>
     </header>
+
+    <nav id="navbar">
+        
+        <ul class="nav-links">
+            <li><a href="">JAUNUMI</a></li> <!-- Ved uz jaunumi *****tehniski, šī pati lapa -->
+            <li><a href="">FILTRĒT</a></li></li> <!-- Ved uz filtrēšanas lapu, proti, lapa, kurā lietotājs būs spējīgs meklēt sev tīkamus  -->
+            <li><a href="">REĢISTRĒTIES</a></li> <!-- Ved uz register lapu, kur lietotājs spēs reģistrēt sev jaunu pasākumu -->
+            
+        </ul>
+        
+
+        <button><a href="">LOGIN</a></button> <!-- Ved uz login page -->
+    </nav>
     <div id="filter-pasakumu">
         <h2>FILTRĒT PASĀKUMU</h2>
         <br>
