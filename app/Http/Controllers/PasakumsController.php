@@ -67,8 +67,8 @@ class PasakumsController extends Controller
             'norises_ilgums' => 'required|date_format:H:i',
             'norises_vieta' => 'required|string|min:1|max:100',
             'cena' => 'required|min:0|max:999.99',
-            'veidotajs' => 'required|exists:users|integer', //users table & lietotajs table, dsk?
-            'kategorijas.*' => 'required|exists:kategorija|integer', //dsk
+            'veidotajs' => 'required|exists:users|integer',
+            'kategorijas.*' => 'required|exists:kategorija|integer',
         );
         $this->validate($request, $rules);
 
@@ -137,8 +137,8 @@ class PasakumsController extends Controller
             'norises_ilgums' => 'required|date_format:H:i',
             'norises_vieta' => 'required|string|min:1|max:100',
             'cena' => 'required|min:0|max:999.99',
-            'veidotajs' => 'required|exists:users|integer', //users table & lietotajs table, dsk?
-            'kategorijas.*' => 'required|exists:kategorija|integer', //dsk
+            'veidotajs' => 'required|exists:users|integer',
+            'kategorijas.*' => 'required|exists:kategorija|integer',
         );
         $this->validate($request, $rules);
 

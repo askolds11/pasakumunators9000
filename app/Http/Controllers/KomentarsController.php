@@ -53,8 +53,8 @@ class KomentarsController extends Controller
         
 
         $rules = array(
-            'lietotajs_id' => 'required|exists:users|integer', //users table & lietotajs table, dsk?
-            'pasakums_id' => 'required|exists:pasakums|integer', //dsk
+            'lietotajs_id' => 'required|exists:users|integer',
+            'pasakums_id' => 'required|exists:pasakums|integer',
             'teksts' => 'required|string|min:1|max:200',
             'datums' => 'required|date|after:yesterday',
         );
@@ -111,8 +111,8 @@ class KomentarsController extends Controller
         
 
         $rules = array(
-            'lietotajs_id' => 'required|exists:users|numeric', //users table & lietotajs table, dsk?
-            'pasakums_id' => 'required|exists:pasakums|numeric', //dsk
+            'lietotajs_id' => 'required|exists:users|numeric',
+            'pasakums_id' => 'required|exists:pasakums|numeric',
             'teksts' => 'required|string|min:1|max:200',
             'date' => 'required|date|after:yesterday',
         );
