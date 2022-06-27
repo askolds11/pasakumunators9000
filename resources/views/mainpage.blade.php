@@ -42,7 +42,7 @@ pārējām projekta funkcijām.
         <h3 id="tituls-pasakums">TITULS</h3>
             <div id="saturs-par-pasakumu">
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat dicta temporibus porro nihil? Praesentium voluptas ad debitis, nisi amet doloremque molestiae dolore est dicta quis sapiente ratione vitae adipisci assumenda. Sequi officiis odit voluptatem inventore unde nobis quos odio? Magnam corrupti praesentium mollitia ab voluptatum fugit facere tempore obcaecati! Facere praesentium qui beatae quidem maxime voluptatibus ducimus minus possimus, vel repellat magni blanditiis nostrum aliquid! Alias doloremque esse eveniet reprehenderit, rerum minima in laudantium error cumque, laborum porro eaque omnis provident itaque, beatae quis distinctio fugiat dolores qui quod illo. Molestias officiis ex modi. Voluptate similique sint laudantium distinctio eveniet perspiciatis porro quae. Consequuntur modi aliquid quas autem officia, alias dolores dolor. Enim assumenda deserunt earum at in voluptas nisi itaque beatae ipsa animi, veritatis cumque, quas cupiditate numquam quia illo esse deleniti doloribus? Consequuntur, doloremque. Ut aspernatur velit dignissimos quia blanditiis maxime quos maiores nam fuga, assumenda, ipsam qui itaque quidem commodi. Iusto quod fugiat magnam, commodi possimus hic, numquam autem incidunt temporibus nihil sequi, eos consequatur eveniet placeat iste molestiae? Eius distinctio porro aut veritatis dolore ipsa qui doloribus voluptates, vitae quos odio cumque aliquam quis omnis possimus necessitatibus mollitia consequuntur dicta voluptatibus, delectus odit, soluta ad nisi.
+                  
 
                 </p>
                 <button id="atteli-button">Attēli</button> <!-- Parādītu attēlus dotajam projektam -->
@@ -53,9 +53,9 @@ pārējām projekta funkcijām.
         <h3 id="tituls-komentari">KOMENTĀRI</h3>
         <div id="saturs-par-komentariem">
             <ul>
-                <li>1.komentars</li>
-                <li>1.komentars</li>
-                <li>1.komentars</li>
+                <li id="pirmais-preview-koments" class="preview-komentari">1.komentars</li>
+                <li id="pirmais-preview-koments" class="preview-komentari">1.komentars</li>
+                <li id="pirmais-preview-koments" class="preview-komentari">1.komentars</li>
             </ul>
         </div>
     </section>
