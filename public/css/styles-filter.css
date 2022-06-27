@@ -1,5 +1,253 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'); */
+/* id # and class . */
 
-p {
-    color: red;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+
+/* STYLES SAISTĪBĀ AR VISU LAPU VAI ATSEVIŠĶIEM TAGIEM: */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+li, a, button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: black;
+    text-decoration: none;
+    border: none;
+    /* background-color: white; */
+}
+button {
+    background-color: white;
+}
+
+/* HEADER */
+#header-project-name{
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    color: black;
+    background-color: rgba(110, 218, 109, 1);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* border: 1px solid red; */
+    /* height: 140px; */
+    
+
+}
+/* NAVIGATION BAR  */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px, 10px;
+    background-color: white;
+    
+
+}
+.nav-links {
+    list-style: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+
+}
+.nav-links li {
+    display: inline-block;
+    padding: 0px 20px;
+    /* background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 0px 0px 30px 30px; */
+}
+
+
+#navbar button {
+    float: right;
+    padding-right: 20px;
+}
+
+
+
+
+/* BODY */
+body {
+    background-color:  rgba(234, 234, 234, 1);
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* CONTNENT */
+
+
+#filter-pasakumu {
+    float: left;
+}
+#results {
+    float: right;
+    margin-left: 30%;
+}
+
+
+#pasakums-preview {
+    /* background-color: rgba(234, 234, 234, 1);; */
+    border: 5px solid rgba(234, 234, 234, 1);
+    float: left;
+    margin-right: 50%;
+    
+}
+
+#tituls-pasakums {
+    background-color: rgba(110, 218, 109, 1);
+    text-align: center;
+}
+#saturs-par-pasakumu {
+    background-color:white;
+    margin-top: 10px;
+    border-radius: 20px 20px 20px 20px;
+    
+    padding: 10px 10px  10px  10px ;
+    
+}
+
+#saturs-par-pasakumu #atteli-button {
+    background-color: skyblue;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    /* float: right; */
+}
+#komentari {
+    border:5px solid rgba(234, 234, 234, 1);
+    float:right;
+}
+
+#tituls-komentari {
+    background-color: skyblue;
+}
+.preview-komentari {
+    background-color: white;
+    border-radius: 5px 5px 5px 5px;
+    list-style: none;
+}
+
+#saturs-par-komentariem {
+    margin-top: 10px;
+}
+
+/* FOOTER */
+
+#footer {
+    position: sticky;
+    font-family: 'Roboto', sans-serif;  
+    background-color: grey;
+    position: sticky;
+    top:100%;
+    padding: 10px 10px 10px 10px;
+    text-align: center; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* GRAVEYARD - DONT TOUCH */
+
+/* .nav-links li a {
+    /* transition: all 0.3s ease 0s; */
+/* } */
+/* .nav-links li a:hover{
+    color: rgba(110, 218, 109, 1);
+    /* background-color:  rgba(234, 234, 234, 1);;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    border-radius: 20px 20px 0px 0px; */
+/*}*/
+/*
+.nav-links li a:active{
+    background-color:  rgba(234, 234, 234, 1);;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 35px 35px 0px 0px;
+} */
+
+
+/* body {
+    font-family: 'Roboto', sans-serif;
+    min-width: 500px;
+    font-weight: 400;
+    font-size: 16px;
+} */
+
+/* 
+body {
+    font-family: 'Roboto';
+    color: black;
+    font-size: 14px;
+    min-width: 500px;
+    
+} */
+  
+
+
+/* #header-project-name p{ */
+    /* text-align: center; */
+    /* margin-top: 40px; */
+    /* font-size: 50px; */
+/* }
+
+#navbar a{
+    text-decoration: none;
+    color: black;
+} */
+
+/* #footer {
+   
+} */
