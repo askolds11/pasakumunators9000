@@ -127,6 +127,14 @@ body {
     margin-top: 10px;
 }
 
+#filter-pasakumu {
+    float: left;
+}
+#results {
+    float: right;
+    
+}
+
 /* FOOTER */
 
 #footer {

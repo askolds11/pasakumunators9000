@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- STYLESHEETS -->
-    <link rel="stylesheet" href="{{url('css/styles-filter.css')}}">
+    <link rel="stylesheet" href="{{url('css/styles.css')}}">
     <!-- GOOGLE FONT LINKS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,8 +41,15 @@
     </div>
     <div id="results">
         <h3>REZULTĀTI</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur similique modi, deserunt ab architecto necessitatibus enim magni, reprehenderit numquam saepe dolore natus inventore aut fuga voluptatibus maiores aperiam, neque eligendi nam qui quo doloribus labore nisi soluta? Impedit aut ratione mollitia exercitationem error voluptatum. Minima debitis hic animi dicta enim eos vero. Possimus repellendus officia quaerat commodi eligendi adipisci saepe aliquid dicta dolores, fugiat debitis soluta veritatis reiciendis at tempore enim quidem corrupti sed. Repellendus pariatur obcaecati, sunt accusamus sequi consectetur numquam quidem iste! Assumenda ad fugit aliquam accusamus quidem et non cumque quisquam reprehenderit inventore maiores dolorem, animi placeat, cum corrupti deserunt blanditiis quis minus dolor nihil. In dolore voluptas perspiciatis delectus, exercitationem consequuntur dolorem dolorum aspernatur alias fugiat iste aut earum doloribus ratione voluptatem! Adipisci enim, deleniti eos, rerum magni eaque aspernatur aliquid temporibus doloribus molestiae odio, animi qui assumenda. Ut laboriosam voluptate tenetur. Iure, enim reiciendis. Pariatur eaque nesciunt consectetur labore mollitia ipsa eos, voluptas quis officia, asperiores, ullam quidem. Tempore perspiciatis odio recusandae ipsa repellendus neque assumenda exercitationem quaerat iste blanditiis similique nemo ullam aut cupiditate dolorem eveniet, animi natus voluptates quidem dolore quibusdam corporis! Soluta maxime hic labore dolor vel iste beatae iusto repellendus officia.</p>
-
+        <ul>
+            <li>Rez1</li>
+            <li>Rez2</li>
+            <li>Rez3</li>
+            <li>Rez4</li>
+            <li>Rez5</li>
+            <li>Rez6</li>
+            <li>Rez7</li>
+        </ul>
     </div>
     <footer id="footer">
         <p>Veidoja: Askolds Bērziņš, Johans Justs Eris, Aleksejs Romaņuks</p>
