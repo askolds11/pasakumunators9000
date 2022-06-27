@@ -32,7 +32,7 @@
         <label for="">Norises vieta text</label><br>
         <input type="text" id="" name=""><br>
         <label for="">Cena skaitlis</label><br>
-        <input type="number" id="" name=""><br>
+        <input type="number" step="0.01" id="" name=""><br>
         <label for="">Veidotajs foreign id</label><br>
         <input type="text" id="" name=""><br>
         <label for="">Kategorija foreign id</label><br>
