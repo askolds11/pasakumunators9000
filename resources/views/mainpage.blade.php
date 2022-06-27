@@ -12,7 +12,7 @@ pārējām projekta funkcijām.
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- STYLESHEETS -->
-    <link rel="stylesheet" href="{{url('css/styles-mainpage.css')}}">
+    <link rel="stylesheet" href="{{url('css/styles.css')}}">
     <!-- GOOGLE FONT LINKS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
