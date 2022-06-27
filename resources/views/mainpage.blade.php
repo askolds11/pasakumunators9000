@@ -24,6 +24,11 @@ pārējām projekta funkcijām.
         <p>Pasākumunators9000</p>
     </header>
   
+
+
+
+
+
     <nav id="navbar">
         
         <ul class="nav-links">
@@ -75,6 +80,11 @@ pārējām projekta funkcijām.
         <p>Best wishes!</p>
     </section> -->
 
+
+
+
+
+    
     <footer id="footer">
         <p>Veidoja: Askolds Bērziņš, Johans Justs Eris, Aleksejs Romaņuks</p>
         <p>&copy Copyright AskoldsJustsAleksejs inc.</p>

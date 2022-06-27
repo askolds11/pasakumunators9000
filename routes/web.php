@@ -32,7 +32,7 @@ Route::get('/testing', function () {
     return 'Testing!';
 });
 
-// ROUTEES MŪSU LAPAI'
+// ROUTEES MŪSU LAPAI--------------------------------------------------------
 
 // MAIN LAPA
 Route::get('/mainpage', function () {
@@ -43,5 +43,12 @@ Route::get('/mainpage', function () {
 Route::get('/filter', function () {
     return view('filter');
 });
+
+// PASĀKUMA IZVEIDES LAPA
+Route::get('/new_pasakums', function () {
+    return view('new_pasakums');
+});
+
+
 
 require __DIR__.'/auth.php';
