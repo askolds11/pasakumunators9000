@@ -130,12 +130,13 @@ body {
 /* FOOTER */
 
 #footer {
-    font-family: 'Roboto', sans-serif; 
+    position: sticky;
+    font-family: 'Roboto', sans-serif;  
     background-color: grey;
     position: sticky;
     top:100%;
     padding: 10px 10px 10px 10px;
-    text-align: center;
+    text-align: center; 
 }
 
 

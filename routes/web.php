@@ -31,9 +31,17 @@ Route::get('/testthing', function () {
 Route::get('/testing', function () {
     return 'Testing!';
 });
+
+// ROUTEES MŪSU LAPAI'
+
+// MAIN LAPA
 Route::get('/mainpage', function () {
     return view('mainpage');
 });
 
+// FILTER LAPA
+Route::get('/filter', function () {
+    return view('filter');
+});
 
 require __DIR__.'/auth.php';
