@@ -28,7 +28,7 @@
         <label for="">Datums date</label><br>
         <input type="date" id="" name=""><br>
         <label for="">Norises ilgums time</label><br>
-        <input type="text" id="" name=""><br>
+        <input type="time" id="" name=""><br>
         <label for="">Norises vieta text</label><br>
         <input type="text" id="" name=""><br>
         <label for="">Cena skaitlis</label><br>
