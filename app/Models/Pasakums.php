@@ -10,5 +10,6 @@ class Pasakums extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['nosaukums','apraksts','datums','norises_ilgums','norises_vieta','cena','veidotajs_id'];
     protected $table = 'pasakums';
 }

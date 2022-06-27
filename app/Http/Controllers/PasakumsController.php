@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pasakums;
+use App\Models\Komentars;
+use Auth;
 
 class PasakumsController extends Controller
 {
@@ -41,14 +44,14 @@ class PasakumsController extends Controller
             $table->time('norises_ilgums');
             $table->string('norises_vieta',100);
             $table->decimal('cena',5,2);
-            $table->foreignId('veidotajs')->constrained('lietotajs');
+            $table->foreignId('veidotajs_id')->constrained('lietotajs');
             $table->foreignId('kategorija_id')->constrained('kategorija');
         **********/
 
         //Need auth check
         //Need language
 
-        dd($request); //for testing
+        //dd($request); //for testing
 
         $nosaukums = $request->nosaukums;
         $apraksts = $request->apraksts;
@@ -56,9 +59,8 @@ class PasakumsController extends Controller
         $norises_ilgums = $request->norises_ilgums;
         $norises_vieta = $request->norises_vieta;
         $cena = $request->cena;
-        $veidotajs = $request->veidotajs; //may be different - checking which user
-        $kategorijas = $request->kategorijas;
-        
+        $veidotajs_id = $request->veidotajs_id; //may be different - checking which user
+        $kategorija = $request->kategorija;
 
         $rules = array(
             'nosaukums' => 'required|string|min:1|max:50',
@@ -67,8 +69,8 @@ class PasakumsController extends Controller
             'norises_ilgums' => 'required|date_format:H:i',
             'norises_vieta' => 'required|string|min:1|max:100',
             'cena' => 'required|min:0|max:999.99',
-            'veidotajs' => 'required|exists:users|integer',
-            'kategorijas.*' => 'required|exists:kategorija|integer',
+            'veidotajs_id' => 'required|exists:users,id|integer',
+            'kategorija.*' => 'required|exists:kategorija|integer',
         );
         $this->validate($request, $rules);
 
@@ -79,8 +81,7 @@ class PasakumsController extends Controller
         $pasakums->norises_ilgums = $request->norises_ilgums;
         $pasakums->norises_vieta = $request->norises_vieta;
         $pasakums->cena = $request->cena;
-        $pasakums->veidotajs = $request->veidotajs; //may be different - checking which user
-        $pasakums->kategorijas = $request->kategorijas;
+        $pasakums->veidotajs_id = $request->veidotajs_id; //may be different - checking which user
         $pasakums->save();
 
         return redirect('pasakums/' . $pasakums->id); //not sure if id exists
@@ -126,7 +127,7 @@ class PasakumsController extends Controller
         $norises_ilgums = $request->norises_ilgums;
         $norises_vieta = $request->norises_vieta;
         $cena = $request->cena;
-        $veidotajs = $request->veidotajs; //may be different - checking which user, does it need to change in update?
+        $veidotajs_id = $request->veidotajs_id; //may be different - checking which user, does it need to change in update?
         $kategorijas = $request->kategorijas;
         
 
@@ -137,7 +138,7 @@ class PasakumsController extends Controller
             'norises_ilgums' => 'required|date_format:H:i',
             'norises_vieta' => 'required|string|min:1|max:100',
             'cena' => 'required|min:0|max:999.99',
-            'veidotajs' => 'required|exists:users|integer',
+            'veidotajs_id' => 'required|exists:users|integer',
             'kategorijas.*' => 'required|exists:kategorija|integer',
         );
         $this->validate($request, $rules);
@@ -148,7 +149,7 @@ class PasakumsController extends Controller
         $pasakums->norises_ilgums = $request->norises_ilgums;
         $pasakums->norises_vieta = $request->norises_vieta;
         $pasakums->cena = $request->cena;
-        $pasakums->veidotajs = $request->veidotajs; //may be different - checking which user
+        $pasakums->veidotajs_id = $request->veidotajs_id; //may be different - checking which user
         $pasakums->kategorijas = $request->kategorijas;
         $pasakums->save();
 

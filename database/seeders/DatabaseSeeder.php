@@ -39,19 +39,19 @@ class DatabaseSeeder extends Seeder
         $users = User::create([
             'name'=> 'janisrainis',
             'email'=> 'janisrainis@gmail.com',
-            'password'=> 'janisrainis123'
+            'password'=> bcrypt('janisrainis123')
         ]);
             
         $users = User::create([
             'name'=> 'oskarslicitis',
             'email'=> 'oskarslicitis@gmail.com',
-            'password'=> 'oskarslicitis123'
+            'password'=> bcrypt('oskarslicitis123')
         ]);
             
         $users = User::create([
             'name'=> 'maijaliepa',
             'email'=> 'maijaliepa@gmail.com',
-            'password'=> 'maijaliepa123'
+            'password'=> bcrypt('maijaliepa123')
         ]);
 
         //Kategorija

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PasakumsController;
+use App\Http\Controllers\KomentarsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,9 +38,9 @@ Route::get('/filter', function () {
 });
 
 // PASĀKUMA IZVEIDES LAPA
-Route::get('/new_pasakums', function () {
-    return view('new_pasakums');
-});
+Route::resource('pasakums', PasakumsController::class, ['except' => ['create']]);
+Route::get('/new_pasakums', [PasakumsController::class, 'create']
+)->middleware('auth'); //currently only needs login
 
 // LIETOTĀJA REĢISTRĀCIJAS LAPA (BŪS JĀMAINA)
 Route::get('/register_user', function () {
