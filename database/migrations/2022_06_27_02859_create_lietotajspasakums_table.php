@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('lietotajspasakums', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('lietotajs_id')->constrained('lietotajs')->primary();
+            $table->foreignId('users_id')->constrained('users')->primary();
             $table->foreignId('pasakums_id')->constrained('pasakums')->primary();
         });
     }

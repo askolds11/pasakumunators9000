@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('lietotajs', function (Blueprint $table) {
-            $table->id();//->primary();
+        Schema::create('pasakumskategorija', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
-            $table->string('lietotajvards',100);
+            $table->foreignId('pasakums_id')->constrained('pasakums');
+            $table->foreignId('kategorija_id')->constrained('kategorija');
         });
     }
 
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lietotajs');
+        Schema::dropIfExists('pasakumskategorija');
     }
 };

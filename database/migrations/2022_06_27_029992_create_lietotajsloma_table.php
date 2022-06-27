@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('lietotajsloma', function (Blueprint $table) {
-            //$table->id();
+            $table->id();
             $table->timestamps();
-            $table->foreignId('lietotajs_id')->constrained('lietotajs');
-            $table->foreignId('loma_nosaukums')->constrained('loma');
+            $table->foreignId('users_id')->constrained('users');
+            $table->foreignId('loma_id')->constrained('loma');
         });
     }
 

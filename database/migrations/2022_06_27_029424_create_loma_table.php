@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('loma', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('nosaukums',50);
+            $table->string('nosaukums',100);
         });
     }
 

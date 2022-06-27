@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('attels', function (Blueprint $table) {
             $table->id();//->primary();
             $table->timestamps();
-            $table->string('apraksts',200);
+            $table->string('apraksts',300);
             $table->date('datums')->format('d/m/Y');
             $table->foreignId('pasakums_id')->constrained('pasakums');
         });

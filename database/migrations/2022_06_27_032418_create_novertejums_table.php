@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('novertejums', function (Blueprint $table) {
             $table->id();//->primary();
             $table->timestamps();
-            $table->foreignId('lietotajs_id')->constrained('lietotajs');
+            $table->foreignId('users_id')->constrained('users');
             $table->foreignId('pasakums_id')->constrained('pasakums');
-            $table->string('novertejums',100);
+            $table->integer('novertejums');
 
         });
     }

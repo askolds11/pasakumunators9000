@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('komentars', function (Blueprint $table) {
             $table->id();//->primary();
             $table->timestamps();
-            $table->foreignId('lietotajs_id')->constrained('lietotajs');
+            $table->foreignId('users_id')->constrained('users');
             $table->foreignId('pasakums_id')->constrained('pasakums');
-            $table->string('teksts',200);
+            $table->string('teksts',500);
             $table->date('datums')->format('d/m/Y');
         });
     }
