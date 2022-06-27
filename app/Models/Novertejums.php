@@ -9,4 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 class Novertejums extends Model
 {
     use HasFactory;
+
+    protected $table = 'novertejums';
 }

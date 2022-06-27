@@ -16,6 +16,7 @@ use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class DatabaseSeeder extends Seeder
 {
@@ -84,28 +85,28 @@ class DatabaseSeeder extends Seeder
         $pasakums = Pasakums::create([
             'nosaukums'=>'Rigas futbola turnirs',
             'apraksts'=>'Ikgadejais futbola ternirs ks notiek Riga start LU un RTU universitatem',
-            'datums'=>'06/07/2022',
+            'datums'=> Carbon::parse('2022-07-06'),
             'norises_ilgums'=>'20:00',
             'norises_vieta'=>'Kipsalas sporta centra',
-            'cena'=>'5,00',
+            'cena'=>'5.00',
             'veidotajs_id'=>'1'
             ]);
         $pasakums = Pasakums::create([
             'nosaukums'=>'Olaines basketbola cempionats',
             'apraksts'=>'2022 Olaines basketbola cempionts start 9-12 klases skoleniem',
-            'datums'=>'12/09/2022',
+            'datums'=> Carbon::parse('2022-09-12'),
             'norises_ilgums'=>'10:00',
             'norises_vieta'=>'Olaines sporta centra',
-            'cena'=>'2,00',
+            'cena'=>'2.00',
             'veidotajs_id'=>'2'
             ]);
         $pasakums = Pasakums::create([
             'nosaukums'=>'Jelgavas peldesanas sacensibas',
             'apraksts'=>'Atklatas Jelgavas peldesanas sacensibas',
-            'datums'=>'21/11/2022',
+            'datums'=>Carbon::parse('2022-11-21'),
             'norises_ilgums'=>'12:00',
             'norises_vieta'=>'Jelgavas baseins',
-            'cena'=>'3,00',
+            'cena'=>'3.00',
             'veidotajs_id'=>'2'
             ]);
 
@@ -114,19 +115,19 @@ class DatabaseSeeder extends Seeder
             'users_id'=>'1',
             'pasakums_id'=>'1',
             'teksts'=>'Paldies',
-            'datums'=>'09/07/2022'
+            'datums'=>Carbon::parse('2022-07-09')
         ]);
         $komentars = Komentars::create([
             'users_id'=>'2',
             'pasakums_id'=>'2',
             'teksts'=>'Bija loti interesanti',
-            'datums'=>'12/10/2022'
+            'datums'=>Carbon::parse('2022-10-12')
         ]);
         $komentars = Komentars::create([
             'users_id'=>'3',
             'pasakums_id'=>'3',
             'teksts'=>'Slikta edinasana',
-            'datums'=>'12/12/2022'
+            'datums'=>Carbon::parse('2022-12-12')
         ]);
 
         //LietotajsPasakums
@@ -158,17 +159,17 @@ class DatabaseSeeder extends Seeder
         ]);
         
         //Novertejums
-        $novertejums - Novertejums::create([
+        $novertejums = Novertejums::create([
             'users_id'=>'1',
             'pasakums_id'=>'3',
             'novertejums'=>'8'
         ]);
-        $novertejums - Novertejums::create([
+        $novertejums = Novertejums::create([
             'users_id'=>'2',
             'pasakums_id'=>'1',
             'novertejums'=>'7'
         ]);
-        $novertejums - Novertejums::create([
+        $novertejums = Novertejums::create([
             'users_id'=>'3',
             'pasakums_id'=>'1',
             'novertejums'=>'2'
@@ -176,18 +177,18 @@ class DatabaseSeeder extends Seeder
         //Attels
         $attels = Attels::create([
             'apraksts'=>'Bilde no Lienes',
-            'datums'=>'10/10/2022',
+            'datums'=>Carbon::parse('2022-10-10'),
             'pasakums_id'=>'1'
         ]);
         $attels = Attels::create([
             'apraksts'=>'Interesanti',
-            'datums'=>'12/10/2022',
+            'datums'=>Carbon::parse('2022-10-12'),
             'pasakums_id'=>'2'
         ]);
 
         $attels = Attels::create([
             'apraksts'=>'Es un mani draugi',
-            'datums'=>'22/12/2022',
+            'datums'=>Carbon::parse('2022-12-22'),
             'pasakums_id'=>'3'
         ]);
 

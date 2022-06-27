@@ -9,4 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 class LietotajsLoma extends Model
 {
     use HasFactory;
+
+    protected $table = 'lietotajsloma';
 }

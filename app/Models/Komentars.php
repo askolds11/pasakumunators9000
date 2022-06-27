@@ -9,4 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 class Komentars extends Model
 {
     use HasFactory;
+
+    protected $table = 'komentars';
 }

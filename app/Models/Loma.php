@@ -9,4 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 class Loma extends Model
 {
     use HasFactory;
+
+    protected $table = 'loma';
 }

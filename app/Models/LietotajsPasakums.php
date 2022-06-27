@@ -9,4 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 class LietotajsPasakums extends Model
 {
     use HasFactory;
+
+    protected $table = 'lietotajspasakums';
 }

@@ -9,4 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 class Attels extends Model
 {
     use HasFactory;
+
+    protected $table = 'attels';
 }

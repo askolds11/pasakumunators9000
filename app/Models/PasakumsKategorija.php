@@ -9,4 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 class PasakumsKategorija extends Model
 {
     use HasFactory;
+
+    protected $table = 'pasakumskategorija';
 }
