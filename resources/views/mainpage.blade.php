@@ -2,7 +2,7 @@
 Mainpage.blade.php
 Fails ir dotā laravel projekta galvenā lapa, 
 cauru kuru lietotājs var sasniegt un piekļūt 
-pārējām projekta funkcijām.
+pārējām projekta funkcijām un lapām.
 -->
 
 <!DOCTYPE html>
