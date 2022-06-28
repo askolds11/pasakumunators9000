@@ -13,33 +13,11 @@
     <title>Pasākums + tā nosaukums</title>
 </head>
 <body>
-    <header id="header-project-name">
-        <p>Pasākumunators9000</p>
-    </header>
-    <nav id="navbar">
-        <ul class="nav-links">
-            <li><a href="{{ url('/mainpage') }}">JAUNUMI</a></li> <!-- Ved uz jaunumi *****tehniski, šī pati lapa -->
-            <li><a href="{{ url('/filter') }}">FILTRĒT</a></li></li> <!-- Ved uz filtrēšanas lapu, proti, lapa, kurā lietotājs būs spējīgs meklēt sev tīkamus  -->
-            <li><a href="{{ url('/new_pasakums') }}">PIEVIENOT PASĀKUMU</a></li>
-        </ul>
-        <button>
-        @if (Route::has('login'))
-                    @auth
-                    <a href="{{ url('/dashboard') }}">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}">LOG IN</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">REĢISTRĒTIES</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-        </button> <!-- Ved uz login page -->
-    </nav>
+    <x-header-comp />
+    <x-navbar-comp />
 
     <div id="show_pasakums">
-        <h3>Nosaukums dotajam paskumam</h3>
+        <h3>Nosaukums dotajam paskumam WORK IN PROGRESS</h3>
     </div>
 
     <div id="show_pasakums_komentari">
@@ -48,10 +26,6 @@
 
             </ul>
     </div>
-
-
-
-
     <footer id="footer">
         <p>Veidoja: Askolds Bērziņš, Johans Justs Eris, Aleksejs Romaņuks</p>
         <p>&copy Copyright AskoldsJustsAleksejs inc.</p>
