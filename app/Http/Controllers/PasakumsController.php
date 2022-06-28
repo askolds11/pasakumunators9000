@@ -156,6 +156,14 @@ class PasakumsController extends Controller
         return redirect('pasakums/' . $pasakums->id); //not sure if id exists
     }
 
+    public function showFilter() 
+    {
+        $pasakumi = Pasakums::all()->map(function ($pasakums) {
+            return $pasakums;
+	    });
+        return view('filter', compact('pasakumi'));        
+    }
+
     /**
      * Remove the specified resource from storage.
      *

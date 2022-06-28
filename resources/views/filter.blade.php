@@ -38,7 +38,7 @@
                         @endif
                     @endauth
                 </div>
-            @endif
+        @endif
         </button> <!-- Ved uz login page -->
     </nav>
     
@@ -94,7 +94,8 @@
                     <td>{{$pasakums->veidotajs_id }}</td>
                     <td>{{$pasakums->kategorija }}</td>
                 </tr>
-        @endforeach
+            @endforeach
+            @endif
         </table>
         
     

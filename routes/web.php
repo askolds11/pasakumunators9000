@@ -33,9 +33,7 @@ Route::get('/mainpage', function () {
 });
 
 // FILTER LAPA
-Route::get('/filter', function () {
-    return view('filter');
-});
+Route::get('/filter', [PasakumsController::class, 'showFilter']);
 
 // PASĀKUMA IZVEIDES LAPA
 Route::resource('pasakums', PasakumsController::class, ['except' => ['create']]);
