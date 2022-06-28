@@ -6,6 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Auth;
+use App\Models\LietotajsLoma;
 
 class EnsureUserHasRole
 {
@@ -21,8 +22,7 @@ class EnsureUserHasRole
     {
         foreach($roles as $role)
         {
-            $userroles = DB::table('lietotajsloma')
-                        ->where('users_id', '=', Auth::user()->id)
+            $userroles = LietotajsLoma::where('users_id', '=', Auth::user()->id)
                         ->join('loma', 'lietotajsloma.loma_id', '=', 'loma.id')
                         ->where('loma.nosaukums', $role)
                         ->get();
