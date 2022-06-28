@@ -20,6 +20,8 @@ class EnsureUserHasRole
      */
     public function handle(Request $request, Closure $next, ...$roles)
     {
+        if(!Auth::check()) abort(404);
+
         foreach($roles as $role)
         {
             $userroles = LietotajsLoma::where('users_id', '=', Auth::user()->id)
