@@ -1,5 +1,5 @@
 <div>
-        <div id="izveidot-jaunu-pasakumus">
+<div id="izveidot-jaunu-pasakumus">
             <h3>Publicēt jaunu pasākumu</h3>
             @foreach ($errors->all() as $message) {
                 <strong>{{ $message }}</strong><br>
