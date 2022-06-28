@@ -35,12 +35,15 @@ class AdminPanelController extends Controller
 
         $comments = Komentars::orderBy('updated_at', 'desc')
                             ->orderBy('id', 'desc')
-                            ->get();
+                            ->get()
+                            ->toArray();
 
         $events = Pasakums::orderBy('updated_at', 'desc')
                             ->orderBy('id', 'desc')
-                            ->get();
+                            ->get()
+                            ->toArray();
 
+        
         return view('adminpanel', compact('users', 'comments', 'events'));   
     }
 }
