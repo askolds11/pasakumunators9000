@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use App\Models\LietotajsLoma;
+use Illuminate\Support\Facades\DB;
 
 class RegisteredUserController extends Controller
 {
@@ -48,6 +50,14 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
+
+
+        $lietotajsloma = new LietotajsLoma();
+        $lietotajsloma->users_id = Auth::user()->id;
+        $lietotajsloma->loma_id = DB::table('loma')
+                                    ->where('nosaukums', 'invidivuals')
+                                    ->get('id')->first()->id;
+        $lietotajsloma->save();
 
         return redirect(RouteServiceProvider::HOME);
     }

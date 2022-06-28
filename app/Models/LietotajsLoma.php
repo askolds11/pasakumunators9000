@@ -10,5 +10,6 @@ class LietotajsLoma extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['users_id', 'loma_id'];
     protected $table = 'lietotajsloma';
 }
