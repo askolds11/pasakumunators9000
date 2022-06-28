@@ -83,16 +83,17 @@ body {
 /* CONTNENT */
 
 
-
-/* MAIN LAPAI */
-#pasakums-preview {
-    /* background-color: rgba(234, 234, 234, 1);; */
-    border: 5px solid rgba(234, 234, 234, 1);
-    float: left;
-    /* margin-right: 50%; */
-    
+/* MAINPAGE */
+#parent-preview-pasakums {
+    display: flex;
 }
 
+#pasakums-preview {
+    border: 5px solid rgba(234, 234, 234, 1);
+    float: left;
+    width: 40%;
+    height: max-content;
+}
 #tituls-pasakums {
     background-color: rgba(110, 218, 109, 1);
     text-align: center;
@@ -105,18 +106,19 @@ body {
     padding: 10px 10px  10px  10px ;
     
 }
-
 #saturs-par-pasakumu #atteli-button {
     background-color: skyblue;
     padding: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
     /* float: right; */
 }
+
 #komentari {
     border:5px solid rgba(234, 234, 234, 1);
-    float: right;
+    float: left;
+    width: 60%;
+    height: max-content;
 }
-
 #tituls-komentari {
     background-color: skyblue;
 }
@@ -125,19 +127,20 @@ body {
     border-radius: 5px 5px 5px 5px;
     list-style: none;
 }
-
 #saturs-par-komentariem {
     margin-top: 10px;
 }
+.mainpage-content {
+    display: inline-block;
+    
+
+}
 
 /* FILTER LAPAI */
-/* @media (min-width:768px){ */
-    #filter-content-group{
-        display: flex;
-    
-    }
-/* } */
+#filter-content-group{
+    display: flex;
 
+}
 #filter-pasakumu {
     /* border: 10px solid white; */
     
@@ -145,7 +148,6 @@ body {
     width: 20%;
     height: max-content;
 }
-
 #show-filter-list {
     /* border: 10px solid white; */
     
@@ -159,12 +161,6 @@ body {
 }
 
 
-/* .filter-content-child {
-    border: 5px solid red;
-    float: left;
-    width: 50%;
-
-} */
 
 /* NEW_PASAKUMA LAPAI */
 #parent-new-pasakums {
@@ -182,6 +178,9 @@ body {
     padding: 15px;
     margin-top: 20px;
 }
+
+
+
 
 /* FOOTER */
 

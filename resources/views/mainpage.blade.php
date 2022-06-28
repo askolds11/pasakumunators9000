@@ -16,12 +16,23 @@
 <body>
     <x-header-comp />
     <x-navbar-comp />
-    <div id="pasakums-preview">
-        <x-pasakumu-preview-comp />
+    
+    <aside>
+        <!-- left -->
+    </aside>
+    
+    <div id="parent-preview-pasakums">
+        <div id="pasakums-preview" class="mainpage-content">
+            <x-pasakumu-preview-comp />
+        </div>
+        <div id="komentari">
+            <x-komentari-comp />
+        </div>
     </div>
-    <div id="komentari">
-       <x-komentari-comp />
-    </div>
+    <aside>
+        <!-- right -->
+    </aside>
+    
     <!-- <x-footer-comp /> -->
     <footer id="footer">
         <p>Veidoja: Askolds Bērziņš, Johans Justs Eris, Aleksejs Romaņuks</p>
