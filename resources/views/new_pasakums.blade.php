@@ -18,17 +18,27 @@
             <p>Pasākumunators9000</p>
     </header>
     <nav id="navbar">
-        
         <ul class="nav-links">
-            <li><a href="">JAUNUMI</a></li> <!-- Ved uz jaunumi *****tehniski, šī pati lapa -->
-            <li><a href="">FILTRĒT</a></li></li> <!-- Ved uz filtrēšanas lapu, proti, lapa, kurā lietotājs būs spējīgs meklēt sev tīkamus  -->
-            <li><a href="">REĢISTRĒTIES</a></li> <!-- Ved uz register lapu, kur lietotājs spēs reģistrēt sev jaunu pasākumu -->
-            
+            <li><a href="{{ url('/mainpage') }}">JAUNUMI</a></li> <!-- Ved uz jaunumi *****tehniski, šī pati lapa -->
+            <li><a href="{{ url('/filter') }}">FILTRĒT</a></li></li> <!-- Ved uz filtrēšanas lapu, proti, lapa, kurā lietotājs būs spējīgs meklēt sev tīkamus  -->
+            <li><a href="{{ url('/new_pasakums') }}">PIEVIENOT PASĀKUMU</a></li>
         </ul>
-        
+        <button>
+        @if (Route::has('login'))
+                    @auth
+                    <a href="{{ url('/dashboard') }}">Dashboard</a>
+                    @else
+                        <a href="{{ route('login') }}">LOG IN</a>
 
-        <button><a href="">LOGIN</a></button> <!-- Ved uz login page -->
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}">REĢISTRĒTIES</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+        </button> <!-- Ved uz login page -->
     </nav>
+
     <div id="izveidot-jaunu-pasakumus">
         <h3>Publicēt jaunu pasākumu</h3>
         @foreach ($errors->all() as $message) {
@@ -77,7 +87,7 @@
             </select><br>
             <input type="submit" value="Submit">
         </form>
-</div>
+    </div>
 
     <footer id="footer">
         <p>Veidoja: Askolds Bērziņš, Johans Justs Eris, Aleksejs Romaņuks</p>

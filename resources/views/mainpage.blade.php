@@ -21,6 +21,7 @@ pārējām projekta funkcijām un lapām.
 </head>
 <body>
     <header id="header-project-name">
+        <!-- <a href="{{ url('/mainpage') }}">Pasākumunators9000</a> TO BE ADDED --> 
         <p>Pasākumunators9000</p>
     </header>
   
@@ -30,24 +31,20 @@ pārējām projekta funkcijām un lapām.
 
 
     <nav id="navbar">
-        
         <ul class="nav-links">
-            <li><a href="">JAUNUMI</a></li> <!-- Ved uz jaunumi *****tehniski, šī pati lapa -->
+            <li><a href="{{ url('/mainpage') }}">JAUNUMI</a></li> <!-- Ved uz jaunumi *****tehniski, šī pati lapa -->
             <li><a href="{{ url('/filter') }}">FILTRĒT</a></li></li> <!-- Ved uz filtrēšanas lapu, proti, lapa, kurā lietotājs būs spējīgs meklēt sev tīkamus  -->
-            <li><a href="{{ url('/register_user') }}">REĢISTRĒTIES</a></li> <!-- Ved uz register lapu, kur lietotājs spēs reģistrēt sev jaunu pasākumu -->
-            
+            <li><a href="{{ url('/new_pasakums') }}">PIEVIENOT PASĀKUMU</a></li>
         </ul>
-        
-
         <button>
         @if (Route::has('login'))
                     @auth
                     <a href="{{ url('/dashboard') }}">Dashboard</a>
                     @else
-                        <a href="{{ route('login') }}">Log in</a>
+                        <a href="{{ route('login') }}">LOG IN</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}">REĢISTRĒTIES</a>
                         @endif
                     @endauth
                 </div>
@@ -78,26 +75,6 @@ pārējām projekta funkcijām un lapām.
         </div>
     </div>
     
-    
-
-    <!-- <section>
-        <h3>About</h3>
-        <p>Šīs lapas doma jada jada jada jada</p>
-        <p>vrbt links uz mūsu darba aprakstu</p>
-        <ul>
-            <li>1. feature</li>
-            <li>2. feature</li>
-            <li>3. feature</li>
-
-        </ul>
-        <p>Best wishes!</p>
-    </section> -->
-
-
-
-
-
-
     <footer id="footer">
         <p>Veidoja: Askolds Bērziņš, Johans Justs Eris, Aleksejs Romaņuks</p>
         <p>&copy Copyright AskoldsJustsAleksejs inc.</p>

@@ -42,9 +42,15 @@ Route::resource('pasakums', PasakumsController::class, ['except' => ['create']])
 Route::get('/new_pasakums', [PasakumsController::class, 'create']
 )->middleware('auth'); //currently only needs login
 
+// OUTDATED
 // LIETOTĀJA REĢISTRĀCIJAS LAPA (BŪS JĀMAINA)
-Route::get('/register_user', function () {
-    return view('register_user');
+// Route::get('/register_user', function () {
+//     return view('register_user');
+// });
+
+// ROUTE UZ INDIVIDUĀLU PASĀKUMU UN TĀ DATIEM (BŪS JĀMAINA, LAI TAS PARĀDA NOTEIKTU PASĀKUMU, NEVIS VNK BASIC LAPU)
+Route::get('/show_pasakums', function () {
+    return view('show_pasakums');
 });
 
 
