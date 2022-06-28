@@ -40,7 +40,7 @@ Route::get('/filter', function () {
 // PASĀKUMA IZVEIDES LAPA
 Route::resource('pasakums', PasakumsController::class, ['except' => ['create']]);
 Route::get('/new_pasakums', [PasakumsController::class, 'create']
-)->middleware('auth'); //currently only needs login
+)->middleware('role:invidivuals'); //currently only needs login
 
 // OUTDATED
 // LIETOTĀJA REĢISTRĀCIJAS LAPA (BŪS JĀMAINA)
