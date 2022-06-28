@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PasakumsController;
 use App\Http\Controllers\KomentarsController;
 use App\Http\Controllers\AdminPanelController;
+use App\Http\Controllers\MainPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,9 +30,7 @@ Route::get('/dashboard', function () {
 // ROUTEES MŪSU LAPAI--------------------------------------------------------
 
 // MAIN LAPA
-Route::get('/mainpage', function () {
-    return view('mainpage');
-});
+Route::get('/mainpage', [MainPageController::class, 'index']);
 
 // FILTER LAPA
 Route::get('/filter', [PasakumsController::class, 'showFilter']);
