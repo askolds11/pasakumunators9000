@@ -95,7 +95,10 @@ class PasakumsController extends Controller
      */
     public function show($id)
     {
-        //
+        $pasakums = Pasakums::findOrFail($id);
+        $komentari = Komentars::where('pasakums_id', '=', $id)->get();
+
+        return view('show_pasakums', compact('pasakums', 'komentari'));
     }
 
     /**
