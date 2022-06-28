@@ -23,10 +23,24 @@
     
     <div id="parent-preview-pasakums">
         <div id="pasakums-preview" class="mainpage-content">
-            <x-pasakumu-preview-comp />
+            <h3 id="tituls-pasakums">TITULS</h3>
+                <div id="saturs-par-pasakumu">
+                    <p>
+                    
+
+                    </p>
+                    <button id="atteli-button">Attēli</button> <!-- Parādītu attēlus dotajam projektam -->
+                </div>
         </div>
         <div id="komentari">
-            <x-komentari-comp />
+            <h3 id="tituls-komentari">KOMENTĀRI</h3>
+            <div id="saturs-par-komentariem">
+                <ul>
+                    <li id="pirmais-preview-koments" class="preview-komentari">1.komentars</li>
+                    <li id="pirmais-preview-koments" class="preview-komentari">1.komentars</li>
+                    <li id="pirmais-preview-koments" class="preview-komentari">1.komentars</li>
+                </ul>
+        </div>
         </div>
     </div>
     <aside>
