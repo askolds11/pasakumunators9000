@@ -131,12 +131,56 @@ body {
 }
 
 /* FILTER LAPAI */
+/* @media (min-width:768px){ */
+    #filter-content-group{
+        display: flex;
+    
+    }
+/* } */
 
+#filter-pasakumu {
+    /* border: 10px solid white; */
+    
+    float: left;
+    width: 20%;
+    height: max-content;
+}
+
+#show-filter-list {
+    /* border: 10px solid white; */
+    
+    float: left;
+    width: 80%;
+    height: max-content;
+    
+}
+.filter-content-child {
+    display: inline-block;
+}
+
+
+/* .filter-content-child {
+    border: 5px solid red;
+    float: left;
+    width: 50%;
+
+} */
 
 /* NEW_PASAKUMA LAPAI */
-#izveidot-jaunu-pasakumus {
-    margin-left: 40%;
-    margin-right: 30%;
+#parent-new-pasakums {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 5px solid red; */
+    /* background-color: white; */
+    /* max-width: 200px; */
+}
+
+#izveidot-jaunu-pasakumus{
+    background-color: white;
+    border-radius:10px;
+    padding: 15px;
+    margin-top: 20px;
 }
 
 /* FOOTER */

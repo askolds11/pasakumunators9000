@@ -42,38 +42,65 @@
         </button> <!-- Ved uz login page -->
     </nav>
     
-    <div id="filter-pasakumu">
-        <h2>FILTRĒT PASĀKUMU</h2>
-        <br>
-        <form action="">
-        <label for="">1. kritērija:</label><br>
-        <input type="text" id="" name="" value=""><br>
-        <label for="lname">2. kritērija</label><br>
-        <input type="text" id="" name="" value=""><br>
-        <label for="lname">3. kritērija</label><br>
-        <input type="text" id="" name="" value=""><br>
-        <label for="lname">4. kritērija</label><br>
-        <input type="radio" id="" name="" value="">
-        <label for="">1. opcija</label><br>
-        <input type="radio" id="" name="" value="">
-        <label for="">2. opcija</label><br>
-        <input type="radio" id="" name="" value="">
-        <label for="">3. opcija</label><br><br>
-        <input type="submit" value="Meklēt">
-        </form>
+
+
+    <div id="filter-content-group">
+        <div id="filter-pasakumu" class="filter-content-child">
+            <h2>FILTRĒT PASĀKUMU</h2>
+            <br>
+            <form action="">
+            <label for="">1. kritērija:</label><br>
+            <input type="text" id="" name="" value=""><br>
+            <label for="lname">2. kritērija</label><br>
+            <input type="text" id="" name="" value=""><br>
+            <label for="lname">3. kritērija</label><br>
+            <input type="text" id="" name="" value=""><br>
+            <label for="lname">4. kritērija</label><br>
+            <input type="radio" id="" name="" value="">
+            <label for="">1. opcija</label><br>
+            <input type="radio" id="" name="" value="">
+            <label for="">2. opcija</label><br>
+            <input type="radio" id="" name="" value="">
+            <label for="">3. opcija</label><br><br>
+            <input type="submit" value="Meklēt">
+            </form>
+        </div>
+        <div id="show-filter-list" class="filter-content-child">
+            <h3>PASĀKUMIS</h3>
+
+
+            @if (count($pasakumi)==0)
+                <p>Netika atrasti pasākumi.</p>
+            @else 
+                <table>
+                    <tr>
+                        <td>Nosaukums</tc>
+                        <td>Apraksts</tc>
+                        <td>Datums</tc>
+                        <td>Norises ilgums</tc>
+                        <tc>Norises vieta</tc>
+                        <tc>Cena</tc>
+                        <tc>Veidotāja id</tc>
+                        <tc>Kategorija</tc>
+                    </tr>
+            @foreach ($pasakumi as $pasakums)
+                <tr>
+                    <td>{{$pasakums->nosaukums }}</td>
+                    <td>{{$pasakums->apraksts }}</td>
+                    <td>{{$pasakums->datums }}</td>
+                    <td>{{$pasakums->norises_ilgums }}</td>
+                    <td>{{$pasakums->norises_vieta }}</td>
+                    <td>{{$pasakums->cena }}</td>
+                    <td>{{$pasakums->veidotajs_id }}</td>
+                    <td>{{$pasakums->kategorija }}</td>
+                </tr>
+        @endforeach
+        </table>
+        
+    
+        </div>
     </div>
-    <div id="results">
-        <h3>REZULTĀTI</h3>
-        <ul>
-            <li>Rez1</li>
-            <li>Rez2</li>
-            <li>Rez3</li>
-            <li>Rez4</li>
-            <li>Rez5</li>
-            <li>Rez6</li>
-            <li>Rez7</li>
-        </ul>
-    </div>
+   
     <footer id="footer">
         <p>Veidoja: Askolds Bērziņš, Johans Justs Eris, Aleksejs Romaņuks</p>
         <p>&copy Copyright AskoldsJustsAleksejs inc.</p>
