@@ -48,4 +48,5 @@ Route::get('adminpanel', [AdminPanelController::class, 'index']
         )->middleware('role:administrators');
 
 
+
 require __DIR__.'/auth.php';

@@ -1,34 +1,129 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- STYLESHEETS -->
-    <link rel="stylesheet" href="{{url('css/styles.css')}}">
-    <!-- GOOGLE FONT LINKS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <title>Pasākums + tā nosaukums</title>
-</head>
-<body>
-    <x-header-comp />
-    <x-navbar-comp />
+@extends('layout_custom')
 
-    <div id="show_pasakums">
-        <h3>Nosaukums dotajam paskumam WORK IN PROGRESS</h3>
+@section('title', 'Pasākums + tā nosaukums')
+
+@section('content')
+<div id="content-show-pasakuma-group">
+
+
+    <div id="show_pasakums" class="show-content-child">    
+        <h2 id="title-show-pasakums">Title</h2>
+        <ul>
+            <li id="show-user-name-pasakums-publicetajs">
+                <p id="show-user-name-pasakums"><a href="" id="link-to-publicetajs">User2</a></p>
+                <p id="show-datums-publicets-pasakums">09.10.2020.</p>
+                <p id="show-laiks-publicets-pasakums">12:00:00</>
+            </li>
+            <li id="apraksts-show-pasakums" class="show-pasakuma-info">
+                <h3>
+                    Apraksts
+                </h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut suscipit laudantium omnis corporis corrupti culpa! Cum 
+
+                </p>
+            </li>
+            <li id="apraksts-show-pasakums" class="show-pasakuma-info">
+                <h3>
+                    Datums
+                </h3>
+                <p>
+                    10.10.2020.
+                </p>
+            </li>
+            <li id="apraksts-show-pasakums" class="show-pasakuma-info">
+                <h3>
+                    Norises ilgums
+                </h3>
+                <p>
+                    10 dienas
+                </p>
+            </li>
+            <li id="apraksts-show-pasakums" class="show-pasakuma-info">
+                <h3>
+                    Cena
+                </h3>
+                <p>
+                    3.50
+                </p>
+            </li>
+            <li id="apraksts-show-pasakums" class="show-pasakuma-info">
+                <h3>
+                    Kategorija
+                </h3>
+                <p > 
+                    1
+                </p>
+            </li>
+            <li id="pieteikties">
+                <button id="button-pieteikties">
+                    Pieteikties
+                </button>
+                
+            </li>
+        </ul>
+        
+       
+        
     </div>
-
-    <div id="show_pasakums_komentari">
-        <h3>Komentāri</h3>
+    <div id="show_pasakums_komentari" class="show-content-child">
+        <h3 id="title-show-pasakums-komentari">Komentāri</h3>
             <ul>
+                <li class="show-user-name-koments">
+                    <h4>User1</h4>
+                    <div class="show-user-name-koments-info">
+                        <p class="datums-publicets-koments">
+                            10.10.2020.
+                        </p>
+                        <p class="laiks-publicets-koments">
+                            14:20
+                        </p>
+                    </div>
+                    
+                    
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea adipisci voluptatum dolores, ducimus eaque rem inventore impedit debitis rerum eum!
+                    </p>
+                </li>
+                <li class="show-user-name-koments">
+                    <h4>User1</h4>
+                    <div class="show-user-name-koments-info">
+                        <p class="datums-publicets-koments">
+                            10.10.2020.
+                        </p>
+                        <p class="laiks-publicets-koments">
+                            14:20
+                        </p>
+                    </div>
+                    
+                    
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea adipisci voluptatum dolores, ducimus eaque rem inventore impedit debitis rerum eum!
+                    </p>
+                </li>
+                
+                
 
             </ul>
     </div>
-    <footer id="footer">
-        <p>Veidoja: Askolds Bērziņš, Johans Justs Eris, Aleksejs Romaņuks</p>
-        <p>&copy Copyright AskoldsJustsAleksejs inc.</p>
-    </footer>
-</body>
-</html>
+</div>
+<div id="attels-preview-show-pasakums-reklama">
+    <h3>Attēlu reklama</h3>
+    <button>
+        Poga-pievienot attēlu(nav css)
+    </button>
+    <div class="attels-child">
+        img
+    </div>
+</div>
+
+<div id="attels-preview-show-pasakums-galerija">
+    <h3>Attēlu galerija</h3>
+    <button>
+        Poga-pievienot attēlu(nav css)
+    </button>
+    <div id="attels-child">
+        img
+    </div>
+
+</div>
+@endsection
+
