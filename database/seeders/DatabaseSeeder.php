@@ -37,6 +37,12 @@ class DatabaseSeeder extends Seeder
 
         //User
         $users = User::create([
+            'name'=> 'admin',
+            'email'=> 'admin@admin.admin',
+            'password'=> bcrypt('admin')
+        ]);
+
+        $users = User::create([
             'name'=> 'janisrainis',
             'email'=> 'janisrainis@gmail.com',
             'password'=> bcrypt('janisrainis123')
@@ -74,10 +80,13 @@ class DatabaseSeeder extends Seeder
         
         //Loma
         $loma = Loma::create([
-            'nosaukums'=>'invidivuals'
+            'nosaukums'=>'lietotajs'
         ]);
         $loma = Loma::create([
-            'nosaukums'=>'grupaskapteinis'
+            'nosaukums'=>'pasakumu_veidotajs'
+        ]);
+        $loma = Loma::create([
+            'nosaukums'=>'administrators'
         ]);
 
         //Pasakums
@@ -165,6 +174,20 @@ class DatabaseSeeder extends Seeder
         $lietotajsloma = LietotajsLoma::create([
             'users_id'=>'3',
             'loma_id'=>'1'
+        ]);
+
+        //admin
+        $lietotajsloma = LietotajsLoma::create([
+            'users_id'=>'1',
+            'loma_id'=>'1'
+        ]);
+        $lietotajsloma = LietotajsLoma::create([
+            'users_id'=>'1',
+            'loma_id'=>'2'
+        ]);
+        $lietotajsloma = LietotajsLoma::create([
+            'users_id'=>'1',
+            'loma_id'=>'3'
         ]);
         
         //Novertejums

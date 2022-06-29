@@ -36,12 +36,15 @@ Route::get('/mainpage', [MainPageController::class, 'index']);
 Route::get('/filter', [PasakumsController::class, 'showFilter']);
 
 // PASĀKUMA IZVEIDES LAPA
-Route::resource('pasakums', PasakumsController::class, ['except' => ['create']]);
-Route::get('/new_pasakums', [PasakumsController::class, 'create']
-)->middleware('role:grupaskapteinis,invidivuals'); //currently only needs login
+Route::resource('pasakums', PasakumsController::class, ['except' => ['create', 'index', 'store']]);
+Route::get('pasakumi', [PasakumsController::class, 'index']);
+Route::get('new_pasakums', [PasakumsController::class, 'create']
+)->middleware('role:pasakumu_veidotajs');
+Route::post('new_pasakums', [PasakumsController::class, 'store']
+)->middleware('role:pasakumu_veidotajs');
 
 //ADMIN PANEL
-Route::get('adminpanel', [AdminPanelController::class, 'index'])->middleware('role:invidivuals');
+Route::get('adminpanel', [AdminPanelController::class, 'index'])->middleware('role:administrators');
 
 
 require __DIR__.'/auth.php';

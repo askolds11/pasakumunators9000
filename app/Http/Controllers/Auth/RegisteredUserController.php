@@ -55,7 +55,7 @@ class RegisteredUserController extends Controller
         $lietotajsloma = new LietotajsLoma();
         $lietotajsloma->users_id = Auth::user()->id;
         $lietotajsloma->loma_id = DB::table('loma')
-                                    ->where('nosaukums', 'invidivuals')
+                                    ->where('nosaukums', 'lietotajs')
                                     ->get('id')->first()->id;
         $lietotajsloma->save();
 
