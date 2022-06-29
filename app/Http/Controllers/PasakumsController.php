@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Attels;
 use App\Models\Pasakums;
 use App\Models\Komentars;
 use App\Models\Kategorija;
@@ -55,7 +56,6 @@ class PasakumsController extends Controller
             $table->boolean('approved_status')->default(0); --not in form
             +kategorijas
         **********/
-
         $nosaukums = $request->nosaukums;
         $apraksts = $request->apraksts;
         $datums = $request->datums;
@@ -68,7 +68,7 @@ class PasakumsController extends Controller
         $rules = array(
             'nosaukums' => 'required|string|min:1|max:50',
             'apraksts' => 'required|string|min:1|max:500',
-            'datums' => 'required|date_format:Y-m-d H:i|after:1 hour',
+            'datums' => 'required|date_format:"Y-m-d\TH:i"|after:1 hour',
             'norises_ilgums' => 'required|integer|min:0',
             'norises_vieta' => 'required|string|min:1|max:100',
             'cena' => 'required|min:0|max:999.99',
@@ -78,11 +78,14 @@ class PasakumsController extends Controller
         );
         $this->validate($request, $rules);
 
-        $request->attels->store('images', 'public');
+        $file = $request->file('attels');
+        $filename = $file->hashName();
+        $file->move(public_path('images'), $filename);
+
         $attels = new Attels();
         $attels->apraksts = '';
-        $attels->datums = now()->format('d-m-Y')->toDateTimeString();
-        $attels->picture = 'public/images/' .$request->file('attels')->getClientOriginalname();
+        $attels->datums = now()->format('Y-m-d');
+        $attels->picture = 'public/images/' .$filename;
         $attels->save();
 
         $pasakums = new Pasakums();
@@ -98,12 +101,12 @@ class PasakumsController extends Controller
 
         foreach($kategorija as $kat)
         {
-            $kateg = new Kategorija();
-            $kateg->pasakums_id = $pasakums_id;
-            $kateg->kategorija_id = $kat->id;
-            $kateg->save;
+            $kateg = new PasakumsKategorija();
+            $kateg->pasakums_id = $pasakums->id;
+            $kateg->kategorija_id = $kat;
+            $kateg->save();
         }
-        
+
         return redirect('pasakums/' . $pasakums->id); //not sure if id exists
     }
 
