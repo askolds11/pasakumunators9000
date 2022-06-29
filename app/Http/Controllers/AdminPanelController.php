@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Komentars;
 use App\Models\Pasakums;
+use App\Models\LietotajsLoma;
 use App\Http\Controllers\KomentarsController;
 use App\Http\Controllers\PasakumsController;
 
@@ -115,8 +116,55 @@ class AdminPanelController extends Controller
         }
     }
 
-    public function updateRole($userid, $roleid, $action) //action: true - add, false - delete
+    public function updateRole($userid, $lomaid, $action) //action: true - add, false - delete
     {
+        //validation rules
+        $rules = array(
+            'userid' => 'required|exists:users',
+            'lomaid' => 'required|exists:lomas|not_in:invidivuals', //can't add or remove invidivuals role
+            'action' => 'required|boolean'
+        );
 
+        //validator instance
+        $validator = Validator::make(
+            array('userid' => $id, 'lomaid' => $status, 'action' => $action),
+            $rules
+        );
+
+        //refresh page, something went wrong
+        if($validator->fails())
+        {
+            return redirect('adminpanel');
+        }
+
+        //everything works out so far
+        //query should return empty
+        $userrole = LietotajsLoma::where('users_id', '=', $userid)
+                        ->where('loma_id', '=', $lomaid)
+                        ->get();
+        
+        //if role needs to be added, but already exists, refresh
+        if($status == true && !$userrole->isEmpty())
+        {
+            return redirect('adminpanel');
+        }
+        //if role needs to be removed, but it doesn't exist, refresh
+        elseif($status == false && $userrole->isEmpty())
+        {
+            return redirect('adminpanel');
+        }
+
+        //can remove or add safely here
+        if($status == true)
+        { //add role
+            $lietotajsloma = new LietotajsLoma;
+            $lietotajsloma->users_id = $userid;
+            $lietotajsloma->loma_id = $lomaid;
+            $lietotajsloma->save();
+        }
+        else
+        { //remove role
+            $userrole->first()->delete();
+        }
     }
 }
