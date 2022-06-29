@@ -179,20 +179,20 @@ class DatabaseSeeder extends Seeder
             'apraksts'=>'Bilde no Lienes',
             'datums'=>Carbon::parse('2022-10-10'),
             'pasakums_id'=>'1',
-            'picture'=> file_get_contents('public/images/image_1.jpg')
+            'picture'=> ('public/images/image_1.jpg')
         ]);
         $attels = Attels::create([
             'apraksts'=>'Interesanti',
             'datums'=>Carbon::parse('2022-10-12'),
             'pasakums_id'=>'2',
-            'picture'=> file_get_contents('public/images/image_2.jpg')
+            'picture'=> ('public/images/image_2.jpg')
         ]);
 
         $attels = Attels::create([
             'apraksts'=>'Es un mani draugi',
             'datums'=>Carbon::parse('2022-12-22'),
             'pasakums_id'=>'3',
-            'picture'=> file_get_contents('public/images/image_3.jpg')
+            'picture'=> ('public/images/image_3.jpg')
         ]);
 
         //PasakumsKategorija
