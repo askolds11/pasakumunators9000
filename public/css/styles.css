@@ -23,6 +23,11 @@ button {
     background-color: white;
 }
 
+/* ERROR */
+
+.invalid-feedback {
+    color: rgba(255, 0, 0, 0.7);
+}
 /* HEADER */
 #header-project-name{
     font-family: 'Roboto', sans-serif;
@@ -68,22 +73,31 @@ nav {
 }
 
 .nav-links li a:hover {
-    color: blue;
-    font-size: 110%;
+    color: rgba(110, 218, 109, 1);
+    /* font-size: 110%; */
 }
+
+.nav-links li a:active {
+    color: blue;
+}
+
+
 .navbar-button {
     transition: all 0.3s ease 0s;
 }
 .navbar-button:hover {
+    color: rgba(110, 218, 109, 1);
+    /* font-size: 110%; */
+}
+.navbar-button:active {
     color: blue;
-    font-size: 110%;
 }
 
 
-#navbar button {
+/* #navbar button {
     float: right;
     padding-right: 20px;
-}
+} */
 
 .deadspace {
     /* border:5px solid red; */
@@ -206,6 +220,7 @@ body {
     border-radius:10px;
     padding: 15px;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 #publicet-pasakumu-div {
     display: flex;
@@ -340,7 +355,7 @@ body {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* #link-to-publicetajs {
+/* .link-to-publicetajs {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.5);
 } */
