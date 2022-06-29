@@ -10,6 +10,7 @@ use App\Models\LietotajsLoma;
 use App\Models\Loma;
 use App\Http\Controllers\KomentarsController;
 use App\Http\Controllers\PasakumsController;
+use Illuminate\Support\Facades\Validator;
 
 class AdminPanelController extends Controller
 {
@@ -29,7 +30,7 @@ class AdminPanelController extends Controller
             {
                 if($userrole->username == $user->name)
                 {
-                    array_push($roles, $userrole->lomaid);
+                    array_push($roles, array('lomaid' => $userrole->lomaid, 'lomanosaukums' => $userrole->lomanosaukums));
                 }
             }
             array_push($lietotaji, array(
@@ -122,12 +123,19 @@ class AdminPanelController extends Controller
         }
     }
 
-    public function updateRole($userid, $lomaid, $action) //action: true - add, false - delete
+    public function updateRole(Request $request) //action: true - add, false - delete
     {
+        $userid = $request->userid;
+        $lomaid = $request->lomaid;
+        $action = $request->action;
+        if($action == 'false') {$action = false; }
+        else if($action == 'true') $action = true;
+
+
         //validation rules
         $rules = array(
             'userid' => 'required|exists:users,id',
-            'lomaid' => 'required|exists:lomas,id|not_in:1', //can't add or remove invidivuals role
+            'lomaid' => 'required|exists:loma,id|not_in:1', //can't add or remove invidivuals role
             'action' => 'required|boolean'
         );
 
@@ -140,7 +148,7 @@ class AdminPanelController extends Controller
         //refresh page, something went wrong
         if($validator->fails())
         {
-            return redirect('adminpanel');
+            return redirect('adminpanel')->withErrors($validator);
         }
 
         //everything works out so far
@@ -150,18 +158,18 @@ class AdminPanelController extends Controller
                         ->get();
         
         //if role needs to be added, but already exists, refresh
-        if($status == true && !$userrole->isEmpty())
+        if($action == true && !$userrole->isEmpty())
         {
             return redirect('adminpanel');
         }
         //if role needs to be removed, but it doesn't exist, refresh
-        elseif($status == false && $userrole->isEmpty())
+        elseif($action == false && $userrole->isEmpty())
         {
             return redirect('adminpanel');
         }
 
         //can remove or add safely here
-        if($status == true)
+        if($action == true)
         { //add role
             $lietotajsloma = new LietotajsLoma;
             $lietotajsloma->users_id = $userid;
@@ -172,5 +180,6 @@ class AdminPanelController extends Controller
         { //remove role
             $userrole->first()->delete();
         }
+        return redirect('adminpanel');
     }
 }
