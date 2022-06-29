@@ -10,5 +10,6 @@ class Attels extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['apraksts', 'datums', 'pasakums_id', 'picture'];
     protected $table = 'attels';
 }

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pasakums;
 use App\Models\Komentars;
+use App\Models\Kategorija;
+use App\Models\PasakumsKategorija;
+use Carbon\Carbon;
 use Auth;
 
 class PasakumsController extends Controller
@@ -26,7 +29,8 @@ class PasakumsController extends Controller
      */
     public function create()
     {
-        return view('new_pasakums');
+        $kategorijas = Kategorija::select('id', 'nosaukums')->get()->toArray();
+        return view('new_pasakums', compact('kategorijas'));
     }
 
     /**
@@ -38,20 +42,19 @@ class PasakumsController extends Controller
     public function store(Request $request)
     {
         /**********
+            $table->id();//->primary(); --not in form
+            $table->timestamps(); --not in form
             $table->string('nosaukums',50);
-            $table->string('apraksts',100);
-            $table->date('datums')->format('d/m/Y');
-            $table->time('norises_ilgums');
+            $table->string('apraksts',500);
+            $table->dateTime('datums', $precision = 0);
+            $table->integer('norises_ilgums');
             $table->string('norises_vieta',100);
             $table->decimal('cena',5,2);
-            $table->foreignId('veidotajs_id')->constrained('lietotajs');
-            $table->foreignId('kategorija_id')->constrained('kategorija');
+            $table->foreignId('veidotajs_id')->constrained('users'); --not in form
+            $table->foreignId('attels_id')->constrained('attels');
+            $table->boolean('approved_status')->default(0); --not in form
+            +kategorijas
         **********/
-
-        //Need auth check
-        //Need language
-
-        //dd($request); //for testing
 
         $nosaukums = $request->nosaukums;
         $apraksts = $request->apraksts;
@@ -59,20 +62,28 @@ class PasakumsController extends Controller
         $norises_ilgums = $request->norises_ilgums;
         $norises_vieta = $request->norises_vieta;
         $cena = $request->cena;
-        $veidotajs_id = $request->veidotajs_id; //may be different - checking which user
         $kategorija = $request->kategorija;
+        $attels = $request->attels;
 
         $rules = array(
             'nosaukums' => 'required|string|min:1|max:50',
-            'apraksts' => 'required|string|min:1|max:100',
-            'datums' => 'required|date|after:yesterday',
-            'norises_ilgums' => 'required|date_format:H:i',
+            'apraksts' => 'required|string|min:1|max:500',
+            'datums' => 'required|date_format:Y-m-d H:i|after:1 hour',
+            'norises_ilgums' => 'required|integer|min:0',
             'norises_vieta' => 'required|string|min:1|max:100',
             'cena' => 'required|min:0|max:999.99',
-            'veidotajs_id' => 'required|exists:users,id|integer',
-            'kategorija.*' => 'required|exists:kategorija|integer',
+            'kategorija' => 'required|min:1',
+            'kategorija.*' => 'required|exists:kategorija,id|integer',
+            'attels' => 'required|mimes:jpeg,jpg,png,gif,svg|max:10000'
         );
         $this->validate($request, $rules);
+
+        $request->attels->store('images', 'public');
+        $attels = new Attels();
+        $attels->apraksts = '';
+        $attels->datums = now()->format('d-m-Y')->toDateTimeString();
+        $attels->picture = 'public/images/' .$request->file('attels')->getClientOriginalname();
+        $attels->save();
 
         $pasakums = new Pasakums();
         $pasakums->nosaukums = $request->nosaukums;
@@ -81,9 +92,18 @@ class PasakumsController extends Controller
         $pasakums->norises_ilgums = $request->norises_ilgums;
         $pasakums->norises_vieta = $request->norises_vieta;
         $pasakums->cena = $request->cena;
-        $pasakums->veidotajs_id = $request->veidotajs_id; //may be different - checking which user
+        $pasakums->veidotajs_id = Auth::user()->id; //may be different - checking which user
+        $pasakums->attels_id = $attels->id;
         $pasakums->save();
 
+        foreach($kategorija as $kat)
+        {
+            $kateg = new Kategorija();
+            $kateg->pasakums_id = $pasakums_id;
+            $kateg->kategorija_id = $kat->id;
+            $kateg->save;
+        }
+        
         return redirect('pasakums/' . $pasakums->id); //not sure if id exists
     }
 
@@ -130,19 +150,18 @@ class PasakumsController extends Controller
         $norises_ilgums = $request->norises_ilgums;
         $norises_vieta = $request->norises_vieta;
         $cena = $request->cena;
-        $veidotajs_id = $request->veidotajs_id; //may be different - checking which user, does it need to change in update?
-        $kategorijas = $request->kategorijas;
-        
+        $kategorija = $request->kategorija;
+        $attels = $request->attels;
 
         $rules = array(
             'nosaukums' => 'required|string|min:1|max:50',
-            'apraksts' => 'required|string|min:1|max:100',
-            'datums' => 'required|date|after:yesterday',
-            'norises_ilgums' => 'required|date_format:H:i',
+            'apraksts' => 'required|string|min:1|max:500',
+            'datums' => 'required|date_format:Y-m-d H:i|after:1 hour',
+            'norises_ilgums' => 'required|integer|min:0',
             'norises_vieta' => 'required|string|min:1|max:100',
             'cena' => 'required|min:0|max:999.99',
-            'veidotajs_id' => 'required|exists:users|integer',
-            'kategorijas.*' => 'required|exists:kategorija|integer',
+            'kategorija.*' => 'required|exists:kategorija,id|integer',
+            'attels' => 'required|mimes:jpeg,jpg,png,gif,svg|max:10000'
         );
         $this->validate($request, $rules);
 
@@ -152,8 +171,8 @@ class PasakumsController extends Controller
         $pasakums->norises_ilgums = $request->norises_ilgums;
         $pasakums->norises_vieta = $request->norises_vieta;
         $pasakums->cena = $request->cena;
-        $pasakums->veidotajs_id = $request->veidotajs_id; //may be different - checking which user
-        $pasakums->kategorijas = $request->kategorijas;
+        $pasakums->veidotajs_id = Auth::user()->id; //may be different - checking which user
+        $pasakums->attels_id = $attels->id;
         $pasakums->save();
 
         return redirect('pasakums/' . $pasakums->id); //not sure if id exists
