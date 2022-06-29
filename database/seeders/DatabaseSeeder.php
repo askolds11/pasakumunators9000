@@ -168,11 +168,11 @@ class DatabaseSeeder extends Seeder
             'loma_id'=>'1'
         ]);
         $lietotajsloma = LietotajsLoma::create([
-            'users_id'=>'1',
+            'users_id'=>'3',
             'loma_id'=>'2'
         ]);
         $lietotajsloma = LietotajsLoma::create([
-            'users_id'=>'3',
+            'users_id'=>'4',
             'loma_id'=>'1'
         ]);
 

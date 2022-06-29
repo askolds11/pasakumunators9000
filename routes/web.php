@@ -46,7 +46,8 @@ Route::post('new_pasakums', [PasakumsController::class, 'store']
 //ADMIN PANEL
 Route::get('adminpanel', [AdminPanelController::class, 'index']
         )->middleware('role:administrators');
-
+Route::post('adminpanel/updaterole', [AdminPanelController::class, 'updateRole']
+        )->middleware('role:administrators');
 
 
 require __DIR__.'/auth.php';
