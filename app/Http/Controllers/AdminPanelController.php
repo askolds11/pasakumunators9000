@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Komentars;
 use App\Models\Pasakums;
+use App\Http\Controllers\KomentarsController;
+use App\Http\Controllers\PasakumsController;
 
 class AdminPanelController extends Controller
 {
@@ -35,15 +37,86 @@ class AdminPanelController extends Controller
 
         $comments = Komentars::orderBy('updated_at', 'desc')
                             ->orderBy('id', 'desc')
+                            ->where('approved_status', '=', '0')
                             ->get()
                             ->toArray();
 
         $events = Pasakums::orderBy('updated_at', 'desc')
                             ->orderBy('id', 'desc')
+                            ->where('approved_status', '=', '0')
                             ->get()
                             ->toArray();
 
         
         return view('adminpanel', compact('users', 'comments', 'events'));   
+    }
+
+    public function approveKomentars($id, $status)
+    {
+        //validation rules
+        $rules = array(
+            'id' => 'required|exists:komentars',
+            'status' => 'required|boolean'
+        );
+
+        //validator instance
+        $validator = Validator::make(
+            array('id' => $id, 'status' => $status),
+            $rules
+        );
+
+        //if validator fails, it means that another admin has already taken action, refresh page
+        if($validator->fails())
+        {
+            return redirect('adminpanel');
+        }
+
+        if($status == true)
+        {
+            $komentars = Komentars::findOrFail($id);
+            $komentars->approved_status = true;
+        }
+        else
+        {
+            $komentarsController = new KomentarsController();
+            $komentarsController->destroy($id);
+        }
+    }
+
+    public function approvePasakums($id, $status)
+    {
+        //validation rules
+        $rules = array(
+            'id' => 'required|exists:pasakums',
+            'status' => 'required|boolean'
+        );
+
+        //validator instance
+        $validator = Validator::make(
+            array('id' => $id, 'status' => $status),
+            $rules
+        );
+
+        //if validator fails, it means that another admin has already taken action, refresh page
+        if($validator->fails())
+        {
+            return redirect('adminpanel');
+        }
+
+        if($status == true)
+        {
+            $pasakums = Pasakums::findOrFail($id);
+            $pasakums->approved_status = true;
+        }
+        else
+        {
+            $pasakumsController = new PasakumsController();
+            $pasakumsController->destroy($id);
+        }
+    }
+
+    public function updateRole($userid, $roleid, $action) //action: true - add, false - delete
+    {
+
     }
 }
