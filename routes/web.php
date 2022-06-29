@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PasakumsController;
 use App\Http\Controllers\KomentarsController;
+use App\Http\Controllers\AdminPanelController;
+use App\Http\Controllers\MainPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,9 +30,7 @@ Route::get('/dashboard', function () {
 // ROUTEES MŪSU LAPAI--------------------------------------------------------
 
 // MAIN LAPA
-Route::get('/mainpage', function () {
-    return view('mainpage');
-});
+Route::get('/mainpage', [MainPageController::class, 'index']);
 
 // FILTER LAPA
 Route::get('/filter', [PasakumsController::class, 'showFilter']);
@@ -38,6 +38,7 @@ Route::get('/filter', [PasakumsController::class, 'showFilter']);
 // PASĀKUMA IZVEIDES LAPA
 Route::resource('pasakums', PasakumsController::class, ['except' => ['create']]);
 Route::get('/new_pasakums', [PasakumsController::class, 'create']
+<<<<<<< HEAD
 )->middleware('role:invidivuals'); //currently only needs login
 
 // ROUTE UZ INDIVIDUĀLU PASĀKUMU UN TĀ DATIEM (BŪS JĀMAINA, LAI TAS PARĀDA NOTEIKTU PASĀKUMU, NEVIS VNK BASIC LAPU)
@@ -49,7 +50,12 @@ Route::get('app', function () {
     return view('app');
 });
 
+=======
+)->middleware('role:grupaskapteinis,invidivuals'); //currently only needs login
+>>>>>>> d3dc12be1ab65d494c62c820cc0400fdabca8201
 
+//ADMIN PANEL
+Route::get('adminpanel', [AdminPanelController::class, 'index'])->middleware('role:invidivuals');
 
 
 require __DIR__.'/auth.php';

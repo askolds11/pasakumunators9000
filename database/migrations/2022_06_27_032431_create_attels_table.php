@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('apraksts',300);
             $table->date('datums')->format('d/m/Y');
             $table->foreignId('pasakums_id')->constrained('pasakums');
+            $table->string('picture');
         });
     }
 

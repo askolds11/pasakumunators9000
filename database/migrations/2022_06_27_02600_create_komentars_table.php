@@ -19,7 +19,9 @@ return new class extends Migration
             $table->foreignId('users_id')->constrained('users');
             $table->foreignId('pasakums_id')->constrained('pasakums');
             $table->string('teksts',500);
-            $table->date('datums')->format('d/m/Y');
+            //datums removed in migrations and seeder
+            //$table->date('datums')->format('d/m/Y');
+            $table->boolean('approved_status')->default(0);
         });
     }
 
