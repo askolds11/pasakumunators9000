@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Komentars;
 use App\Models\Pasakums;
 use App\Models\LietotajsLoma;
+use App\Models\Loma;
 use App\Http\Controllers\KomentarsController;
 use App\Http\Controllers\PasakumsController;
 
@@ -20,43 +21,46 @@ class AdminPanelController extends Controller
                             ->orderBy('users.name', 'asc')
                             ->get();
 
-        $users = [];
+        $lietotaji = [];
         foreach(User::orderBy('users.name', 'asc')->get() as $user)
         {
-            $users[$user->name]['user.id'] = $user->id;
-            $users[$user->name]['user.name'] = $user->name;
-            $users[$user->name]['roles'] = [];
+            $roles = array();
             foreach($usersroles as $userrole)
             {
                 if($userrole->username == $user->name)
                 {
-                    $role = array('lomaid'=>$userrole['lomaid'],'lomanosaukums'=>$userrole['lomanosaukums']);
-                    $users[$user->name]['roles'][$userrole->lomanosaukums] = $role;
+                    array_push($roles, $userrole->lomaid);
                 }
             }
+            array_push($lietotaji, array(
+                'user.id' => $user->id,
+                'user.name' => $user->name,
+                'roles' => $roles
+            ));
         }
 
-        $comments = Komentars::orderBy('updated_at', 'desc')
+        $komentari = Komentars::orderBy('updated_at', 'desc')
                             ->orderBy('id', 'desc')
                             ->where('approved_status', '=', '0')
                             ->get()
                             ->toArray();
 
-        $events = Pasakums::orderBy('updated_at', 'desc')
+        $pasakumi = Pasakums::orderBy('updated_at', 'desc')
                             ->orderBy('id', 'desc')
                             ->where('approved_status', '=', '0')
                             ->get()
                             ->toArray();
 
-        
-        return view('adminpanel', compact('users', 'comments', 'events'));   
+        $lomas = Loma::select('id','nosaukums')->get()->toArray();
+
+        return view('adminpanel', compact('lietotaji', 'komentari', 'pasakumi', 'lomas'));   
     }
 
     public function approveKomentars($id, $status)
     {
         //validation rules
         $rules = array(
-            'id' => 'required|exists:komentars',
+            'id' => 'required|exists:komentars,id',
             'status' => 'required|boolean'
         );
 
@@ -72,13 +76,14 @@ class AdminPanelController extends Controller
             return redirect('adminpanel');
         }
 
+        //data seems fine, continue
         if($status == true)
-        {
+        {//approve
             $komentars = Komentars::findOrFail($id);
             $komentars->approved_status = true;
         }
         else
-        {
+        {//remove
             $komentarsController = new KomentarsController();
             $komentarsController->destroy($id);
         }
@@ -88,7 +93,7 @@ class AdminPanelController extends Controller
     {
         //validation rules
         $rules = array(
-            'id' => 'required|exists:pasakums',
+            'id' => 'required|exists:pasakums,id',
             'status' => 'required|boolean'
         );
 
@@ -104,13 +109,14 @@ class AdminPanelController extends Controller
             return redirect('adminpanel');
         }
 
+        //validated, continue
         if($status == true)
-        {
+        {//approve
             $pasakums = Pasakums::findOrFail($id);
             $pasakums->approved_status = true;
         }
         else
-        {
+        {//remove
             $pasakumsController = new PasakumsController();
             $pasakumsController->destroy($id);
         }
@@ -120,14 +126,14 @@ class AdminPanelController extends Controller
     {
         //validation rules
         $rules = array(
-            'userid' => 'required|exists:users',
-            'lomaid' => 'required|exists:lomas|not_in:invidivuals', //can't add or remove invidivuals role
+            'userid' => 'required|exists:users,id',
+            'lomaid' => 'required|exists:lomas,id|not_in:1', //can't add or remove invidivuals role
             'action' => 'required|boolean'
         );
 
         //validator instance
         $validator = Validator::make(
-            array('userid' => $id, 'lomaid' => $status, 'action' => $action),
+            array('userid' => $userid, 'lomaid' => $lomaid, 'action' => $action),
             $rules
         );
 
@@ -138,7 +144,7 @@ class AdminPanelController extends Controller
         }
 
         //everything works out so far
-        //query should return empty
+        //query should return empty if role needs to be added, with something if needs to be removed
         $userrole = LietotajsLoma::where('users_id', '=', $userid)
                         ->where('loma_id', '=', $lomaid)
                         ->get();

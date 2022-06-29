@@ -5,6 +5,7 @@ use App\Http\Controllers\PasakumsController;
 use App\Http\Controllers\KomentarsController;
 use App\Http\Controllers\AdminPanelController;
 use App\Http\Controllers\MainPageController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +24,8 @@ use App\Http\Controllers\MainPageController;
 
 Route::redirect('/', '/mainpage');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index']
+        )->middleware(['auth'])->name('dashboard');
 
 // ROUTEES MŪSU LAPAI--------------------------------------------------------
 
@@ -36,12 +36,16 @@ Route::get('/mainpage', [MainPageController::class, 'index']);
 Route::get('/filter', [PasakumsController::class, 'showFilter']);
 
 // PASĀKUMA IZVEIDES LAPA
-Route::resource('pasakums', PasakumsController::class, ['except' => ['create']]);
-Route::get('/new_pasakums', [PasakumsController::class, 'create']
-)->middleware('role:grupaskapteinis,invidivuals'); //currently only needs login
+Route::resource('pasakums', PasakumsController::class, ['except' => ['create', 'index', 'store']]);
+Route::get('pasakumi', [PasakumsController::class, 'index']);
+Route::get('new_pasakums', [PasakumsController::class, 'create']
+        )->middleware('role:pasakumu_veidotajs');
+Route::post('new_pasakums', [PasakumsController::class, 'store']
+        )->middleware('role:pasakumu_veidotajs');
 
 //ADMIN PANEL
-Route::get('adminpanel', [AdminPanelController::class, 'index'])->middleware('role:invidivuals');
+Route::get('adminpanel', [AdminPanelController::class, 'index']
+        )->middleware('role:administrators');
 
 
 
