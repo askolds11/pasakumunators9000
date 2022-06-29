@@ -166,7 +166,6 @@ class PasakumsController extends Controller
 	    });
         return view('filter', compact('pasakumi'));        
     }
-
     /**
      * Remove the specified resource from storage.
      *

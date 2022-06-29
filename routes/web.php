@@ -44,4 +44,5 @@ Route::get('/new_pasakums', [PasakumsController::class, 'create']
 Route::get('adminpanel', [AdminPanelController::class, 'index'])->middleware('role:invidivuals');
 
 
+
 require __DIR__.'/auth.php';
