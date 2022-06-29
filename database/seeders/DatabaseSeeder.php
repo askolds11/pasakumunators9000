@@ -82,6 +82,12 @@ class DatabaseSeeder extends Seeder
 
         //Pasakums
 
+        $attels = Attels::create([
+            'apraksts'=>'Ooga booga',
+            'datums'=>Carbon::parse('2022-12-22'),
+            'picture'=> ('public/images/image_3.jpg')
+        ]);
+
         $pasakums = Pasakums::create([
             'nosaukums'=>'Rigas futbola turnirs',
             'apraksts'=>'Ikgadejais futbola ternirs ks notiek Riga start LU un RTU universitatem',
@@ -89,7 +95,8 @@ class DatabaseSeeder extends Seeder
             'norises_ilgums'=>'30',
             'norises_vieta'=>'Kipsalas sporta centra',
             'cena'=>'5.00',
-            'veidotajs_id'=>'1'
+            'veidotajs_id'=>'1',
+            'attels_id' => '1'
             ]);
         $pasakums = Pasakums::create([
             'nosaukums'=>'Olaines basketbola cempionats',
@@ -98,7 +105,8 @@ class DatabaseSeeder extends Seeder
             'norises_ilgums'=>'120',
             'norises_vieta'=>'Olaines sporta centra',
             'cena'=>'2.00',
-            'veidotajs_id'=>'2'
+            'veidotajs_id'=>'2',
+            'attels_id' => '1'
             ]);
         $pasakums = Pasakums::create([
             'nosaukums'=>'Jelgavas peldesanas sacensibas',
@@ -107,7 +115,8 @@ class DatabaseSeeder extends Seeder
             'norises_ilgums'=>'60',
             'norises_vieta'=>'Jelgavas baseins',
             'cena'=>'3.00',
-            'veidotajs_id'=>'2'
+            'veidotajs_id'=>'2',
+            'attels_id' => '1'
             ]);
 
             //Komentars

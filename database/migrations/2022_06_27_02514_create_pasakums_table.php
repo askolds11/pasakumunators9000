@@ -28,6 +28,10 @@ return new class extends Migration
             $table->boolean('approved_status')->default(0);
             //$table->foreignId('kategorija_id')->constrained('kategorija');
         });
+
+        Schema::table('attels', function (Blueprint $table) {
+            $table->foreign('pasakums_id')->references('id')->on('pasakums');
+        });
     }
 
     /**
@@ -37,6 +41,14 @@ return new class extends Migration
      */
     public function down()
     {
+        if(Schema::hasTable('attels'))
+        {
+        Schema::table('attels', function (Blueprint $table) {
+            $table->dropForeign(['pasakums_id']);
+            $table->dropColumn('pasakums_id');
+        });
+        }
+
         Schema::dropIfExists('pasakums');
     }
 };

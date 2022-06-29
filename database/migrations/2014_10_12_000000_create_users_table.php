@@ -32,6 +32,46 @@ return new class extends Migration
      */
     public function down()
     {
+        if(Schema::hasTable('lietotajsloma'))
+        {
+        Schema::table('lietotajsloma', function (Blueprint $table) {
+            $table->dropForeign(['users_id']);
+            $table->dropColumn('users_id');
+        });
+        }
+
+        if(Schema::hasTable('komentars'))
+        {
+        Schema::table('komentars', function (Blueprint $table) {
+            $table->dropForeign(['users_id']);
+            $table->dropColumn('users_id');
+        });
+        }
+
+        if(Schema::hasTable('lietotajspasakums'))
+        {
+        Schema::table('lietotajspasakums', function (Blueprint $table) {
+            $table->dropForeign(['users_id']);
+            $table->dropColumn('users_id');
+        });
+        }
+
+        if(Schema::hasTable('novertejums'))
+        {
+        Schema::table('novertejums', function (Blueprint $table) {
+            $table->dropForeign(['users_id']);
+            $table->dropColumn('users_id');
+        });
+        }
+
+        if(Schema::hasTable('pasakums'))
+        {
+        Schema::table('pasakums', function (Blueprint $table) {
+            $table->dropForeign(['veidotajs_id']);
+            $table->dropColumn('veidotajs_id');
+        });
+        }
+
         Schema::dropIfExists('users');
     }
 };
