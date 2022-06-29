@@ -69,7 +69,18 @@ nav {
     padding-right: 20px;
 }
 
-
+.deadspace {
+    /* border:5px solid red; */
+    height:1000px;
+    width:100px;
+    background-color: rgb(70, 70, 70);
+}
+#left-deadspace {
+    float:left;
+}
+#right-deadspace {
+    float:right;
+}
 
 
 /* BODY */
@@ -81,7 +92,6 @@ body {
 
 
 /* CONTNENT */
-
 
 /* MAINPAGE */
 #parent-preview-pasakums {

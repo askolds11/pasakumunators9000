@@ -17,8 +17,11 @@
     <x-header-comp />
     <x-navbar-comp />
     
-    <aside>
-        <!-- left -->
+    <aside id="left-deadspace" class="deadspace">
+        left
+    </aside>
+    <aside id="right-deadspace" class="deadspace">
+        right
     </aside>
     
     <div id="parent-preview-pasakums">
@@ -43,9 +46,7 @@
         </div>
         </div>
     </div>
-    <aside>
-        <!-- right -->
-    </aside>
+    
     
     <!-- <x-footer-comp /> -->
     <footer id="footer">

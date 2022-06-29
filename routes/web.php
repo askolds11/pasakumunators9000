@@ -45,6 +45,10 @@ Route::get('/pasakums/id', function () {
     return view('show_pasakums');
 });
 
+Route::get('app', function () {
+    return view('app');
+});
+
 
 
 
