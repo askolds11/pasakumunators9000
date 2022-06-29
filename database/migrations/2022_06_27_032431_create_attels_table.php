@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('apraksts',300);
             $table->date('datums')->format('d/m/Y');
-            $table->foreignId('pasakums_id')->constrained('pasakums');
+            $table->foreignId('pasakums_id')->constrained('pasakums')->nullable()->default(null);
             $table->string('picture');
         });
     }

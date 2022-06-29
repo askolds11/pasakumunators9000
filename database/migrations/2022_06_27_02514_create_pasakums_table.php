@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('norises_vieta',100);
             $table->decimal('cena',5,2);
             $table->foreignId('veidotajs_id')->constrained('users');
+            $table->foreignId('attels_id')->constrained('attels');
             $table->boolean('approved_status')->default(0);
             //$table->foreignId('kategorija_id')->constrained('kategorija');
         });
