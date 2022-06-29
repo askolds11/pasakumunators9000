@@ -38,21 +38,7 @@ Route::get('/filter', [PasakumsController::class, 'showFilter']);
 // PASĀKUMA IZVEIDES LAPA
 Route::resource('pasakums', PasakumsController::class, ['except' => ['create']]);
 Route::get('/new_pasakums', [PasakumsController::class, 'create']
-<<<<<<< HEAD
-)->middleware('role:invidivuals'); //currently only needs login
-
-// ROUTE UZ INDIVIDUĀLU PASĀKUMU UN TĀ DATIEM (BŪS JĀMAINA, LAI TAS PARĀDA NOTEIKTU PASĀKUMU, NEVIS VNK BASIC LAPU)
-Route::get('/pasakums/id', function () {
-    return view('show_pasakums');
-});
-
-Route::get('app', function () {
-    return view('app');
-});
-
-=======
 )->middleware('role:grupaskapteinis,invidivuals'); //currently only needs login
->>>>>>> d3dc12be1ab65d494c62c820cc0400fdabca8201
 
 //ADMIN PANEL
 Route::get('adminpanel', [AdminPanelController::class, 'index'])->middleware('role:invidivuals');
