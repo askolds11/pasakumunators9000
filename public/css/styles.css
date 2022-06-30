@@ -83,6 +83,7 @@ nav {
 
 
 .navbar-button {
+    margin-right: 20px;
     transition: all 0.3s ease 0s;
 }
 .navbar-button:hover {
@@ -216,12 +217,29 @@ body {
 }
 
 #izveidot-jaunu-pasakumus{
+    
     background-color: white;
     border-radius:10px;
     padding: 15px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
+/* #form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#form input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+#publicet-jaunu-pasakumu-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #publicet-pasakumu-div {
     display: flex;
     justify-content: center;
@@ -236,6 +254,8 @@ body {
     border-radius: 15px;
     padding: 5px;
     transition: all 0.3s ease 0s;
+    margin-top: 10px;
+    margin-bottom: 10px;
 
 }
 
@@ -255,7 +275,6 @@ body {
 #content-show-pasakuma-group {
     display: flex;
 }
-
 #show_pasakums {
     float: left;
     width: 40%;
@@ -265,9 +284,9 @@ body {
     margin: 10px 10px 10px 10px;
     padding: 4px 4px 4px 4px;
     /* border: 1px solid red; */
-}
+} 
 
-#show_pasakums_komentari {
+#attels-preview-show-pasakums-galerija {
     float: left;
     width: 60%;
     height: max-content;
@@ -276,33 +295,37 @@ body {
     margin: 10px 10px 10px 10px;
     padding: 4px 4px 4px 4px;
 }
+.show-content-child {
+    display: inline-block;
+}
+
+#show_pasakums_komentari {
+    /* float: left; */
+    /* width: 60%; */
+    
+    height: max-content;
+    background-color: white;
+    border-radius: 20px;
+    margin: 10px 10px 10px 10px;
+    padding: 4px 4px 4px 4px;
+}
+
+
 
 #show_pasakums_komentari ul li{
     list-style: none;
     background-color: whitesmoke;
     border-radius: 10px;
     margin-bottom: 5px;
-    padding: 2px 2px 2px 2px;    
+    padding: 2px 2px 2px 2px;
+    /* border-radius: 20px;
+    margin: 10px 10px 10px 10px;
+    padding: 5px 5px 5px 5px;      */
 }
 
-.show-content-child {
-    display: inline-block;
-}
 
-#attels-preview-show-pasakums-galerija {
-    /* border: 5px solid red; */
-    background-color: white;
-    border-radius: 20px;
-    margin: 10px 10px 10px 10px;
-    padding: 5px 5px 5px 5px; 
-}
-#attels-preview-show-pasakums-reklama {
-    /* border: 5px solid red; */
-    background-color: white;
-    border-radius: 20px;
-    margin: 10px 10px 10px 10px;
-    padding: 5px 5px 5px 5px; 
-}
+
+
 
 #title-show-pasakums {
     background-color: rgba(110, 218, 109, 1);
@@ -315,6 +338,13 @@ body {
     border-radius: 10px 10px 10px 10px;
     text-align: center;
 
+}
+
+#attels-preview-show-pasakuma-galerija-title {
+
+    background-color: rgba(239, 247, 0, 0.8);
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
 }
 #show_pasakums ul li {
     list-style: none;
@@ -354,11 +384,32 @@ body {
 #button-pieteikties:active {
     background-color: rgba(0, 0, 0, 0.6);
 }
+#pievienot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-/* .link-to-publicetajs {
-    text-decoration: none;
-    color: rgba(0, 0, 0, 0.5);
-} */
+#attels-preview-show-pasakuma-galerija-pievienot-attelu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(146, 148, 147);
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 5px;
+    transition: all 0.3s ease 0s;
+}
+
+#attels-preview-show-pasakuma-galerija-pievienot-attelu:hover {
+    background-color:  rgba(110, 218, 109, 1);
+}
+
+#attels-preview-show-pasakuma-galerija-pievienot-attelu:active {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+
 
 .show-user-name-koments-info p {
     color: rgba(0, 0, 0, 0.5);

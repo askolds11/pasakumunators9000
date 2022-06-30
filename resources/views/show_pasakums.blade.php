@@ -66,7 +66,27 @@
        
         
     </div>
-    <div id="show_pasakums_komentari" class="show-content-child">
+    <div id="attels-preview-show-pasakums-galerija"  class="show-content-child">
+            <h3 id="attels-preview-show-pasakuma-galerija-title">Attēlu galerija</h3>
+            
+            <div id="attels-child">
+                img
+            </div>
+            <div id="pievienot">
+                <button id="attels-preview-show-pasakuma-galerija-pievienot-attelu">
+                    Pievienot attēlu
+                </button>
+            </div>
+            
+    </div>
+                
+                 
+</div>
+
+
+
+
+<div id="show_pasakums_komentari">
         <h3 id="title-show-pasakums-komentari">Komentāri</h3>
             <ul>
                 <li class="show-user-name-koments">
@@ -99,31 +119,6 @@
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea adipisci voluptatum dolores, ducimus eaque rem inventore impedit debitis rerum eum!
                     </p>
                 </li>
-                
-                
-
-            </ul>
-    </div>
-</div>
-<div id="attels-preview-show-pasakums-reklama">
-    <h3>Attēlu reklama</h3>
-    <button>
-        Poga-pievienot attēlu(nav css)
-    </button>
-    <div class="attels-child">
-        img
-    </div>
-</div>
-
-<div id="attels-preview-show-pasakums-galerija">
-    <h3>Attēlu galerija</h3>
-    <button>
-        Poga-pievienot attēlu(nav css)
-    </button>
-    <div id="attels-child">
-        img
-    </div>
-
 </div>
 @endsection
 

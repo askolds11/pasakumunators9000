@@ -4,8 +4,12 @@
 
 @section('content')
     <div id="parent-new-pasakums">
+        
+
         <div id="izveidot-jaunu-pasakumus">
-            <h3>Publicēt jaunu pasākumu</h3>
+            <div id="form">
+            <h3 id="publicet-jaunu-pasakumu-title">Publicēt jaunu pasākumu</h3>
+           
             <form method="POST"
             action="{{action([App\Http\Controllers\PasakumsController::class, 'store']) }}" enctype="multipart/form-data">
                 @csrf
@@ -54,6 +58,8 @@
                 </div>
                
             </form>
+            </div>
+           
         </div>
     </div>
 @endsection

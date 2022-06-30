@@ -41,6 +41,19 @@
                                         </p>
                                     </li>
                                     </ul>
+                                    <div id="komentari">
+                                        <h4 id="tituls-komentari">KOMENTĀRI</h4>
+                                        <div id="saturs-par-komentariem">
+                                            <ul>
+                                                <li id="pirmais-preview-koments" class="preview-komentari">1.komentars</li>
+                                                <li id="pirmais-preview-koments" class="preview-komentari">1.komentars</li>
+                                                <li id="pirmais-preview-koments" class="preview-komentari">1.komentars</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+
+
                                 </div>
                             </li>
                             <li>
@@ -66,6 +79,16 @@
                                     </li>
                                     </ul>
                                 </div>
+                                    <div id="komentari">
+                                        <h4 id="tituls-komentari">KOMENTĀRI</h4>
+                                        <div id="saturs-par-komentariem">
+                                            <ul>
+                                                <li id="pirmais-preview-koments" class="preview-komentari">1.komentars</li>
+                                                <li id="pirmais-preview-koments" class="preview-komentari">1.komentars</li>
+                                                <li id="pirmais-preview-koments" class="preview-komentari">1.komentars</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                             </li>
                             <li>
                                 <div id="tresais-pasakums" class="pasakumu-list-preview-items">
@@ -90,6 +113,16 @@
                                     </li>
                                     </ul>
                                 </div>
+                                    <div id="komentari">
+                                        <h4 id="tituls-komentari">KOMENTĀRI</h4>
+                                        <div id="saturs-par-komentariem">
+                                            <ul>
+                                                <li id="pirmais-preview-koments" class="preview-komentari">1.komentars</li>
+                                                <li id="pirmais-preview-koments" class="preview-komentari">1.komentars</li>
+                                                <li id="pirmais-preview-koments" class="preview-komentari">1.komentars</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                             </li>
                         </ul>
     
@@ -101,15 +134,6 @@
                     <button id="atteli-button">Attēli</button> <!-- Parādītu attēlus dotajam projektam -->
                 </div>
         </div>
-        <div id="komentari">
-            <h4 id="tituls-komentari">KOMENTĀRI</h4>
-            <div id="saturs-par-komentariem">
-                <ul>
-                    <li id="pirmais-preview-koments" class="preview-komentari">1.komentars</li>
-                    <li id="pirmais-preview-koments" class="preview-komentari">1.komentars</li>
-                    <li id="pirmais-preview-koments" class="preview-komentari">1.komentars</li>
-                </ul>
-        </div>
-        </div>
+        
     </div>
 @endsection
