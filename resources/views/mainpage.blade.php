@@ -12,8 +12,8 @@
                 <button class="atlasi-buttons">Jaunākie</button>
             </div>
         <div id="mainpage-title-sadalijums">
-            <h2 id="pasakumi-title-mainpage">Pasākumi + tā veids!!</h2>
-            <h3 id="komentari-title-mainpage">Komentāri</h3>
+            <h2 id="pasakumi-title-mainpage">PASĀKUMI + tā veids!!</h2>
+            <h3 id="komentari-title-mainpage">KOMENTĀRI</h3>
 
         </div>
         <div id="mainpage-pasakumi-komentari">
