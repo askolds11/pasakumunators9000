@@ -23,6 +23,21 @@ button {
     background-color: white;
 }
 
+#form textarea  {
+    /* resize: vertical; */
+    max-height: 200px;
+    
+    /* resize: horizontal; */
+    max-width: 300px;
+    
+}
+#post-komentaru textarea{
+    max-height: 1000px;
+    max-width: 1000px;
+}
+
+
+   
 /* ERROR */
 
 .invalid-feedback {
@@ -507,6 +522,25 @@ hr {
 
 
 /* SHOW_PASAKUMU */
+#post-komentaru-button {
+    background-color: rgb(146, 148, 147);
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 5px;
+    transition: all 0.3s ease 0s;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+#post-komentaru-button:hover {
+    background-color: rgba(110, 218, 109, 1);
+}
+
+#post-komentaru-button:active {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
 #content-show-pasakuma-group {
     display: flex;
 }
@@ -627,7 +661,7 @@ hr {
     font-size: 30px;
     height: max-content;
     /* width: max-content; */
-    background-color: green;
+    background-color: rgba(0, 128, 0, 0.7);
     margin-right: 10px;
     color: white;
     border-radius: 10px;
@@ -641,12 +675,16 @@ hr {
     font-size: 30px;
     height: max-content;
     /* width: max-content; */
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.7);
     border-radius: 10px;
     padding: 5px;
 }
-
-
+#show-edit-link:hover {
+    background-color: rgba(0, 128, 0, 1);
+}
+#show-delete-link:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
 
 #pieteikties {
     display: flex;

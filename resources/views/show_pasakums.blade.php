@@ -128,6 +128,11 @@
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea adipisci voluptatum dolores, ducimus eaque rem inventore impedit debitis rerum eum!
                     </p>
                 </li>
+                <li id="post-komentaru">
+                    <textarea id="" name="" rows="20" cols="70">Rakstiet savu komentāru šeit...</textarea>
+                    <br>
+                <input type="submit" value="Post" id="post-komentaru-button">
+                </li>
 </div>
 @endsection
 
