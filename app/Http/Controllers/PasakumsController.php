@@ -73,7 +73,7 @@ class PasakumsController extends Controller
             'datums' => 'required|date_format:"Y-m-d\TH:i"|after:1 hour',
             'norises_ilgums' => 'required|integer|min:0',
             'norises_vieta' => 'required|string|min:1|max:100',
-            'cena' => 'required|min:0|max:999.99',
+            'cena' => 'required|numeric|min:0|max:999.99',
             'kategorija' => 'required|min:1',
             'kategorija.*' => 'required|exists:kategorija,id|integer',
             'attels' => 'required|mimes:jpeg,jpg,png,gif,svg|max:10000'
@@ -185,10 +185,121 @@ class PasakumsController extends Controller
 
     public function showFilter() 
     {
-        $pasakumi = Pasakums::all()->map(function ($pasakums) {
-            return $pasakums;
-	    });
-        return view('filter', compact('pasakumi'));        
+        $pasakumi = Pasakums::join('users', 'veidotajs_id', '=', 'users.id')
+                            ->join('attels', 'attels_id', '=', 'attels.id')
+                            ->select('pasakums.*', 'users.name as username', 'attels.picture as attels')
+                            ->get()->toArray();
+        
+        $pasakumskategorijas = [];
+        foreach($pasakumi as &$pasakums)
+        {   
+            $kategorijas = PasakumsKategorija::where('pasakums_id', '=', $pasakums['id'])
+                                ->join('kategorija', 'kategorija_id', '=', 'kategorija.id')
+                                ->pluck('kategorija.nosaukums')->toArray();
+
+            $pasakums['kategorijas'] = $kategorijas;
+        }
+        $kategorijas = Kategorija::select('id','nosaukums')->get()->toArray();
+        return view('filter', compact('pasakumi', 'kategorijas'));        
+    }
+
+    public function filter(Request $request)
+    {
+        $nosaukums = $request->nosaukums;
+        $vieta = $request->vieta;
+        $veidotajs = $request->veidotajs;
+        $datumsno = $request->datumsno;
+        $datumslidz = $request->datumslidz;
+        $ilgumsno = $request->ilgumsno;
+        $ilgumslidz = $request->ilgumslidz;
+        $cenano = $request->cenano;
+        $cenalidz = $request->cenalidz;
+        $kategorija = $request->kategorija;
+
+        $rules = array(
+            'nosaukums' => 'nullable|string|max:50',
+            'vieta' => 'nullable|string|max:100',
+            'veidotajs' => 'nullable|string',
+            'datumsno' => 'nullable|date_format:"Y-m-d\TH:i"',
+            'datumslidz' => 'nullable|date_format:"Y-m-d\TH:i"',
+            'ilgumsno' => 'nullable|integer|min:0',
+            'ilgumslidz' => 'nullable|integer|min:0',
+            'cenano' => 'nullable|numeric|min:0|max:999.99',
+            'cenalidz' => 'nullable|numeric|min:0|max:999.99',
+            'kategorija.*' => 'nullable|required|exists:kategorija,id|integer',
+        );
+        
+        if($request->datumsno != null && $request->datumslidz != null)
+        {
+            $rules['datumslidz'] = $rules['datumslidz'].'|after_or_equal:'.$datumsno;
+        }
+
+        if($request->ilgumsno != null && $request->ilgumslidz != null)
+        {
+            $rules['ilgumslidz'] = $rules['ilgumslidz'].'|gte:'.$ilgumsno;
+        }
+
+        if($request->cenano != null && $request->cenalidz != null)
+        {
+            $rules['cenalidz'] = $rules['cenalidz'].'|gte:'.$cenano;
+        }
+        $this->validate($request, $rules);
+        
+        $pasakumi = Pasakums::join('users', 'veidotajs_id', '=', 'users.id')
+                        ->join('attels', 'attels_id', '=', 'attels.id')
+                        ->select('pasakums.*', 'users.name as username', 'attels.picture as attels');
+                        
+        if($request->nosaukums) {
+            $pasakumi = $pasakumi->where('nosaukums', 'like', '%'.$nosaukums.'%');
+        }
+        if($request->vieta) {
+            $pasakumi = $pasakumi->where('norises_vieta', 'like', '%'.$vieta.'%');
+        }
+        if($request->veidotajs) {
+            $pasakumi = $pasakumi->where('users.name', 'like', '%'.$veidotajs.'%');
+        }
+        if($request->datumsno) {
+            $pasakumi = $pasakumi->where('pasakums.datums', '>=', $datumsno);
+        }
+        if($request->datumslidz) {
+            $pasakumi = $pasakumi->where('pasakums.datums', '<=', $datumslidz);
+        }
+        if($request->ilgumsno) {
+            $pasakumi = $pasakumi->where('norises_ilgums', '>=', $ilgumsno);
+        }
+        if($request->ilgumslidz) {
+            $pasakumi = $pasakumi->where('norises_ilgums', '<=', $ilgumslidz);
+        }
+        if($request->cenano) {
+            $pasakumi = $pasakumi->where('cena', '>=', $cenano);
+        }
+        if($request->cenalidz) {
+            $pasakumi = $pasakumi->where('cena', '<=', $cenalidz);
+        }
+        if($request->kategorija) {
+            $pasakkat = [];
+            foreach($kategorija as $kat) {
+                array_push($pasakkat, PasakumsKategorija::where('kategorija_id', '=', $kat)->pluck('pasakums_id')->toArray());
+            }
+            $pasakkat = call_user_func_array('array_intersect', $pasakkat);
+            $pasakumi = $pasakumi->whereIn('pasakums.id', $pasakkat);
+        }
+
+        $pasakumi=$pasakumi->get()->toArray();
+        
+        $pasakumskategorijas = [];
+        foreach($pasakumi as &$pasakums)
+        {   
+            $kategorijas = PasakumsKategorija::where('pasakums_id', '=', $pasakums['id'])
+                                    ->join('kategorija', 'kategorija_id', '=', 'kategorija.id')
+                                    ->pluck('kategorija.nosaukums')->toArray();
+        
+            $pasakums['kategorijas'] = $kategorijas;
+        }
+
+        $kategorijas = Kategorija::select('id','nosaukums')->get()->toArray();
+        session()->flashInput($request->input());
+        return view('filter', compact('pasakumi', 'kategorijas'));
     }
     /**
      * Remove the specified resource from storage.
