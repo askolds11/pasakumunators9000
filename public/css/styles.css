@@ -351,12 +351,21 @@ hr {
     display: flex;
 
 }
+#filter-title {
+    background-color: rgba(110, 218, 109, 1);
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+}
 #filter-pasakumu {
-    /* border: 10px solid white; */
-    
     float: left;
     width: 20%;
     height: max-content;
+    border: 1px solid grey;
+    border-radius: 10px;
+    background-color: white;
+    margin:10px;
+    padding: 10px;
+    
 }
 #show-filter-list {
     /* border: 10px solid white; */
@@ -372,6 +381,60 @@ hr {
 
 
 
+#filter-button-meklet {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    background-color: rgb(146, 148, 147);
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 5px;
+    transition: all 0.3s ease 0s;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#filter-button-meklet:hover {
+    background-color: rgba(110, 218, 109, 1);
+}
+
+#filter-button-meklet:active {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#filter-result-title {
+    border-radius: 10px 10px 10px 10px;
+    padding: 5px;
+    text-align: center;
+    background-color: skyblue;
+    width: max-content;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+
+
+}
+
+#filter-table-list {
+    border: 1px solid grey;
+    background-color: white;
+    border-radius: 10px;
+    margin:10px;
+    padding: 10px;
+    
+}
+
+#filter-table-heading {
+    background-color: goldenrod;
+
+
+
+}
+#filter-table-list tr {
+  background-color: whitesmoke;
+  
+    
+}
 /* NEW_PASAKUMA LAPAI */
 #parent-new-pasakums {
     display: flex;
@@ -404,6 +467,11 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba(110, 218, 109, 1);
+    border-radius: 10px 10px 10px 10px;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 #publicet-pasakumu-div {

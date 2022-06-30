@@ -8,7 +8,7 @@
 
         <div id="izveidot-jaunu-pasakumus">
             <div id="form">
-            <h3 id="publicet-jaunu-pasakumu-title">Publicēt jaunu pasākumu</h3>
+            <h2 id="publicet-jaunu-pasakumu-title">PUBLICĒT JAUNU PASĀKUMU</h2>
            
             <form method="POST"
             action="{{action([App\Http\Controllers\PasakumsController::class, 'store']) }}" enctype="multipart/form-data">
@@ -41,7 +41,7 @@
                 <input type="number" step="0.01" id="cena" name="cena" value="{{ old('cena')}}" class="form-control @error('cena') is-invalid @enderror">
                 <x-error-validation-msg-comp name='cena' /><br>
                 
-                <label for="">Kategorija foreign id</label><br>
+                <label for="">Kategorija</label><br>
                 <select id="kategorija[]" name="kategorija[]" multiple>
                     @foreach($kategorijas as $kat)
                         <option value ="{{ $kat['id'] }}">{{ $kat['nosaukums'] }}</option>
@@ -54,7 +54,7 @@
                 <x-error-validation-msg-comp name='attels' /><br>
 
                 <div id="publicet-pasakumu-div">
-                    <input type="submit" value="Submit" id="publicet-pasakumu">
+                    <input type="submit" value="Publicēt pasākumu" id="publicet-pasakumu">
                 </div>
                
             </form>
