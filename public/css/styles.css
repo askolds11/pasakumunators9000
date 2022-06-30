@@ -688,6 +688,7 @@ hr {
     /* height: max-content; */
 }
 #show-edit-link {
+    /* border: 1px solid red; */
     float: left;
     width: 50%;
     /* border: 1px solid red; */
@@ -707,6 +708,7 @@ hr {
 
 
 #show-delete-link {
+    border: 1px solid red;
     float: left;
     width: 50%;
     /* border: 1px solid red; */
@@ -764,6 +766,16 @@ hr {
     padding: 5px;
     transition: all 0.3s ease 0s;
 }
+#attela-form-galerija input {
+    border-style: none;
+    border-radius: 10px;
+    border: 1px solid grey;
+    background-color: white;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+
 #attels-preview-show-pasakuma-galerija-pievienot-attelu {
     display: flex;
     justify-content: center;
