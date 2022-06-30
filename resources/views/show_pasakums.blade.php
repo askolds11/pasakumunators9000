@@ -88,6 +88,19 @@
             </div>
             
     </div>
+    <div id="attels-preview-show-pasakums-reklāma"  class="show-content-child">
+            <h3 id="attels-preview-show-pasakuma-reklama-title">Attēlu galerija</h3>
+            
+            <div id="attels-child-reklama">
+                img
+            </div>
+            <div id="pievienot-reklama">
+                <button id="attels-preview-show-pasakuma-reklama-pievienot-attelu">
+                    Pievienot attēlu
+                </button>
+            </div>
+            
+    </div>
                 
                  
 </div>

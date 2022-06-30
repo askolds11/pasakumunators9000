@@ -742,6 +742,31 @@ hr {
 .show-user-name-koments-info p {
     color: rgba(0, 0, 0, 0.5);
 }
+
+/* ADMINPANEL */
+
+.admin-content-element {
+    background-color: white;
+    border: 1px solid grey;
+    margin:10px;
+    border-radius: 10px;
+}
+
+#admin-sarakstu-title {
+    background-color: rgba(110, 218, 109, 1);
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+    width: max-content;
+    margin: 10px 0px 0px 10px;
+    padding: 4px 4px 4px 4px;
+}
+
+
+
+
+
+
+
 /* FOOTER */
 
 #footer {
