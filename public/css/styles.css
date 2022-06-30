@@ -691,7 +691,7 @@ hr {
     float: left;
     width: 50%;
     /* border: 1px solid red; */
-    font-size: 30px;
+    font-size: 10px;
     height: max-content;
     width: max-content;
     background-color: rgba(0, 128, 0, 0.7);
@@ -701,12 +701,17 @@ hr {
     padding: 5px;
     transition: all 0.3s ease 0s;
 }
+#group-of-data {
+    display: flex;
+}
+
+
 #show-delete-link {
     float: left;
     width: 50%;
     /* border: 1px solid red; */
     color: white;
-    font-size: 30px;
+    font-size: 10px;
     height: max-content;
     width: max-content;
     background-color: rgba(255, 0, 0, 0.7);
@@ -749,7 +754,16 @@ hr {
     justify-content: center;
     align-items: center;
 }
-
+#pievienot-attelu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(146, 148, 147);
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 5px;
+    transition: all 0.3s ease 0s;
+}
 #attels-preview-show-pasakuma-galerija-pievienot-attelu {
     display: flex;
     justify-content: center;
@@ -768,7 +782,12 @@ hr {
 #attels-preview-show-pasakuma-galerija-pievienot-attelu:active {
     background-color: rgba(0, 0, 0, 0.6);
 }
-
+#pievienot {
+    float: left;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+} 
 
 
 .show-user-name-koments-info p {

@@ -10,32 +10,40 @@
         <h2 id="title-show-pasakums">Title</h2>
         <ul>
             <li id="show-user-name-pasakums-publicetajs">
-                <div id=show-pasākuma-details>
-                    <p id="show-user-name-pasakums">{{ $pasakums['username'] }}</p>
-                    <p id="show-datums-publicets-pasakums">
-                        @php 
-                            $date = new DateTime($pasakums['created_at']);
-                            echo $date->format('Y-m-d');
-                        @endphp
-                    </p>
-                    <p id="show-laiks-publicets-pasakums">
-                        @php 
-                            $date = new DateTime($pasakums['created_at']);
-                            echo $date->format('H:i');
-                        @endphp
-                    </p>
+                <div id="group-of-data">
+                    <div id=show-pasākuma-details>
+                        <p id="show-user-name-pasakums">{{ $pasakums['username'] }}</p>
+                        <p id="show-datums-publicets-pasakums">
+                            @php 
+                                $date = new DateTime($pasakums['created_at']);
+                                echo $date->format('Y-m-d');
+                            @endphp
+                        </p>
+                        <p id="show-laiks-publicets-pasakums">
+                            @php 
+                                $date = new DateTime($pasakums['created_at']);
+                                echo $date->format('H:i');
+                            @endphp
+                        </p>
+                    </div>
+                    @if($pasakums['veidotajs_id'] == Auth::user()->id)
+
+
+
+
+                    <div id=show-edit-delete-link>
+                        <a href="{{ url('pasakums/'.$pasakums['id'].'/edit') }}" id="show-edit-link">EDIT</a>
+                        <form method="POST"
+                            action="{{action([App\Http\Controllers\PasakumsController::class, 'destroy'],
+                        $pasakums['id']) }}" id="form-delete">
+                        @csrf @method('DELETE')<input type="submit"
+                        value="DELETE" id="show-delete-link">
+                    </form>
+                    
+                    </div>
+                    @endif
                 </div>
-                @if($pasakums['veidotajs_id'] == Auth::user()->id)
-                <div id=show-edit-delete-link>
-                    <a href="{{ url('pasakums/'.$pasakums['id'].'/edit') }}" id="show-edit-link">EDIT</a>
-                    <form method="POST"
-                        action="{{action([App\Http\Controllers\PasakumsController::class, 'destroy'],
-                    $pasakums['id']) }}" id="show-delete-link">
-                    @csrf @method('DELETE')<input type="submit"
-                    value="delete"></form>
-                </td>
-                </div>
-                @endif
+                
                 
             </li>
         </ul>
@@ -126,7 +134,7 @@
             </div>
             <div id="pievienot">
                 <form method="POST"
-                    action="{{action([App\Http\Controllers\AttelsController::class, 'store']) }}" enctype="multipart/form-data">
+                    action="{{action([App\Http\Controllers\AttelsController::class, 'store']) }}" enctype="multipart/form-data" id="attela-form-galerija">
                     @csrf
                 
                     <label for="apraksts">Apraksts</label><br>
@@ -140,14 +148,13 @@
                     <input type="hidden" id="pasakums_id" name="pasakums_id" value="{{ $pasakums['id']}}" />
 
                     <label for="attels">Attēls</label>
+                    <br>
                     <input type="file" name="attels" id="attels" value="{{ old('attels') }}" class="form-control @error('attels') is-invalid @enderror">
                     <x-error-validation-msg-comp name='attels' /><br>
 
-                    <input type="submit" value="Pievienot attēlu" id="pievienot-attelu"> <!--id="publicet-pasakumu"-->
+                    <input type="submit" value="Pievienot attēlu" id="attels-preview-show-pasakuma-galerija-pievienot-attelu"> <!--id="publicet-pasakumu"-->
                 </form>
-                <button id="attels-preview-show-pasakuma-galerija-pievienot-attelu">
-                    Pievienot attēlu
-                </button>
+
             </div>
             
     </div>

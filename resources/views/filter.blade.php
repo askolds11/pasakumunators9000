@@ -25,21 +25,21 @@
                     <label for="datumsno">Datums no:</label><br>
                     <input type="datetime-local" id="datumsno" name="datumsno" value="{{ old('datumsno')}}" class="form-control @error('datumsno') is-invalid @enderror"><br>
                     <x-error-validation-msg-comp name='datumsno' /><br>
-
+                    
                     <label for="datumslidz">Datums līdz:</label><br>
                     <input type="datetime-local" id="datumslidz" name="datumslidz" value="{{ old('datumslidz')}}" class="form-control @error('datumslidz') is-invalid @enderror"><br>
                     <x-error-validation-msg-comp name='datumslidz' /><br>
 
                     <label for="ilgumsno">Norises ilgums</label><br>
-                    No <input type="number" id="ilgumsno" name="ilgumsno" value="{{ old('ilgumsno')}}" class="form-control @error('ilgumsno') is-invalid @enderror">
-                     līdz <input type="number" id="ilgumslidz" name="ilgumslidz" value="{{ old('ilgumslidz')}}" class="form-control @error('ilgumslidz') is-invalid @enderror">
+                    No <input type="number" id="ilgumsno" name="ilgumsno" value="{{ old('ilgumsno')}}" class="form-control @error('ilgumsno') is-invalid @enderror"><br>
+                     Līdz <input type="number" id="ilgumslidz" name="ilgumslidz" value="{{ old('ilgumslidz')}}" class="form-control @error('ilgumslidz') is-invalid @enderror">
                     <br>
                     <x-error-validation-msg-comp name='ilgumsno' /><br>
                     <x-error-validation-msg-comp name='ilgumslidz' /><br>
 
                     <label for="cenano">Cena</label><br>
-                    No <input type="number" id="cenano" name="cenano" value="{{ old('cenano')}}" class="form-control @error('cenano') is-invalid @enderror">
-                    līdz <input type="number" id="cenalidz" name="cenalidz" value="{{ old('cenalidz')}}" class="form-control @error('cenalidz') is-invalid @enderror"><br>
+                    No <input type="number" id="cenano" name="cenano" value="{{ old('cenano')}}" class="form-control @error('cenano') is-invalid @enderror"><br>
+                    Līdz <input type="number" id="cenalidz" name="cenalidz" value="{{ old('cenalidz')}}" class="form-control @error('cenalidz') is-invalid @enderror"><br>
                     <x-error-validation-msg-comp name='cenano' /><br>
                     <x-error-validation-msg-comp name='cenalidz' /><br>
                     
