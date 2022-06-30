@@ -3,17 +3,9 @@
 @section('title', 'Admin panel')
 
 @section('content')
+    <div id="admina-panel-all">
 
-
-
-
-
-
-    <div id="reminder-for-roles">
-        Loma:krāsa
-        Loma:krāsa
-        Loma:krāsa
-    </div>
+    
     <div id="izvelne-sarakstam">
             <h3 id="atlasit-pasakumus-title">Atlasīt pasākumus</h3>
             <button class="atlasi-buttons">Lietotāji</button>
@@ -22,11 +14,12 @@
     </div>
     <div id="admin-panel-content">
         <div id="admin-lietotaju-saraksts" class="admin-content-element">
-            <h2 id="admin-sarakstu-title">Lietotāju saraksts</h2>
+            <h2 class="admin-sarakstu-title">LIETOTĀJI</h2>
             @foreach ($errors->all() as $message) {
                     <strong>{{ $message }}</strong><br>
                 }
                 @endforeach
+            <div class="admin-table">
             <table>
                 <tr>
                     <th>Username</th>
@@ -111,9 +104,11 @@
                         @endfor
                     @endforeach
             </table>
+            </div>
         </div>
         <div id="admin-pasakumu-saraksts" class="admin-content-element">
-            <b>Pasakumi</b>
+            <h2 class="admin-sarakstu-title">PASĀKUMI</h2>
+            <div class="admin-table">
             <table>
                 <tr>
                     <th>Autors</th>
@@ -152,9 +147,11 @@
                     </tr>
                 @endforeach
             </table>
+            </div>
         </div>
         <div id="admin-komentaru-saraksts" class="admin-content-element">
-            <b>Komentari</b>
+            <h2 class="admin-sarakstu-title">KOMENTĀRI</h2>
+            <div class="admin-table">
             <table>
                 <tr>
                     <th>Autors</th>
@@ -192,7 +189,7 @@
         
         
     </div>
-
+    </div>
 
 
 

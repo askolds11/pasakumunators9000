@@ -350,6 +350,10 @@ hr {
 } */
 
 /* FILTER LAPAI */
+#filter-content-group {
+    margin-left: 150px;
+    margin-right: 150px;
+}
 #filter-content-group{
     display: flex;
 
@@ -511,6 +515,11 @@ hr {
 
 
 /* SHOW_PASAKUMU */
+#content-show-pasakuma-group {
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
 #post-komentaru-button {
     background-color: rgb(146, 148, 147);
     border: 1px solid black;
@@ -570,6 +579,8 @@ hr {
     border-radius: 20px;
     margin: 10px 10px 10px 10px;
     padding: 4px 4px 4px 4px;
+    margin-left: 160px;
+    margin-right: 150px;
 }
 
 
@@ -736,7 +747,10 @@ hr {
 }
 
 /* ADMINPANEL */
-
+#admina-panel-all {
+    margin-left: 150px;
+    margin-right: 150px;
+}
 .admin-content-element {
     background-color: white;
     border: 1px solid grey;
@@ -744,7 +758,7 @@ hr {
     border-radius: 10px;
 }
 
-#admin-sarakstu-title {
+.admin-sarakstu-title {
     background-color: rgba(110, 218, 109, 1);
     border-radius: 10px 10px 10px 10px;
     text-align: center;
@@ -752,8 +766,21 @@ hr {
     margin: 10px 0px 0px 10px;
     padding: 4px 4px 4px 4px;
 }
+.admin-table {
+    border: 1px solid grey;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    margin: 10px;
 
 
+}
+
+
+/* EDIT PASAKUMS */
+/* #edit-pasakums {
+    margin-left: 150px;
+    margin-right: 150px;
+} */
 
 
 
