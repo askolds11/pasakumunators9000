@@ -32,8 +32,8 @@ button {
     
 }
 #post-komentaru textarea{
-    max-height: 1000px;
-    max-width: 1000px;
+    max-height: 600px;
+    max-width: 1200px;
 }
 
 
@@ -662,12 +662,13 @@ hr {
     /* border: 1px solid red; */
     font-size: 30px;
     height: max-content;
-    /* width: max-content; */
+    width: max-content;
     background-color: rgba(0, 128, 0, 0.7);
     margin-right: 10px;
     color: white;
     border-radius: 10px;
     padding: 5px;
+    transition: all 0.3s ease 0s;
 }
 #show-delete-link {
     float: left;
@@ -676,10 +677,11 @@ hr {
     color: white;
     font-size: 30px;
     height: max-content;
-    /* width: max-content; */
+    width: max-content;
     background-color: rgba(255, 0, 0, 0.7);
     border-radius: 10px;
     padding: 5px;
+    transition: all 0.3s ease 0s;
 }
 #show-edit-link:hover {
     background-color: rgba(0, 128, 0, 1);
