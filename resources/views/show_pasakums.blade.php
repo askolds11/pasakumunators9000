@@ -43,7 +43,19 @@
                     </div>
                     @endif
                 </div>
-                
+                @if(Auth::check())
+                    @if($pasakums['veidotajs_id'] == Auth::user()->id)
+                <div id=show-edit-delete-link>
+                    <a href="{{ url('pasakums/'.$pasakums['id'].'/edit') }}" id="show-edit-link">EDIT</a>
+                    <form method="POST"
+                        action="{{action([App\Http\Controllers\PasakumsController::class, 'destroy'],
+                    $pasakums['id']) }}" id="show-delete-link">
+                    @csrf @method('DELETE')<input type="submit"
+                    value="delete"></form>
+                </td>
+                </div>
+                    @endif
+                @endif
                 
             </li>
         </ul>
@@ -110,6 +122,7 @@
                 </p>
             </li>
             <li id="pieteikties">
+                @if(Auth::check())
                 <button id="button-pieteikties" onclick="window.location.href='/pasakums/{{ $pasakums['id'] }}/pieteikties'">
                         @if($pasakums['pieteicies'] == false)
                             Pieteikties
@@ -117,7 +130,7 @@
                             Atteikties
                         @endif
                 </button>
-                
+                @endif
             </li>
         </ul>
         

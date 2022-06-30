@@ -133,10 +133,13 @@ class PasakumsController extends Controller
                             ->pluck('kategorija.nosaukums')->toArray();
 
         $pasakums[0]['kategorijas'] = $kategorijas;
-
         $pasakums = $pasakums[0];
 
-        if(LietotajsPasakums::where('pasakums_id', '=', $id)->where('users_id', '=', Auth::user()->id)->get()->first() == null)
+        if(!Auth::check())
+        {
+            $pasakums['pieteicies'] = false;
+        }
+        else if(LietotajsPasakums::where('pasakums_id', '=', $id)->where('users_id', '=', Auth::user()->id)->get()->first() == null)
         {
             $pasakums['pieteicies'] = false;
         }
@@ -146,6 +149,7 @@ class PasakumsController extends Controller
         }
 
         $pasakums['pieteikusies'] = count(LietotajsPasakums::where('pasakums_id', '=', $id)->get());
+        $pasakums['novertejums'] = Novertejums::where('pasakums_id', '=', $pasakums['id'])->groupBy('novertejums')->avg('novertejums');
 
         $galerija = Attels::where('pasakums_id', '=', $id)->orderBy('datums', 'desc')->orderBy('id', 'desc')->get()->toArray();
         $pasakums['atteli'] = $galerija;
