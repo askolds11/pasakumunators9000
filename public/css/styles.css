@@ -140,6 +140,11 @@ body {
 /* CONTNENT */
 
 /* MAINPAGE */
+#mainpage-contnet-parent {
+    max-width: 100%;
+    margin-left: 150px;
+    margin-right: 150px;
+}
 
 #atlasit-pasakumus-title {
     /* margin: 10px 10px 0px 0px; */
@@ -222,7 +227,7 @@ body {
 
 .pasakumu-list-preview-pasakuma {
     float: left;
-    width: 35%;
+    width: 60%;
     height: max-content;
     /* border: 1px solid red; */
     background-color:whitesmoke;
@@ -245,7 +250,7 @@ hr {
 }
 .pasakumu-list-preview-komentars {
     float: left;
-    width: 65%;
+    width: 40%;
     height: max-content;
     /* border:1px solid blue; */
     background-color:whitesmoke;
@@ -568,6 +573,10 @@ hr {
 }
 .show-content-child {
     display: inline-block;
+    border: 1px solid grey;
+}
+#show_pasakums_komentari {
+    border: 1px solid grey;
 }
 
 #show_pasakums_komentari {
@@ -697,6 +706,7 @@ hr {
 }
 #button-pieteikties {
     display: flex;
+    /* float: right; */
     justify-content: center;
     align-items: center;
     background-color: rgb(146, 148, 147);
