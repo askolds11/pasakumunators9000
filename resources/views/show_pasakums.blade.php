@@ -125,7 +125,7 @@
             
             <div id="attels-child">
                 @foreach($pasakums['atteli'] as $attels)
-                    <img src="{{ url($attels['picture']) }}" width="100" />
+                    <img src="{{ url($attels['picture']) }}" width="100" id="attels-chils-more"/>
                 @endforeach
             </div>
             <div id="pievienot">
@@ -158,7 +158,7 @@
             <h3 id="attels-preview-show-pasakuma-reklama-title">Attēlu galerija</h3>
             
             <div id="attels-child-reklama">
-                <img src="{{ url($pasakums['picture']) }}" width="100" / id="reklama-img">
+                <img src="{{ url($pasakums['picture']) }}" width="100" id="reklama-img"/>
             </div>
             <div id="pievienot-reklama">
                 <!-- <button id="attels-preview-show-pasakuma-reklama-pievienot-attelu">
