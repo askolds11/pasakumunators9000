@@ -154,16 +154,16 @@
             </div>
             
     </div>
-    <div id="attels-preview-show-pasakums-reklāma"  class="show-content-child">
+    <div id="attels-preview-show-pasakums-reklama"  class="show-content-child">
             <h3 id="attels-preview-show-pasakuma-reklama-title">Attēlu galerija</h3>
             
             <div id="attels-child-reklama">
-                <img src="{{ url($pasakums['picture']) }}" width="100" />
+                <img src="{{ url($pasakums['picture']) }}" width="100" / id="reklama-img">
             </div>
             <div id="pievienot-reklama">
-                <button id="attels-preview-show-pasakuma-reklama-pievienot-attelu">
+                <!-- <button id="attels-preview-show-pasakuma-reklama-pievienot-attelu">
                     Pievienot attēlu
-                </button>
+                </button> -->
             </div>
             
     </div>

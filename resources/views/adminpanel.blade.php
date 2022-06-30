@@ -6,12 +6,12 @@
     <div id="admina-panel-all">
 
     
-    <div id="izvelne-sarakstam">
+    <!-- <div id="izvelne-sarakstam">
             <h3 id="atlasit-pasakumus-title">Atlasīt pasākumus</h3>
-            <button class="atlasi-buttons">Lietotāji</button>
+            <button class="atlasi-buttons" id="admin-lietotaji-select">Lietotāji</button>
             <button class="atlasi-buttons">Pasākumi</button>
             <button class="atlasi-buttons">Komentāri</button>
-    </div>
+    </div> -->
     <div id="admin-panel-content">
         <div id="admin-lietotaju-saraksts" class="admin-content-element">
             <h2 class="admin-sarakstu-title">LIETOTĀJI</h2>
@@ -20,7 +20,7 @@
                 }
                 @endforeach
             <div class="admin-table">
-            <table>
+            <table class="table-content-admin">
                 <tr>
                     <th>Username</th>
                     <th>Roles</th>
@@ -36,7 +36,7 @@
                                 @if($lietotajs['roles'][0]['lomanosaukums'] != 'lietotajs')
                                     
                                     <form method="POST"
-                                        action="{{ url('adminpanel/updaterole') }}">
+                                        action="{{ url('adminpanel/updaterole') }}" class="button-admins-all">
                                         @csrf
                                         <input type="hidden" name="userid" id="userid" value="{{ $lietotajs['user.id'] }}"></input>
                                         <input type="hidden" name="lomaid" id="lomaid" value="{{ $lietotajs['roles'][0]['lomaid'] }}"></input>
@@ -60,7 +60,7 @@
                                 @if(count($lomasadd) > 0)
                                 <td rowspan="{{ count($lietotajs['roles']) }}">
                                     <form method="POST"
-                                        action="{{ url('adminpanel/updaterole') }}">
+                                        action="{{ url('adminpanel/updaterole') }}" class="button-admins-all">
                                         @csrf
                                         <input type="hidden" name="userid" id="userid" value="{{ $lietotajs['user.id'] }}"></input>
                                         <input type="hidden" name="action" id="action" value="true"></input>
@@ -74,7 +74,7 @@
                                 </td>
                                 @endif
                                 <td rowspan="{{ count($lietotajs['roles']) }}">
-                                    <form method="POST" action="{{ url('adminpanel/banuser') }}">
+                                    <form method="POST" action="{{ url('adminpanel/banuser') }}" class="button-admins-all">
                                         @csrf
                                         <input type="hidden" name="id" id="id" value="{{ $lietotajs['user.id'] }}"></input>
                                         @if($lietotajs['banned_status'] == false)
@@ -109,7 +109,7 @@
         <div id="admin-pasakumu-saraksts" class="admin-content-element">
             <h2 class="admin-sarakstu-title">PASĀKUMI</h2>
             <div class="admin-table">
-            <table>
+            <table class="table-content-admin">
                 <tr>
                     <th>Autors</th>
                     <th>Nosaukums</th>
@@ -152,7 +152,7 @@
         <div id="admin-komentaru-saraksts" class="admin-content-element">
             <h2 class="admin-sarakstu-title">KOMENTĀRI</h2>
             <div class="admin-table">
-            <table>
+            <table class="table-content-admin">
                 <tr>
                     <th>Autors</th>
                     <th>Teksts</th>

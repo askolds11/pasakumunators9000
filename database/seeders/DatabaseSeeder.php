@@ -111,6 +111,19 @@ class DatabaseSeeder extends Seeder
         $kategorija = Kategorija::create([
             'nosaukums'=>'Teniss'
         ]);
+        $kategorija = Kategorija::create([
+            'nosaukums'=>'Komandas spele'
+        ]);
+        $kategorija = Kategorija::create([
+            'nosaukums'=>'Individuala spele'
+        ]);
+        $kategorija = Kategorija::create([
+            'nosaukums'=>'Iekštelpas'
+        ]);
+        $kategorija = Kategorija::create([
+            'nosaukums'=>'Artelpas'
+        ]);
+
         
         
         //Loma
@@ -184,10 +197,10 @@ class DatabaseSeeder extends Seeder
             ]); 
         $pasakums = Pasakums::create([
             'nosaukums'=>'Boulings visiem',
-            'apraksts'=>'Open-Air boulinga turnirs - Eiropas kvalifikacija',
+            'apraksts'=>'Boulinga turnirs - Eiropas kvalifikacija',
             'datums'=>Carbon::parse('2023-01-17 11:00:00'),
             'norises_ilgums'=>'90',
-            'norises_vieta'=>'Riga, Mezaparka',
+            'norises_vieta'=>'Riga, Mezaparka estrade telpas',
             'cena'=>'3.00',
             'veidotajs_id'=>'5',
             'attels_id' => '7'
@@ -396,24 +409,80 @@ class DatabaseSeeder extends Seeder
             'kategorija_id'=>'5'
         ]);
         $pasakumskategorija = PasakumsKategorija::create([
+            'pasakums_id'=>'1',
+            'kategorija_id'=>'15'
+        ]);
+        $pasakumskategorija = PasakumsKategorija::create([
+            'pasakums_id'=>'1',
+            'kategorija_id'=>'12'
+        ]);
+        ///////////////
+        $pasakumskategorija = PasakumsKategorija::create([
             'pasakums_id'=>'2',
             'kategorija_id'=>'4'
         ]);
+        $pasakumskategorija = PasakumsKategorija::create([
+            'pasakums_id'=>'2',
+            'kategorija_id'=>'14'
+        ]);
+        $pasakumskategorija = PasakumsKategorija::create([
+            'pasakums_id'=>'2',
+            'kategorija_id'=>'12'
+        ]);
+        ////////////////////
         $pasakumskategorija = PasakumsKategorija::create([
             'pasakums_id'=>'3',
             'kategorija_id'=>'2'
         ]);
         $pasakumskategorija = PasakumsKategorija::create([
+            'pasakums_id'=>'3',
+            'kategorija_id'=>'12'
+        ]);
+        $pasakumskategorija = PasakumsKategorija::create([
+            'pasakums_id'=>'3',
+            'kategorija_id'=>'15'
+        ]);
+        ////////////////////////
+        $pasakumskategorija = PasakumsKategorija::create([
             'pasakums_id'=>'4',
             'kategorija_id'=>'6'
         ]);
+        $pasakumskategorija = PasakumsKategorija::create([
+            'pasakums_id'=>'4',
+            'kategorija_id'=>'13'
+        ]);
+        $pasakumskategorija = PasakumsKategorija::create([
+            'pasakums_id'=>'4',
+            'kategorija_id'=>'14'
+        ]);
+
+        //////////////////////
         $pasakumskategorija = PasakumsKategorija::create([
             'pasakums_id'=>'5',
             'kategorija_id'=>'7'
         ]);
         $pasakumskategorija = PasakumsKategorija::create([
+            'pasakums_id'=>'5',
+            'kategorija_id'=>'13'
+        ]);
+        $pasakumskategorija = PasakumsKategorija::create([
+            'pasakums_id'=>'5',
+            'kategorija_id'=>'15'
+        ]);
+
+
+        ////////////////////
+        $pasakumskategorija = PasakumsKategorija::create([
             'pasakums_id'=>'6',
             'kategorija_id'=>'3'
+        ]);
+        $pasakumskategorija = PasakumsKategorija::create([
+            'pasakums_id'=>'6',
+            'kategorija_id'=>'13'
+        ]);
+        $pasakumskategorija = PasakumsKategorija::create([
+            'pasakums_id'=>'6',
+            'kategorija_id'=>'14'
         ]);
 
 
