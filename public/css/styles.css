@@ -562,6 +562,35 @@ hr {
     margin: 10px 10px 10px 10px;
     padding: 4px 4px 4px 4px;
 }
+#attels-preview-show-pasakums-reklama {
+    float: left;
+    width: 60%;
+    height: max-content;
+    background-color: white;
+    border-radius: 20px;
+    margin: 10px 10px 10px 10px;
+    padding: 4px 4px 4px 4px;
+}
+#attels-preview-show-pasakuma-reklama-title {
+    background-color: rgb(255, 217, 0);
+    border-radius: 10px;
+    text-align: center;
+}
+
+#reklama-img {
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    border-radius: 3px;
+    border: 1px solid grey;
+    
+    
+}
+#attels-child-reklama {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .show-content-child {
     display: inline-block;
     border: 1px solid grey;
