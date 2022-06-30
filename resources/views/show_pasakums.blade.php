@@ -16,8 +16,8 @@
                     <p id="show-laiks-publicets-pasakums">12:00:00</>
                 </div>
                 <div id=show-edit-delete-link>
-                    <a href="" id="show-edit-link">Edit</a>
-                    <a href="" id="show-delete-link">Delete</a>
+                    <a href="" id="show-edit-link">EDIT</a>
+                    <a href="" id="show-delete-link">DELETE</a>
                 </div>
                 
             </li>
