@@ -11,14 +11,31 @@
         <ul>
             <li id="show-user-name-pasakums-publicetajs">
                 <div id=show-pasākuma-details>
-                    <p id="show-user-name-pasakums"><a href="" class="link-to-publicetajs">User2</a></p>
-                    <p id="show-datums-publicets-pasakums">09.10.2020.</p>
-                    <p id="show-laiks-publicets-pasakums">12:00:00</>
+                    <p id="show-user-name-pasakums">{{ $pasakums['username'] }}</p>
+                    <p id="show-datums-publicets-pasakums">
+                        @php 
+                            $date = new DateTime($pasakums['created_at']);
+                            echo $date->format('Y-m-d');
+                        @endphp
+                    </p>
+                    <p id="show-laiks-publicets-pasakums">
+                        @php 
+                            $date = new DateTime($pasakums['created_at']);
+                            echo $date->format('H:i');
+                        @endphp
+                    </p>
                 </div>
+                @if($pasakums['veidotajs_id'] == Auth::user()->id)
                 <div id=show-edit-delete-link>
-                    <a href="" id="show-edit-link">EDIT</a>
-                    <a href="" id="show-delete-link">DELETE</a>
+                    <a href="{{ url('pasakums/'.$pasakums['id'].'/edit') }}" id="show-edit-link">EDIT</a>
+                    <form method="POST"
+                        action="{{action([App\Http\Controllers\PasakumsController::class, 'destroy'],
+                    $pasakums['id']) }}" id="show-delete-link">
+                    @csrf @method('DELETE')<input type="submit"
+                    value="delete"></form>
+                </td>
                 </div>
+                @endif
                 
             </li>
         </ul>
@@ -28,8 +45,7 @@
                     Apraksts
                 </h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut suscipit laudantium omnis corporis corrupti culpa! Cum 
-
+                    {{ $pasakums['apraksts'] }}
                 </p>
             </li>
             <li id="apraksts-show-pasakums" class="show-pasakuma-info">
@@ -37,7 +53,10 @@
                     Datums
                 </h3>
                 <p>
-                    10.10.2020.
+                        @php 
+                            $date = new DateTime($pasakums['datums']);
+                            echo $date->format('d-m-Y H:i');
+                        @endphp
                 </p>
             </li>
             <li id="apraksts-show-pasakums" class="show-pasakuma-info">
@@ -45,7 +64,15 @@
                     Norises ilgums
                 </h3>
                 <p>
-                    10 dienas
+                    @php
+                        $day = floor(($pasakums['norises_ilgums']*60) / 86400);
+                        $hours = floor((($pasakums['norises_ilgums']*60) -($day*86400)) / 3600);
+                        $minutes = floor((($pasakums['norises_ilgums']*60) / 60) % 60);
+
+                        if($day != 0) echo $day.'d';
+                        if($hours != 0) echo $hours.'h';
+                        if($minutes != 0) echo $minutes.'min';
+                    @endphp
                 </p>
             </li>
             <li id="apraksts-show-pasakums" class="show-pasakuma-info">
@@ -53,7 +80,7 @@
                     Cena
                 </h3>
                 <p>
-                    3.50
+                    {{ $pasakums['cena'] }}
                 </p>
             </li>
             <li id="apraksts-show-pasakums" class="show-pasakuma-info">
@@ -61,11 +88,13 @@
                     Kategorija
                 </h3>
                 <p > 
-                    1
+                    @foreach($pasakums['kategorijas'] as $kategorija)
+                        {{ $kategorija.' ' }} 
+                    @endforeach
                 </p>
             </li>
             <li id="pieteikties">
-                <button id="button-pieteikties">
+                <button id="button-pieteikties" onclick="window.location.href='/pasakums/{{ $pasakums['id'] }}/pieteikties'">
                     Pieteikties
                 </button>
                 
@@ -111,40 +140,38 @@
 <div id="show_pasakums_komentari">
         <h3 id="title-show-pasakums-komentari">Komentāri</h3>
             <ul>
+                @foreach($komentari as $komentars)
                 <li class="show-user-name-koments">
-                    <h4 class="show-komentetaja-user-name">User1</h4>
+                    <h4 class="show-komentetaja-user-name">{{ $komentars['username'] }}</h4>
                     <div class="show-user-name-koments-info">
                         <p class="datums-publicets-koments">
-                            10.10.2020.
+                            @php 
+                                $date = new DateTime($komentars['created_at']);
+                                echo $date->format('d-m-Y');
+                            @endphp
                         </p>
                         <p class="laiks-publicets-koments">
-                            14:20
+                            @php 
+                                $date = new DateTime($komentars['created_at']);
+                                echo $date->format('H:i');
+                            @endphp
                         </p>
                     </div>
-                    
-                    
-                    <p class="komenta-teksts">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea adipisci voluptatum dolores, ducimus eaque rem inventore impedit debitis rerum eum!
+                    <p class="komenta-teksts">
+                        {{ $komentars['teksts'] }}
                     </p>
                 </li>
-                <li class="show-user-name-koments">
-                    <h4>User1</h4>
-                    <div class="show-user-name-koments-info">
-                        <p class="datums-publicets-koments">
-                            10.10.2020.
-                        </p>
-                        <p class="laiks-publicets-koments">
-                            14:20
-                        </p>
-                    </div>
-                    
-                    
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea adipisci voluptatum dolores, ducimus eaque rem inventore impedit debitis rerum eum!
-                    </p>
-                </li>
+                @endforeach
+
+
                 <li id="post-komentaru">
-                    <textarea id="" name="" rows="20" cols="70">Rakstiet savu komentāru šeit...</textarea>
-                    <br>
-                <input type="submit" value="Post" id="post-komentaru-button">
+                    <form method="POST" action="{{action([App\Http\Controllers\KomentarsController::class, 'store']) }}">
+                        @csrf
+                        <input type="hidden" id="pasakums_id" name="pasakums_id" value="{{ $pasakums['id'] }}" />
+                        <textarea id="teksts" name="teksts" rows="20" cols="70" placeholder="Rakstiet savu komentāru šeit...">{{ old('teksts') }}</textarea>
+                        <br>
+                        <input type="submit" value="Post" id="post-komentaru-button">
+                    </form>
                 </li>
 </div>
 @endsection

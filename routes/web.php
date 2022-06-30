@@ -6,6 +6,7 @@ use App\Http\Controllers\KomentarsController;
 use App\Http\Controllers\AdminPanelController;
 use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LietotajsPasakumsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,5 +58,7 @@ Route::post('adminpanel/approvepasakums', [AdminPanelController::class, 'approve
 Route::post('adminpanel/approvekomentars', [AdminPanelController::class, 'approveKomentars']
         )->middleware('role:administrators');
 
+Route::post('pasakums/post', [KomentarsController::class, 'store'])->middleware(['auth']);
+Route::get('pasakums/{id}/pieteikties', [LietotajsPasakumsController::class, 'store'])->middleware(['auth']);
 
 require __DIR__.'/auth.php';

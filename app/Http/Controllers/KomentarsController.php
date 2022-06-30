@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Komentars;
+use Auth;
 
 class KomentarsController extends Controller
 {
@@ -41,31 +42,21 @@ class KomentarsController extends Controller
             $table->string('teksts',200);
             $table->date('datums')->format('d/m/Y');
         *********/
-
-        //Need auth check
-        //Need language
-
-        dd($request); //for testing
-
-        $lietotajs_id = $request->lietotajs_id; //may be done differently - to be seen
+        $users_id = Auth::user()->id; //may be done differently - to be seen
         $pasakums_id = $request->pasakums_id;
         $teksts = $request->teksts;
-        $datums = $request->datums;
         
 
         $rules = array(
-            'lietotajs_id' => 'required|exists:users|integer',
-            'pasakums_id' => 'required|exists:pasakums|integer',
+            'pasakums_id' => 'required|exists:pasakums,id|integer',
             'teksts' => 'required|string|min:1|max:200',
-            'datums' => 'required|date|after:yesterday',
         );
         $this->validate($request, $rules);
 
         $komentars = new Komentars();
-        $komentars->lietotajs_id = $request->lietotajs_id;
+        $komentars->users_id = $users_id;
         $komentars->pasakums_id = $request->pasakums_id;
         $komentars->teksts = $request->teksts;
-        $komentars->datums = $request->datums; //May be an error
         $komentars->save();
 
         return redirect('pasakums/' . $pasakums_id);
