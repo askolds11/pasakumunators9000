@@ -3,7 +3,17 @@
 @section('title', 'Admin panel')
 
 @section('content')
+
+
+
+
+
     <div id="admin-panel-content">
+        <div id="reminder-for-roles">
+            Loma:krāsa
+            Loma:krāsa
+            Loma:krāsa
+        </div>
         <b>Lietotaji:</b><br>
         @foreach ($errors->all() as $message) {
                 <strong>{{ $message }}</strong><br>
@@ -80,4 +90,10 @@
                 @endforeach
         </table>
     </div>
+
+
+
+
+
+
 @endsection
