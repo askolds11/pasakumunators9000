@@ -8,6 +8,8 @@ use App\Models\Pasakums;
 use App\Models\Komentars;
 use App\Models\Kategorija;
 use App\Models\PasakumsKategorija;
+use App\Models\LietotajsPasakums;
+use App\Models\Novertejums;
 use Carbon\Carbon;
 use Auth;
 
@@ -85,7 +87,7 @@ class PasakumsController extends Controller
         $attels = new Attels();
         $attels->apraksts = '';
         $attels->datums = now()->format('Y-m-d');
-        $attels->picture = 'public/images/' .$filename;
+        $attels->picture = 'images/' .$filename;
         $attels->save();
 
         $pasakums = new Pasakums();
@@ -198,6 +200,10 @@ class PasakumsController extends Controller
     {
         //Will need to delete registration entries
         Komentars::where('pasakums_id',$id)->delete();
+        Attels::where('pasakums_id', $id)->delete();
+        LietotajsPasakums::where('pasakums_id', $id)->delete();
+        PasakumsKategorija::where('pasakums_id', $id)->delete();
+        Novertejums::where('pasakums_id', $id)->delete();
         Pasakums::findOrFail($id)->delete();
         return redirect('mainpage');
     }

@@ -48,6 +48,12 @@ Route::get('adminpanel', [AdminPanelController::class, 'index']
         )->middleware('role:administrators');
 Route::post('adminpanel/updaterole', [AdminPanelController::class, 'updateRole']
         )->middleware('role:administrators');
+Route::post('adminpanel/banuser', [AdminPanelController::class, 'banUser']
+        )->middleware('role:administrators');
+Route::post('adminpanel/approvepasakums', [AdminPanelController::class, 'approvePasakums']
+        )->middleware('role:administrators');
+Route::post('adminpanel/approvekomentars', [AdminPanelController::class, 'approveKomentars']
+        )->middleware('role:administrators');
 
 
 require __DIR__.'/auth.php';

@@ -13,6 +13,9 @@
             <tr>
                 <th>Username</th>
                 <th>Roles</th>
+                <th>Remove role</th>
+                <th>Add role</th>
+                <th>Ban</th>
             </tr>
                 @foreach($lietotaji as $lietotajs)
                     <tr>
@@ -59,6 +62,17 @@
                                 </form>
                             </td>
                             @endif
+                            <td rowspan="{{ count($lietotajs['roles']) }}">
+                                <form method="POST" action="{{ url('adminpanel/banuser') }}">
+                                    @csrf
+                                    <input type="hidden" name="id" id="id" value="{{ $lietotajs['user.id'] }}"></input>
+                                    @if($lietotajs['banned_status'] == false)
+                                    <input type="submit" name="submit" id="submit" value="Ban"></input>
+                                    @else
+                                    <input type="submit" name="submit" id="submit" value="Unban"></input>
+                                    @endif
+                                </form>
+                            </td>
                     </tr>
                     @for($i = 1; $i < count($lietotajs['roles']); $i++)
                         <tr>
@@ -78,6 +92,78 @@
                         </tr>
                     @endfor
                 @endforeach
+        </table>
+        <b>Pasakumi</b>
+        <table>
+            <tr>
+                <th>Autors</th>
+                <th>Nosaukums</th>
+                <th>Apraksts</th>
+                <th>Vieta</th>
+                <th>Attels</th>
+                <th>Apstiprināt</th>
+                <th>Noraidīt</th>
+            </tr>
+            @foreach($pasakumi as $pasakums)
+                <tr>
+                    <td>{{ $pasakums['username'] }}</td>
+                    <td>{{ $pasakums['nosaukums'] }}</td>
+                    <td>{{ $pasakums['apraksts'] }}</td>
+                    <td>{{ $pasakums['norises_vieta'] }}</td>
+                    <td><img src="{{ url($pasakums['picture']) }}" width="100"></td>
+                    <td>
+                            <form method="POST"
+                                action="{{ url('adminpanel/approvepasakums') }}">
+                                @csrf
+                                <input type="hidden" name="id" id="id" value="{{ $pasakums['id'] }}"></input>
+                                <input type="hidden" name="status" id="status" value="true"></input>
+                                <input type="submit" name="submit" id="submit" value="Apstiprināt"></input>
+                            </form>
+                    </td>
+                    <td>
+                            <form method="POST"
+                                action="{{ url('adminpanel/approvepasakums') }}">
+                                @csrf
+                                <input type="hidden" name="id" id="id" value="{{ $pasakums['id'] }}"></input>
+                                <input type="hidden" name="status" id="status" value="false"></input>
+                                <input type="submit" name="submit" id="submit" value="Noraidīt"></input>
+                            </form>
+                    </td>
+                </tr>
+            @endforeach
+        </table>
+        <b>Komentari</b>
+        <table>
+            <tr>
+                <th>Autors</th>
+                <th>Teksts</th>
+                <th>Apstiprināt</th>
+                <th>Noraidīt</th>
+            </tr>
+            @foreach($komentari as $komentars)
+                <tr>
+                    <td>{{ $komentars['username'] }}</td>
+                    <td>{{ $komentars['teksts'] }}</td>
+                    <td>
+                            <form method="POST"
+                                action="{{ url('adminpanel/approvekomentars') }}">
+                                @csrf
+                                <input type="hidden" name="id" id="id" value="{{ $komentars['id'] }}"></input>
+                                <input type="hidden" name="status" id="status" value="true"></input>
+                                <input type="submit" name="submit" id="submit" value="Apstiprināt"></input>
+                            </form>
+                    </td>
+                    <td>
+                            <form method="POST"
+                                action="{{ url('adminpanel/approvekomentars') }}">
+                                @csrf
+                                <input type="hidden" name="id" id="id" value="{{ $komentars['id'] }}"></input>
+                                <input type="hidden" name="status" id="status" value="false"></input>
+                                <input type="submit" name="submit" id="submit" value="Noraidīt"></input>
+                            </form>
+                    </td>
+                </tr>
+            @endforeach
         </table>
     </div>
 @endsection

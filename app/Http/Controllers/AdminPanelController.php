@@ -18,7 +18,7 @@ class AdminPanelController extends Controller
     {
         $usersroles = User::join('lietotajsloma', 'lietotajsloma.users_id', '=', 'users.id')
                             ->join('loma', 'lietotajsloma.loma_id', '=', 'loma.id')
-                            ->select('users.id as userid', 'users.name as username', 'loma.id as lomaid', 'loma.nosaukums as lomanosaukums')
+                            ->select('users.id as userid', 'users.name as username', 'loma.id as lomaid', 'loma.nosaukums as lomanosaukums', 'users.banned_status as banned_status')
                             ->orderBy('users.name', 'asc')
                             ->get();
 
@@ -36,6 +36,7 @@ class AdminPanelController extends Controller
             array_push($lietotaji, array(
                 'user.id' => $user->id,
                 'user.name' => $user->name,
+                'banned_status' => $user->banned_status,
                 'roles' => $roles
             ));
         }
@@ -43,12 +44,17 @@ class AdminPanelController extends Controller
         $komentari = Komentars::orderBy('updated_at', 'desc')
                             ->orderBy('id', 'desc')
                             ->where('approved_status', '=', '0')
+                            ->join('users', 'users_id', '=', 'users.id')
+                            ->select('komentars.*', 'users.name as username')
                             ->get()
                             ->toArray();
 
         $pasakumi = Pasakums::orderBy('updated_at', 'desc')
                             ->orderBy('id', 'desc')
                             ->where('approved_status', '=', '0')
+                            ->join('attels', 'pasakums.attels_id', '=', 'attels.id')
+                            ->join('users', 'veidotajs_id', '=', 'users.id')
+                            ->select('pasakums.*', 'attels.picture', 'users.name as username')
                             ->get()
                             ->toArray();
 
@@ -57,9 +63,15 @@ class AdminPanelController extends Controller
         return view('adminpanel', compact('lietotaji', 'komentari', 'pasakumi', 'lomas'));   
     }
 
-    public function approveKomentars($id, $status)
+    public function approveKomentars(Request $request)
     {
         //validation rules
+        $id = $request->id;
+        $status = $request->status;
+
+        if($status == 'false') {$status = false; }
+        else if($status == 'true') $status = true;
+
         $rules = array(
             'id' => 'required|exists:komentars,id',
             'status' => 'required|boolean'
@@ -82,16 +94,25 @@ class AdminPanelController extends Controller
         {//approve
             $komentars = Komentars::findOrFail($id);
             $komentars->approved_status = true;
+            $komentars->save();
         }
         else
         {//remove
             $komentarsController = new KomentarsController();
             $komentarsController->destroy($id);
         }
+
+        return redirect('adminpanel');
     }
 
-    public function approvePasakums($id, $status)
+    public function approvePasakums(Request $request)
     {
+        $id = $request->id;
+        $status = $request->status;
+
+        if($status == 'false') {$status = false; }
+        else if($status == 'true') $status = true;
+
         //validation rules
         $rules = array(
             'id' => 'required|exists:pasakums,id',
@@ -115,12 +136,15 @@ class AdminPanelController extends Controller
         {//approve
             $pasakums = Pasakums::findOrFail($id);
             $pasakums->approved_status = true;
+            $pasakums->save();
         }
         else
         {//remove
             $pasakumsController = new PasakumsController();
             $pasakumsController->destroy($id);
         }
+
+        return redirect('adminpanel');
     }
 
     public function updateRole(Request $request) //action: true - add, false - delete
@@ -148,7 +172,7 @@ class AdminPanelController extends Controller
         //refresh page, something went wrong
         if($validator->fails())
         {
-            return redirect('adminpanel')->withErrors($validator);
+            return redirect('adminpanel');
         }
 
         //everything works out so far
@@ -180,6 +204,32 @@ class AdminPanelController extends Controller
         { //remove role
             $userrole->first()->delete();
         }
+        return redirect('adminpanel');
+    }
+
+    public function banUser(Request $request)
+    {
+        $id = $request->id;
+
+        $rules = array(
+            'id' => 'required|exists:users,id',
+        );
+
+        $validator = Validator::make(
+            array('id' => $id),
+            $rules
+        );
+
+        //refresh page, something went wrong
+        if($validator->fails())
+        {
+            return redirect('adminpanel');
+        }
+
+        $user = User::findOrFail($id);
+        $user->banned_status = !$user->banned_status;
+        $user->save();
+
         return redirect('adminpanel');
     }
 }
