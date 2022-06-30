@@ -252,7 +252,7 @@
             <div id="about-content-group">
             <h2 class="about-content">Par mums</h2>
             <p class="about-content">
-                Mājaslapu LU DF 1. kursa studenti Tīmekļa Tehnoloģijas II eksāmenam. 
+                Mājaslapu veidoja LU DF 1. kursa studenti Tīmekļa Tehnoloģijas II eksāmenam. 
             </p>
             <p class="about-content">
                 Dotajā mājaslapā cilvēki ir spējīgi pievienot, kā arī pieteikties, pasākumiem, kuri var iekļauties dažādās aktivitāšu kategorijās.
