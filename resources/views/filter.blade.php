@@ -60,7 +60,7 @@
                             </tr>
                     @foreach ($pasakumi as $pasakums)
                         <tr>
-                            <td>{{$pasakums->nosaukums }}</td>
+                            <td><a href="{{url('/pasakums/{$pasakums->id}')}}" id="filter-link-to-show-pasakums">{{$pasakums->nosaukums }}</a></td>
                             <td>{{$pasakums->apraksts }}</td>
                             <td>{{$pasakums->datums }}</td>
                             <td>{{$pasakums->norises_ilgums }}</td>

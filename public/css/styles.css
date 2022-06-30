@@ -394,7 +394,9 @@ hr {
 .filter-content-child {
     display: inline-block;
 }
-
+#filter-link-to-show-pasakums:hover {
+    color: blue;
+}
 
 
 #filter-button-meklet {
