@@ -90,7 +90,7 @@
         <h3 id="title-show-pasakums-komentari">Komentāri</h3>
             <ul>
                 <li class="show-user-name-koments">
-                    <h4>User1</h4>
+                    <h4 class="show-komentetaja-user-name">User1</h4>
                     <div class="show-user-name-koments-info">
                         <p class="datums-publicets-koments">
                             10.10.2020.
@@ -101,7 +101,7 @@
                     </div>
                     
                     
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea adipisci voluptatum dolores, ducimus eaque rem inventore impedit debitis rerum eum!
+                    <p class="komenta-teksts">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea adipisci voluptatum dolores, ducimus eaque rem inventore impedit debitis rerum eum!
                     </p>
                 </li>
                 <li class="show-user-name-koments">

@@ -125,7 +125,173 @@ body {
 /* CONTNENT */
 
 /* MAINPAGE */
-#parent-preview-pasakums {
+
+#atlasit-pasakumus-title {
+    /* margin: 10px 10px 0px 0px; */
+    /* background-color: black; */
+    width: max-content;
+
+}
+#izveleties-atlasi-form {
+    /* background-color: rgb(173, 173, 173); */
+    background-color: rgba(234, 234, 234, 1);
+    /* border: 1px solid grey; */
+    padding: 5px;
+    border-radius:  0px 20px 20px 0px;
+    /* border: 1px solid red; */
+    width: max-content;
+    margin: 5px 5px 10px 0px;
+    /* padding-top: 2px;
+    padding-bottom: 2px; */
+    /* padding-right: 0px; */
+    /* padding: 0px 5px 5px 5px; */
+}
+
+#atlasi-button {
+    padding: 5px;
+    border-radius: 20px;
+    /* background-color: rgb(146, 148, 147); */
+    border-style: none;
+    border:1px solid grey;
+    transition: all 0.3s ease 0s;
+    
+}
+
+#atlasi-button:hover {
+    background-color: rgba(110, 218, 109, 1);
+}
+
+#atlasi-button:active {
+    background-color: grey;
+}
+
+.atlasi-buttons {
+    /* background-color: rgb(224, 219, 219); */
+    background-color: white;
+
+    /* padding: 2px; */
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10px;
+    transition: all 0.3s ease 0s;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.atlasi-buttons:hover {
+    background-color: rgba(110, 218, 109, 1);
+}
+.atlasi-buttons:active {
+    background-color: rgb(142, 148, 142);;
+}
+
+.pasakumu-list-preview-pasakuma ul li {
+    list-style: none;
+}
+.pasakumu-list-preview-komentars ul li {
+    list-style: none;
+}
+
+
+.pasakumu-list-preview-items {
+    display: flex;
+    /* border: 5px solid red; */
+    /* border: 1px solid red; */
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    border:1px solid grey;
+}
+
+.pasakumu-list-preview-pasakuma {
+    float: left;
+    width: 35%;
+    height: max-content;
+    /* border: 1px solid red; */
+    background-color:whitesmoke;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 20px 20px 20px 20px;
+    padding: 0px 10px  10px  10px ;
+}
+.preview-komentari {
+    background-color: rgba(212, 212, 212, 0.5);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+hr {
+    
+    margin-bottom: 8px;
+}
+.pasakumu-list-preview-komentars {
+    float: left;
+    width: 65%;
+    height: max-content;
+    /* border:1px solid blue; */
+    background-color:whitesmoke;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 20px 20px 20px 20px;
+    padding: 10px 10px  10px  10px ;
+}
+.tituls-pasakums {
+    background-color: rgba(110, 218, 109, 1);
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+}
+#mainpage-title-sadalijums {
+    display: flex;
+}
+#pasakumi-title-mainpage {
+    background-color: rgba(110, 218, 109, 1);
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+    float: left;
+    width: 35%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#komentari-title-mainpage {
+    background-color: skyblue;
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+    float: left;
+    width: 65%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#about-div {
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+}
+
+.about-content {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+/* #parent-preview-pasakums {
     display: flex;
 }
 
@@ -152,7 +318,7 @@ body {
     background-color: skyblue;
     padding: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
-    /* float: right; */
+    
 }
 
 #komentari {
@@ -178,7 +344,7 @@ body {
     display: inline-block;
     
 
-}
+} */
 
 /* FILTER LAPAI */
 #filter-content-group{
