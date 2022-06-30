@@ -141,55 +141,24 @@ body {
 
 /* MAINPAGE */
 #mainpage-contnet-parent {
-    max-width: 100%;
     margin-left: 150px;
     margin-right: 150px;
 }
 
 #atlasit-pasakumus-title {
-    /* margin: 10px 10px 0px 0px; */
-    /* background-color: black; */
     width: max-content;
 
 }
 #izveleties-atlasi-form {
-    /* background-color: rgb(173, 173, 173); */
     background-color: rgba(234, 234, 234, 1);
-    /* border: 1px solid grey; */
     padding: 5px;
     border-radius:  0px 20px 20px 0px;
-    /* border: 1px solid red; */
     width: max-content;
-    margin: 5px 5px 10px 0px;
-    /* padding-top: 2px;
-    padding-bottom: 2px; */
-    /* padding-right: 0px; */
-    /* padding: 0px 5px 5px 5px; */
+    margin: 5px 5px 10px 10px;
+   
 }
-
-#atlasi-button {
-    padding: 5px;
-    border-radius: 20px;
-    /* background-color: rgb(146, 148, 147); */
-    border-style: none;
-    border:1px solid grey;
-    transition: all 0.3s ease 0s;
-    
-}
-
-#atlasi-button:hover {
-    background-color: rgba(110, 218, 109, 1);
-}
-
-#atlasi-button:active {
-    background-color: grey;
-}
-
 .atlasi-buttons {
-    /* background-color: rgb(224, 219, 219); */
     background-color: white;
-
-    /* padding: 2px; */
     padding-left: 5px;
     padding-right: 5px;
     border-radius: 10px;
@@ -203,14 +172,70 @@ body {
 .atlasi-buttons:active {
     background-color: rgb(142, 148, 142);;
 }
-
-.pasakumu-list-preview-pasakuma ul li {
+#mainpage-pasakumi ul li {
     list-style: none;
 }
-.pasakumu-list-preview-komentars ul li {
+#mainpage-komentari ul li {
     list-style: none;
 }
 
+
+
+
+
+#mainpage-title-sadalijums {
+        display: flex;    
+}
+#pasakumi-title-mainpage {
+    float: left;
+    width: 65%;
+    /* border: 1px solid red; */
+    background-color: rgba(110, 218, 109, 1);
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#komentari-title-mainpage {
+    float: left;
+    width: 35%;
+    /* border: 1px solid red; */
+    background-color: skyblue;
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+
+
+
+
+#pasakumi-x-komentari {
+    display: flex;
+    /* border: 1px solid red; */
+    /* background-color: whitesmoke; */
+
+}
+#mainpage-pasakumi {
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 10px;
+    float: left;
+    width: 65%;
+    margin:10px;
+}
+#mainpage-komentari {
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 10px;    
+    float: left;
+    width: 35%;
+    margin:10px;
+    
+
+}
 
 .pasakumu-list-preview-items {
     display: flex;
@@ -222,14 +247,11 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     border-radius: 10px;
-    border:1px solid grey;
+    /* border:1px solid grey; */
 }
 
 .pasakumu-list-preview-pasakuma {
-    float: left;
-    width: 60%;
-    height: max-content;
-    /* border: 1px solid red; */
+    /* height: max-content; */
     background-color:whitesmoke;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -237,71 +259,49 @@ body {
     margin-right: 10px;
     border-radius: 20px 20px 20px 20px;
     padding: 0px 10px  10px  10px ;
+    
 }
 .preview-komentari {
     background-color: rgba(212, 212, 212, 0.5);
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin: 10px;
     padding: 5px;
 }
-hr {
-    
+
+hr {    
     margin-bottom: 8px;
 }
-.pasakumu-list-preview-komentars {
-    float: left;
-    width: 40%;
-    height: max-content;
-    /* border:1px solid blue; */
-    background-color:whitesmoke;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    border-radius: 20px 20px 20px 20px;
-    padding: 10px 10px  10px  10px ;
-}
+
 .tituls-pasakums {
     background-color: rgba(110, 218, 109, 1);
     border-radius: 10px 10px 10px 10px;
     text-align: center;
     margin-top: 10px;
 }
-#mainpage-title-sadalijums {
-    display: flex;
+
+
+
+
+
+
+
+#about-us-section {
+    border: 1px solid red;
+    width:100%;
 }
-#pasakumi-title-mainpage {
-    background-color: rgba(110, 218, 109, 1);
-    border-radius: 10px 10px 10px 10px;
-    text-align: center;
-    float: left;
-    width: 35%;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-#komentari-title-mainpage {
-    background-color: skyblue;
-    border-radius: 10px 10px 10px 10px;
-    text-align: center;
-    float: left;
-    width: 65%;
-    margin-left: 10px;
-    margin-right: 10px;
-}
+
+
 
 #about-div {
     background-color: white;
+    border: 1px solid grey;
     border-radius: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    display: flex;
+    margin: 0px 10px 10px 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid grey;
 }
-
 .about-content {
     margin-top: 10px;
     margin-bottom: 20px;
@@ -310,61 +310,43 @@ hr {
     align-items: center;
     
 }
+/*
 
 
-/* #parent-preview-pasakums {
-    display: flex;
-}
 
-#pasakums-preview {
-    border: 5px solid rgba(234, 234, 234, 1);
+
+
+
+
+#pasakumi-title-mainpage {
     float: left;
-    width: 40%;
-    height: max-content;
-}
-#tituls-pasakums {
+    width: 60%;
+    border: 1px solid red;
     background-color: rgba(110, 218, 109, 1);
     border-radius: 10px 10px 10px 10px;
     text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
 }
-#saturs-par-pasakumu {
-    background-color:white;
-    margin-top: 10px;
-    border-radius: 20px 20px 20px 20px;
-    
-    padding: 10px 10px  10px  10px ;
-    
-}
-#saturs-par-pasakumu #atteli-button {
-    background-color: skyblue;
-    padding: 10px 10px 10px 10px;
-    border-radius: 10px 10px 10px 10px;
-    
-}
-
-#komentari {
-    border:5px solid rgba(234, 234, 234, 1);
+#komentari-title-mainpage {
     float: left;
-    width: 60%;
-    height: max-content;
-}
-#tituls-komentari {
+    width: 40%;
+    border: 1px solid red;
     background-color: skyblue;
     border-radius: 10px 10px 10px 10px;
     text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
 }
-.preview-komentari {
-    background-color: white;
-    border-radius: 5px 5px 5px 5px;
-    list-style: none;
+#pasakumu-section {
+    width: 50%;
+    float:left;
+    border: 1px solid red;
 }
-#saturs-par-komentariem {
-    margin-top: 10px;
-}
-.mainpage-content {
-    display: inline-block;
-    
-
+#mainpage-pasakumi-komentari {
+    width: 50%;
+    float:left;
+    border: 1px solid red;
 } */
 
 /* FILTER LAPAI */
