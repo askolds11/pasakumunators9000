@@ -34,6 +34,7 @@ Route::get('/mainpage', [MainPageController::class, 'index']);
 
 // FILTER LAPA
 Route::get('/filter', [PasakumsController::class, 'showFilter']);
+Route::post('/filter', [PasakumsController::class, 'filter']);
 
 // PASĀKUMA IZVEIDES LAPA
 Route::resource('pasakums', PasakumsController::class, ['except' => ['create', 'index', 'store']]);
@@ -42,6 +43,7 @@ Route::get('new_pasakums', [PasakumsController::class, 'create']
         )->middleware('role:pasakumu_veidotajs');
 Route::post('new_pasakums', [PasakumsController::class, 'store']
         )->middleware('role:pasakumu_veidotajs');
+        
 
 //ADMIN PANEL
 Route::get('adminpanel', [AdminPanelController::class, 'index']
