@@ -4,12 +4,12 @@
 
 @section('content')
     <div id="mainpage-contnet-parent">
-        <div id=izveleties-atlasi-form>
+        <!-- <div id=izveleties-atlasi-form>
                 <h3 id="atlasit-pasakumus-title">Atlasīt pasākumus</h3>
                 <button class="atlasi-buttons" onclick="pasakumi('popularakie')">Populārākie</button>
                 <button class="atlasi-buttons" onclick="pasakumi('labakie')">Vislabākie</button>
                 <button class="atlasi-buttons" onclick="pasakumi('jaunakie')">Jaunākie</button>
-            </div>
+            </div> -->
         <div id="mainpage-title-sadalijums">
             <h2 id="pasakumi-title-mainpage">PASĀKUMI + tā veids!!</h2>
             <h3 id="komentari-title-mainpage">KOMENTĀRI</h3>
