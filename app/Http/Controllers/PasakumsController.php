@@ -12,6 +12,7 @@ use App\Models\LietotajsPasakums;
 use App\Models\Novertejums;
 use Carbon\Carbon;
 use Auth;
+use Storage;
 
 class PasakumsController extends Controller
 {
@@ -120,8 +121,27 @@ class PasakumsController extends Controller
      */
     public function show($id)
     {
-        $pasakums = Pasakums::findOrFail($id);
-        $komentari = Komentars::where('pasakums_id', '=', $id)->get();
+        $pasakums = Pasakums::where('pasakums.id', '=', $id)
+                            ->join('users', 'veidotajs_id', '=', 'users.id')
+                            ->join('attels', 'attels_id', '=', 'attels.id')
+                            ->select('pasakums.*', 'users.name as username', 'attels.picture')
+                            ->get()->toArray();
+
+        $pasakumskategorijas = [];
+        $kategorijas = PasakumsKategorija::where('pasakums_id', '=', $id)
+                            ->join('kategorija', 'kategorija_id', '=', 'kategorija.id')
+                            ->pluck('kategorija.nosaukums')->toArray();
+
+        $pasakums[0]['kategorijas'] = $kategorijas;
+
+        $pasakums = $pasakums[0];
+
+        $komentari = Komentars::where('pasakums_id', '=', $id)
+                            ->join('users', 'users_id', '=', 'users.id')
+                            ->orderBy('komentars.created_at', 'desc')
+                            ->orderBy('komentars.id', 'desc')
+                            ->select('komentars.created_at', 'users.name as username', 'teksts')
+                            ->get()->toArray();
 
         return view('show_pasakums', compact('pasakums', 'komentari'));
     }
@@ -134,8 +154,23 @@ class PasakumsController extends Controller
      */
     public function edit($id)
     {
-        $pasakums = Pasakums::findOrFail($id);
-        return view('update_pasakums', compact('pasakums'));
+        $pasakums = Pasakums::where('pasakums.id', '=', $id)
+                            ->join('attels', 'attels_id', '=', 'attels.id')
+                            ->select('pasakums.*', 'attels.picture')
+                            ->get()->toArray();
+
+        $pasakumskategorijas = [];
+        $kategorijas = PasakumsKategorija::where('pasakums_id', '=', $id)
+                            ->join('kategorija', 'kategorija_id', '=', 'kategorija.id')
+                            ->pluck('kategorija.nosaukums')->toArray();
+
+        $pasakums[0]['kategorijas'] = $kategorijas;
+
+        $pasakums = $pasakums[0];
+
+        $kategorijas = Kategorija::select('id', 'nosaukums')->get()->toArray();
+        dd(compact('pasakums', 'kategorijas'));
+        return view('edit_pasakums', compact('pasakums', 'kategorijas'));
     }
 
     /**
@@ -311,11 +346,15 @@ class PasakumsController extends Controller
     {
         //Will need to delete registration entries
         Komentars::where('pasakums_id',$id)->delete();
-        Attels::where('pasakums_id', $id)->delete();
+        $path = Pasakums::join('attels', 'attels_id', '=', 'attels.id')
+                        ->pluck('attels.picture')
+                        ->first();
+        Storage::disk('public')->delete($path);
         LietotajsPasakums::where('pasakums_id', $id)->delete();
         PasakumsKategorija::where('pasakums_id', $id)->delete();
         Novertejums::where('pasakums_id', $id)->delete();
         Pasakums::findOrFail($id)->delete();
+        Attels::where('pasakums_id', $id)->delete();
         return redirect('mainpage');
     }
 }
