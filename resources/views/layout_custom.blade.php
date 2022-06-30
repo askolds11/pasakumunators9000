@@ -48,6 +48,13 @@
         @yield('content')
     </div>
 
+    <script type="text/javascript">
+        function load() {
+            @yield('script')
+        }
+        load();
+    </script>
+
     <footer id="footer">
         <p>Veidoja: Askolds Bērziņš, Johans Justs Eris, Aleksejs Romaņuks</p>
         <p>&copy Copyright AskoldsJustsAleksejs inc.</p>
