@@ -17,16 +17,22 @@
 
         </div>
         <div id="mainpage-pasakumi-komentari">
+        </div>
 
-        
+    </div>
+
+
+
+
+@endsection
+<!--         
             <div id="pirmais-pasakums" class="pasakumu-list-preview-items">
                 <div class="pasakumu-list-preview-pasakuma">
                     <h2 class="tituls-pasakums">Title1</h2>
                     <ul>
                         <li class="main-user-name-pasakums-publicetajs">
                             <p class="main-user-name-pasakums"><a href="" class="link-to-publicetajs">User2</a></p>
-                            <!-- <p class="main-datums-publicets-pasakums">09.10.2020.</p>
-                            <p class="main-laiks-publicets-pasakums">12:00:00</> -->
+                            
                         </li>
                         <li class="pasakumu-list-preview-attels">
                             <div>
@@ -37,9 +43,17 @@
                             <h4>Apraksts</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero ea commodi ducimus tenetur consectetur at dignissimos! Neque deserunt quas eos.</p>
                         </li>
+                        <li id="pieteikties">
+                            <button id="button-pieteikties">
+                                Pieteikties
+                            </button>
+                            
+                        </li>
                     </ul>
                 </div>
-                <div class="pasakumu-list-preview-komentars">
+                
+            </div>
+            <div class="pasakumu-list-preview-komentars">
                     <ul>
                         <li class="preview-komentari">
                         <h4 class="mainpage-komentetaja-user-name">User1</h4>
@@ -95,7 +109,6 @@
 
                         </li>
                     </ul>
-                </div>
             </div>
             <div id="otrais-pasakums" class="pasakumu-list-preview-items">
                 <div class="pasakumu-list-preview-pasakuma">
@@ -103,8 +116,7 @@
                     <ul>
                         <li class="main-user-name-pasakums-publicetajs">
                             <p class="main-user-name-pasakums"><a href="" class="link-to-publicetajs">User2</a></p>
-                            <!-- <p class="main-datums-publicets-pasakums">09.10.2020.</p>
-                            <p class="main-laiks-publicets-pasakums">12:00:00</> -->
+                            
                         </li>
                         <li class="pasakumu-list-preview-attels">
                             <div>
@@ -114,60 +126,6 @@
                         <li class="mainpage-apraksts">
                             <h4>Apraksts</h4>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero ea commodi ducimus tenetur consectetur at dignissimos! Neque deserunt quas eos.</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="pasakumu-list-preview-komentars">
-                    <ul>
-                    <li class="preview-komentari">
-                        <h4 class="mainpage-komentetaja-user-name">User1</h4>
-                        <div class="show-user-name-koments-info">
-                            <p class="datums-publicets-koments">
-                                10.10.2020.
-                            </p>
-                            <p class="laiks-publicets-koments">
-                                14:20
-                            </p>
-                        </div>
-                        
-                        
-                        <p class="komenta-teksts">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea adipisci voluptatum dolores, ducimus eaque rem inventore impedit debitis rerum eum!
-                        </p>
-
-                        </li>
-                        <hr>
-                        <li class="preview-komentari">
-                        <h4 class="mainpage-komentetaja-user-name">User1</h4>
-                        <div class="show-user-name-koments-info">
-                            <p class="datums-publicets-koments">
-                                10.10.2020.
-                            </p>
-                            <p class="laiks-publicets-koments">
-                                14:20
-                            </p>
-                        </div>
-                        
-                        
-                        <p class="komenta-teksts">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea adipisci voluptatum dolores, ducimus eaque rem inventore impedit debitis rerum eum!
-                        </p>
-
-                        </li>
-                        <hr>
-                        <li class="preview-komentari">
-                        <h4 class="mainpage-komentetaja-user-name">User1</h4>
-                        <div class="show-user-name-koments-info">
-                            <p class="datums-publicets-koments">
-                                10.10.2020.
-                            </p>
-                            <p class="laiks-publicets-koments">
-                                14:20
-                            </p>
-                        </div>
-                        
-                        
-                        <p class="komenta-teksts">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea adipisci voluptatum dolores, ducimus eaque rem inventore impedit debitis rerum eum!
-                        </p>
-
                         </li>
                     </ul>
                 </div>
@@ -178,8 +136,7 @@
                     <ul>
                         <li class="main-user-name-pasakums-publicetajs">
                             <p class="main-user-name-pasakums"><a href="" class="link-to-publicetajs">User2</a></p>
-                            <!-- <p class="main-datums-publicets-pasakums">09.10.2020.</p>
-                            <p class="main-laiks-publicets-pasakums">12:00:00</> -->
+                            
                         </li>
                         <li class="pasakumu-list-preview-attels">
                             <div>
@@ -192,60 +149,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="pasakumu-list-preview-komentars">
-                    <ul>
-                    <li class="preview-komentari">
-                        <h4 class="mainpage-komentetaja-user-name">User1</h4>
-                        <div class="show-user-name-koments-info">
-                            <p class="datums-publicets-koments">
-                                10.10.2020.
-                            </p>
-                            <p class="laiks-publicets-koments">
-                                14:20
-                            </p>
-                        </div>
-                        
-                        
-                        <p class="komenta-teksts">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea adipisci voluptatum dolores, ducimus eaque rem inventore impedit debitis rerum eum!
-                        </p>
 
-                        </li>
-                        <hr>
-                        <li class="preview-komentari">
-                        <h4 class="mainpage-komentetaja-user-name">User1</h4>
-                        <div class="show-user-name-koments-info">
-                            <p class="datums-publicets-koments">
-                                10.10.2020.
-                            </p>
-                            <p class="laiks-publicets-koments">
-                                14:20
-                            </p>
-                        </div>
-                        
-                        
-                        <p class="komenta-teksts">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea adipisci voluptatum dolores, ducimus eaque rem inventore impedit debitis rerum eum!
-                        </p>
-
-                        </li>
-                        <hr>
-                        <li class="preview-komentari">
-                        <h4 class="mainpage-komentetaja-user-name">User1</h4>
-                        <div class="show-user-name-koments-info">
-                            <p class="datums-publicets-koments">
-                                10.10.2020.
-                            </p>
-                            <p class="laiks-publicets-koments">
-                                14:20
-                            </p>
-                        </div>
-                        
-                        
-                        <p class="komenta-teksts">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea adipisci voluptatum dolores, ducimus eaque rem inventore impedit debitis rerum eum!
-                        </p>
-
-                        </li>
-                    </ul>
-                </div>
             </div>
         </div>
         <div id="about-div">
@@ -269,10 +173,4 @@
             </p>
             </div>
             
-        </div>
-    </div>
-
-
-
-
-@endsection
+        </div> -->
