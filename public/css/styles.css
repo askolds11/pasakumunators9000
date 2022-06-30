@@ -647,7 +647,15 @@ hr {
     background-color: rgba(239, 247, 0, 0.8);
     border-radius: 10px 10px 10px 10px;
     text-align: center;
+    margin-bottom: 10px;
 }
+#attels-child {
+    width: max-content;
+    margin: 10px;
+    /* border-radius: 3px; */
+    /* border: 1px solid grey; */
+}
+
 #show_pasakums ul li {
     list-style: none;
 }
@@ -861,6 +869,43 @@ hr {
 } */
 
 
+/* DASHBOARD */
+#dashboard-content {
+    margin: auto;
+    width: 50%;
+    /* border: 3px solid green; */
+    padding: 10px;
+    margin-top: 13%;
+    /* width:100%;
+    display: ;
+    width: max-content;
+    margin-left:  20%;
+    margin-right:  20%;
+    margin-top: 10%; */
+    /* align-items: center; */
+    /* margin-top: 200px; */
+    /* align-items: center; */
+    /* border: 1px solid red; */
+    
+}
+#dashboard-content-group {
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin: 0px 10px 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+}
+
+.dashboard-content-item {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 
