@@ -10,5 +10,6 @@ class LietotajsPasakums extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['users_id', 'pasakums_id'];
     protected $table = 'lietotajspasakums';
 }

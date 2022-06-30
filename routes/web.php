@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminPanelController;
 use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LietotajsPasakumsController;
+use App\Http\Controllers\AttelsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,24 +42,25 @@ Route::post('/filter', [PasakumsController::class, 'filter']);
 Route::resource('pasakums', PasakumsController::class, ['except' => ['create', 'index', 'store']]);
 Route::get('pasakumi', [PasakumsController::class, 'index']);
 Route::get('new_pasakums', [PasakumsController::class, 'create']
-        )->middleware('role:pasakumu_veidotajs');
+        )->middleware(['auth', 'role:pasakumu_veidotajs']);
 Route::post('new_pasakums', [PasakumsController::class, 'store']
-        )->middleware('role:pasakumu_veidotajs');
+        )->middleware(['auth', 'role:pasakumu_veidotajs']);
         
 
 //ADMIN PANEL
 Route::get('adminpanel', [AdminPanelController::class, 'index']
-        )->middleware('role:administrators');
+        )->middleware(['auth', 'role:administrators']);
 Route::post('adminpanel/updaterole', [AdminPanelController::class, 'updateRole']
-        )->middleware('role:administrators');
+        )->middleware(['auth', 'role:administrators']);
 Route::post('adminpanel/banuser', [AdminPanelController::class, 'banUser']
-        )->middleware('role:administrators');
+        )->middleware(['auth', 'role:administrators']);
 Route::post('adminpanel/approvepasakums', [AdminPanelController::class, 'approvePasakums']
-        )->middleware('role:administrators');
+        )->middleware(['auth', 'role:administrators']);
 Route::post('adminpanel/approvekomentars', [AdminPanelController::class, 'approveKomentars']
-        )->middleware('role:administrators');
+        )->middleware(['auth', 'role:administrators']);
 
 Route::post('pasakums/post', [KomentarsController::class, 'store'])->middleware(['auth']);
 Route::get('pasakums/{id}/pieteikties', [LietotajsPasakumsController::class, 'store'])->middleware(['auth']);
+Route::post('pasakums/add_image', [AttelsController::class, 'store'])->middleware(['auth']);
 
 require __DIR__.'/auth.php';

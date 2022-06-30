@@ -93,9 +93,21 @@
                     @endforeach
                 </p>
             </li>
+            <li id="apraksts-show-pasakums" class="show-pasakuma-info">
+                <h3>
+                    Pieteikušies
+                </h3>
+                <p > 
+                    {{ $pasakums['pieteikusies'] }}
+                </p>
+            </li>
             <li id="pieteikties">
                 <button id="button-pieteikties" onclick="window.location.href='/pasakums/{{ $pasakums['id'] }}/pieteikties'">
-                    Pieteikties
+                        @if($pasakums['pieteicies'] == false)
+                            Pieteikties
+                        @else
+                            Atteikties
+                        @endif
                 </button>
                 
             </li>
@@ -108,9 +120,31 @@
             <h3 id="attels-preview-show-pasakuma-galerija-title">Attēlu galerija</h3>
             
             <div id="attels-child">
-                img
+                @foreach($pasakums['atteli'] as $attels)
+                    <img src="{{ url($attels['picture']) }}" width="100" />
+                @endforeach
             </div>
             <div id="pievienot">
+                <form method="POST"
+                    action="{{action([App\Http\Controllers\AttelsController::class, 'store']) }}" enctype="multipart/form-data">
+                    @csrf
+                
+                    <label for="apraksts">Apraksts</label><br>
+                    <input type="text" id="apraksts" name="apraksts" value="{{ old('apraksts')}}" class="form-control @error('apraksts') is-invalid @enderror">
+                    <x-error-validation-msg-comp name='apraksts' /> <br>
+
+                    <label for="apraksts">Datums</label><br>
+                    <input type="date" id="datums" name="datums" value="{{ old('datums')}}" class="form-control @error('datums') is-invalid @enderror">
+                    <x-error-validation-msg-comp name='datums' /> <br>
+
+                    <input type="hidden" id="pasakums_id" name="pasakums_id" value="{{ $pasakums['id']}}" />
+
+                    <label for="attels">Attēls</label>
+                    <input type="file" name="attels" id="attels" value="{{ old('attels') }}" class="form-control @error('attels') is-invalid @enderror">
+                    <x-error-validation-msg-comp name='attels' /><br>
+
+                    <input type="submit" value="Pievienot attēlu" id="pievienot-attelu"> <!--id="publicet-pasakumu"-->
+                </form>
                 <button id="attels-preview-show-pasakuma-galerija-pievienot-attelu">
                     Pievienot attēlu
                 </button>
@@ -121,7 +155,7 @@
             <h3 id="attels-preview-show-pasakuma-reklama-title">Attēlu galerija</h3>
             
             <div id="attels-child-reklama">
-                img
+                <img src="{{ url($pasakums['picture']) }}" width="100" />
             </div>
             <div id="pievienot-reklama">
                 <button id="attels-preview-show-pasakuma-reklama-pievienot-attelu">

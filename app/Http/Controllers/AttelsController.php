@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\LietotajsPasakums;
-use Illuminate\Support\Facades\Validator;
-use Auth;
+use Carbon\Carbon;
+use App\Models\Attels;
 
-class LietotajsPasakumsController extends Controller
+class AttelsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -35,40 +34,29 @@ class LietotajsPasakumsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($id)
+    public function store(Request $request)
     {
-        $user_id = Auth::user()->id;
         $rules = array(
-            'user_id' => 'required|exists:users,id|integer',
-            'id' => 'required|exists:pasakums,id|integer'
+            'apraksts' => 'required|string|min:1|max:300',
+            'datums' => 'required|date|before:tomorrow',
+            'pasakums_id' => 'required|exists:pasakums,id|integer',
+            'attels' => 'required|mimes:jpeg,jpg,png,gif,svg|max:10000'
         );
+        $this->validate($request, $rules);
 
-        $validator = Validator::make(
-            array('user_id' => $user_id, 'id' => $id),
-            $rules
-        );
+        $file = $request->file('attels');
+        $filename = $file->hashName();
+        $file->move(public_path('images'), $filename);
 
-        if($validator->fails())
-        {
-            return redirect('pasakums/'.$id);
-        }
+        $attels = new Attels();
+        $attels->apraksts = $request->apraksts;
+        $attels->pasakums_id = $request->pasakums_id;
+        $attels->datums = Carbon::parse($request->datums)->format('Y-m-d');
+        $attels->picture = 'images/' .$filename;
+        $attels->save();
 
-        $query = LietotajsPasakums::where('pasakums_id', '=', $id)->where('users_id', '=', $user_id)->get()->first();
-        if($query == null)
-        {
-            $lietotajspasakums = new LietotajsPasakums();
-            $lietotajspasakums->users_id = $user_id;
-            $lietotajspasakums->pasakums_id = $id;
-            $lietotajspasakums->save();
-        }
-        else
-        {
-            $query->delete();
-        }
 
-        
-
-        return redirect('pasakums/'.$id);
+        return redirect('pasakums/' . $request->pasakums_id);
     }
 
     /**
@@ -113,6 +101,6 @@ class LietotajsPasakumsController extends Controller
      */
     public function destroy($id)
     {
-        LietotajsPasakums::findOrFail($id)->delete();
+        //
     }
 }

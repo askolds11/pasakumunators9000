@@ -136,6 +136,20 @@ class PasakumsController extends Controller
 
         $pasakums = $pasakums[0];
 
+        if(LietotajsPasakums::where('pasakums_id', '=', $id)->where('users_id', '=', Auth::user()->id)->get()->first() == null)
+        {
+            $pasakums['pieteicies'] = false;
+        }
+        else
+        {
+            $pasakums['pieteicies'] = true;
+        }
+
+        $pasakums['pieteikusies'] = count(LietotajsPasakums::where('pasakums_id', '=', $id)->get());
+
+        $galerija = Attels::where('pasakums_id', '=', $id)->orderBy('datums', 'desc')->orderBy('id', 'desc')->get()->toArray();
+        $pasakums['atteli'] = $galerija;
+
         $komentari = Komentars::where('pasakums_id', '=', $id)
                             ->join('users', 'users_id', '=', 'users.id')
                             ->orderBy('komentars.created_at', 'desc')
