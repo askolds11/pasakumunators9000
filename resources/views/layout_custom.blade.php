@@ -25,7 +25,6 @@
             <li><a href="{{ url('/filter') }}">FILTRĒT</a></li></li> <!-- Ved uz filtrēšanas lapu, proti, lapa, kurā lietotājs būs spējīgs meklēt sev tīkamus  -->
             <li><a href="{{ url('/new_pasakums') }}">PIEVIENOT PASĀKUMU</a></li>
             <li><a href="{{ url('/adminpanel') }}">ADMINA PANELIS</a></li>
-            <li><a href="{{ url('/pasakums/1') }}">pasakums/1temp</a></li>
 
             
         </ul>
