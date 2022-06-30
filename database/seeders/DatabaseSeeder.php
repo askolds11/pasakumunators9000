@@ -129,7 +129,7 @@ class DatabaseSeeder extends Seeder
         $attels = Attels::create([
             'apraksts'=>'Ooga booga',
             'datums'=>Carbon::parse('2022-12-22'),
-            'picture'=> ('public/images/image_3.jpg')
+            'picture'=> ('images/image_3.jpg')
         ]);
 
         $pasakums = Pasakums::create([
@@ -140,7 +140,7 @@ class DatabaseSeeder extends Seeder
             'norises_vieta'=>'Kipsalas sporta centra',
             'cena'=>'5.00',
             'veidotajs_id'=>'1',
-            'attels_id' => '1'
+            'attels_id' => '2'
             ]);
         $pasakums = Pasakums::create([
             'nosaukums'=>'Olaines Florbola cempionats',
@@ -150,7 +150,7 @@ class DatabaseSeeder extends Seeder
             'norises_vieta'=>'Olaines sporta centra',
             'cena'=>'2.00',
             'veidotajs_id'=>'2',
-            'attels_id' => '1'
+            'attels_id' => '3'
             ]);
         $pasakums = Pasakums::create([
             'nosaukums'=>'Jelgavas beisbola sacensibas',
@@ -160,7 +160,7 @@ class DatabaseSeeder extends Seeder
             'norises_vieta'=>'Jelgavas centrala parka',
             'cena'=>'3.00',
             'veidotajs_id'=>'2',
-            'attels_id' => '1'
+            'attels_id' => '4'
             ]);
         $pasakums = Pasakums::create([
             'nosaukums'=>'Rigas galda tenisa 2022 atlases spele',
@@ -170,7 +170,7 @@ class DatabaseSeeder extends Seeder
             'norises_vieta'=>'VEF kulturas centrs',
             'cena'=>'3.00',
             'veidotajs_id'=>'3',
-            'attels_id' => '1'
+            'attels_id' => '5'
             ]);
         $pasakums = Pasakums::create([
             'nosaukums'=>'Daugavpls golfa sacensibas',
@@ -180,7 +180,7 @@ class DatabaseSeeder extends Seeder
             'norises_vieta'=>'Daugavpls sporta pils',
             'cena'=>'3.00',
             'veidotajs_id'=>'4',
-            'attels_id' => '1'
+            'attels_id' => '6'
             ]); 
         $pasakums = Pasakums::create([
             'nosaukums'=>'Boulings visiem',
@@ -190,7 +190,7 @@ class DatabaseSeeder extends Seeder
             'norises_vieta'=>'Riga, Mezaparka',
             'cena'=>'3.00',
             'veidotajs_id'=>'5',
-            'attels_id' => '1'
+            'attels_id' => '7'
             ]);   
 
             //Komentars
