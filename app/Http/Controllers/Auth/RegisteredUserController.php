@@ -59,6 +59,6 @@ class RegisteredUserController extends Controller
                                     ->get('id')->first()->id;
         $lietotajsloma->save();
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect('mainpage');
     }
 }

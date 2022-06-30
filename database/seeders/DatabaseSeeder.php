@@ -139,12 +139,6 @@ class DatabaseSeeder extends Seeder
 
         //Pasakums
 
-        $attels = Attels::create([
-            'apraksts'=>'Ooga booga',
-            'datums'=>Carbon::parse('2022-12-22'),
-            'picture'=> ('images/image_3.jpg')
-        ]);
-
         $pasakums = Pasakums::create([
             'nosaukums'=>'Rigas futbola turnirs',
             'apraksts'=>'Ikgadejais futbola turnirs kas notiek Riga: starp LU un RTU universitatem',
@@ -366,41 +360,70 @@ class DatabaseSeeder extends Seeder
         ]);
         //Attels*****************
         $attels = Attels::create([
+            'apraksts'=>'Ooga booga',
+            'datums'=>Carbon::parse('2022-12-22'),
+            'pasakums_id' => '1',
+            'picture'=> ('images/image_3.jpg')
+        ]);
+
+        $attels = Attels::create([
             'apraksts'=>'futbola turnirs',
             'datums'=>Carbon::parse('2022-10-10'),
-            'pasakums_id'=>'1',
             'picture'=> ('images/futbols_1.jpg')
         ]);
         $attels = Attels::create([
             'apraksts'=>'Florbola cempionats',
             'datums'=>Carbon::parse('2022-10-12'),
-            'pasakums_id'=>'2',
             'picture'=> ('images/florbols_1.jpg')
         ]);
 
         $attels = Attels::create([
             'apraksts'=>'beisbola sacensibas',
             'datums'=>Carbon::parse('2022-12-22'),
-            'pasakums_id'=>'3',
             'picture'=> ('images/beisbols_1.jpg')
         ]);
         $attels = Attels::create([
             'apraksts'=>'galda tenisa 2022 atlases spele',
             'datums'=>Carbon::parse('2022-11-27'),
-            'pasakums_id'=>'4',
             'picture'=> ('images/galda_teniss_1.jpg')
         ]);
         $attels = Attels::create([
             'apraksts'=>'golfa sacensibas',
             'datums'=>Carbon::parse('2023-08-15'),
-            'pasakums_id'=>'5',
             'picture'=> ('images/golfs.jpg')
         ]);
         $attels = Attels::create([
             'apraksts'=>'boulinga turnirs',
             'datums'=>Carbon::parse('2023-01-12'),
-            'pasakums_id'=>'6',
             'picture'=> ('images/bowling_1.JPG')
+        ]);
+
+        $attels = Attels::create([
+            'apraksts'=>'Ooga booga',
+            'datums'=>Carbon::parse('2022-12-22'),
+            'pasakums_id' => '1',
+            'picture'=> ('images/t4.jpg')
+        ]);
+
+        $attels = Attels::create([
+            'apraksts'=>'Ooga booga',
+            'datums'=>Carbon::parse('2022-12-22'),
+            'pasakums_id' => '1',
+            'picture'=> ('images/t1.jpg')
+        ]);
+
+        $attels = Attels::create([
+            'apraksts'=>'Ooga booga',
+            'datums'=>Carbon::parse('2022-12-22'),
+            'pasakums_id' => '2',
+            'picture'=> ('images/t2.jpg')
+        ]);
+
+        $attels = Attels::create([
+            'apraksts'=>'Ooga booga',
+            'datums'=>Carbon::parse('2022-12-22'),
+            'pasakums_id' => '3',
+            'picture'=> ('images/t3.jpg')
         ]);
 
         //PasakumsKategorija
