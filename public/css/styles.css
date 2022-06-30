@@ -747,6 +747,9 @@ hr {
 }
 
 /* ADMINPANEL */
+#izvelne-sarakstam {
+    margin-left: 15px;
+}
 #admina-panel-all {
     margin-left: 150px;
     margin-right: 150px;
@@ -774,7 +777,22 @@ hr {
 
 
 }
+.table-content-admin tr td{
+    /* border:1px solid grey; */
+    background-color: rgb(226, 226, 226);
+    margin: 10px;
+}
 
+/* .button-admins-all input{
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 4px;
+} */
+.button-admins-all select{
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid grey;
+}
 
 /* EDIT PASAKUMS */
 /* #edit-pasakums {
