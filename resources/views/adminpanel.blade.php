@@ -57,8 +57,8 @@
                                         @endforeach
                                 @if($exists == false) @php array_push($lomasadd, $loma) @endphp @endif
                                 @endforeach
-                                @if(count($lomasadd) > 0)
                                 <td rowspan="{{ count($lietotajs['roles']) }}">
+                                @if(count($lomasadd) > 0)
                                     <form method="POST"
                                         action="{{ url('adminpanel/updaterole') }}" class="button-admins-all">
                                         @csrf
@@ -71,8 +71,8 @@
                                         </select>
                                         <input type="submit" name="submit" id="submit" value="Add role"></input>
                                     </form>
-                                </td>
                                 @endif
+                                </td>
                                 <td rowspan="{{ count($lietotajs['roles']) }}">
                                     <form method="POST" action="{{ url('adminpanel/banuser') }}" class="button-admins-all">
                                         @csrf
@@ -88,8 +88,8 @@
                         @for($i = 1; $i < count($lietotajs['roles']); $i++)
                             <tr>
                                 <td>{{ $lietotajs['roles'][$i]['lomanosaukums'] }}</td>
-                                @if($lietotajs['roles'][$i]['lomanosaukums'] != 'lietotajs')
                                 <td>
+                                @if($lietotajs['roles'][$i]['lomanosaukums'] != 'lietotajs')
                                     <form method="POST"
                                         action="{{ url('adminpanel/updaterole') }}">
                                         @csrf
@@ -98,8 +98,8 @@
                                         <input type="hidden" name="action" id="action" value="false"></input>
                                         <input type="submit" name="submit" id="submit" value="Remove role"></input>
                                     </form>
-                                </td>
                                 @endif
+                                </td>
                             </tr>
                         @endfor
                     @endforeach
