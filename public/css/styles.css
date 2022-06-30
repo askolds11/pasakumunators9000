@@ -245,6 +245,7 @@ hr {
     background-color: rgba(110, 218, 109, 1);
     border-radius: 10px 10px 10px 10px;
     text-align: center;
+    margin-top: 10px;
 }
 #mainpage-title-sadalijums {
     display: flex;
@@ -421,7 +422,7 @@ hr {
     border-radius: 10px;
     margin:10px;
     padding: 10px;
-    
+
 }
 
 #filter-table-heading {
@@ -594,7 +595,58 @@ hr {
 
 #show-user-name-pasakums-publicetajs p {
     color: rgba(0, 0, 0, 0.5);
+    
 }
+#show-user-name-pasakums-publicetajs {
+    display: flex;
+    /* border: 1px solid red; */
+    background-color: whitesmoke;
+    
+    border-radius: 10px;
+    margin-bottom: 5px;
+    padding: 2px 2px 2px 2px;
+}
+
+#show-pasākuma-details {
+    float: left;
+    width: 50%;
+    /* height: max-content; */
+}
+
+#show-edit-delete-link {
+    display: flex;
+    float: right;
+    width: 50%;
+    /* border: 1px solid red; */
+    /* height: max-content; */
+}
+#show-edit-link {
+    float: left;
+    width: 50%;
+    /* border: 1px solid red; */
+    font-size: 30px;
+    height: max-content;
+    /* width: max-content; */
+    background-color: green;
+    margin-right: 10px;
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
+}
+#show-delete-link {
+    float: left;
+    width: 50%;
+    /* border: 1px solid red; */
+    color: white;
+    font-size: 30px;
+    height: max-content;
+    /* width: max-content; */
+    background-color: red;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+
 
 #pieteikties {
     display: flex;
