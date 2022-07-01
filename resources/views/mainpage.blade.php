@@ -5,14 +5,14 @@
 @section('content')
     <div id="mainpage-contnet-parent">
         <div id=izveleties-atlasi-form>
-                <h3 id="atlasit-pasakumus-title">Atlasīt pasākumus</h3>
-                <button class="atlasi-buttons" onclick="pasakumi('popularakie')">Populārākie</button>
-                <button class="atlasi-buttons" onclick="pasakumi('labakie')">Vislabākie</button>
-                <button class="atlasi-buttons" onclick="pasakumi('jaunakie')">Jaunākie</button>
+                <h3 id="atlasit-pasakumus-title">{{__('main.Atlasīt pasākumus')}}</h3>
+                <button class="atlasi-buttons" onclick="pasakumi('popularakie')">{{__('main.Populārākie')}}</button>
+                <button class="atlasi-buttons" onclick="pasakumi('labakie')">{{__('main.Vislabākie')}}</button>
+                <button class="atlasi-buttons" onclick="pasakumi('jaunakie')">{{__('main.Jaunākie')}}</button>
             </div>
         <div id="mainpage-title-sadalijums">
-            <h2 id="pasakumi-title-mainpage">PASĀKUMI</h2>
-            <h3 id="komentari-title-mainpage">KOMENTĀRI</h3>
+            <h2 id="pasakumi-title-mainpage">{{__('main.PASĀKUMI')}}</h2>
+            <h3 id="komentari-title-mainpage">{{__('main.KOMENTĀRI')}}</h3>
 
         </div>
         <div id="pasakumi-x-komentari">
@@ -20,17 +20,17 @@
                 <div id="pirmais-pasakums" class="pasakumu-list-preview-items">
                     <div class="pasakumu-list-preview-pasakuma">
                         <h2 class="tituls-pasakums">Title1</h2>
-                        <p class="novertejums">Novērtējums: <span id="novertejums1" class="novertejums-sk">10</span></p>
-                        <p class="cilveki">Cilvēki: <span id="cilveki1" class="cilveki-sk">10</span></p>
+                        <p class="novertejums">{{__('main.Novērtējums')}}: <span id="novertejums1" class="novertejums-sk">10</span></p>
+                        <p class="cilveki">{{__('main.Cilvēki')}}: <span id="cilveki1" class="cilveki-sk">10</span></p>
 
                         <ul>
                             <li class="pasakumu-list-preview-attels">
                                 <div>
-                                    bilde seit
+                                {{__('main.bilde seit')}}
                                 </div>
                             </li>
                             <li class="mainpage-apraksts">
-                                <h4>Apraksts</h4>
+                                <h4>{{__('main.Apraksts')}}</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero ea commodi ducimus tenetur consectetur at dignissimos! Neque deserunt quas eos.</p>
                             </li>
                         </ul>
@@ -39,17 +39,17 @@
                 <div id="otrais-pasakums" class="pasakumu-list-preview-items">
                     <div class="pasakumu-list-preview-pasakuma">
                         <h2 class="tituls-pasakums">Title1</h2>
-                        <p class="novertejums">Novērtējums: <span id="novertejums2" class="novertejums-sk">10</span></p>
-                        <p class="cilveki">Cilvēki: <span id="cilveki2" class="cilveki-sk">10</span></p>
+                        <p class="novertejums">{{__('main.Novērtējums')}}: <span id="novertejums2" class="novertejums-sk">10</span></p>
+                        <p class="cilveki">{{__('main.Cilvēki')}}: <span id="cilveki2" class="cilveki-sk">10</span></p>
 
                         <ul>
                             <li class="pasakumu-list-preview-attels">
                                 <div>
-                                    bilde seit
+                                {{__('main.bilde seit')}}
                                 </div>
                             </li>
                             <li class="mainpage-apraksts">
-                                <h4>Apraksts</h4>
+                                <h4>{{__('main.Apraksts')}}</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero ea commodi ducimus tenetur consectetur at dignissimos! Neque deserunt quas eos.</p>
                             </li>
                         </ul>
@@ -58,16 +58,16 @@
                 <div id="tresais-pasakums" class="pasakumu-list-preview-items">
                 <div class="pasakumu-list-preview-pasakuma">
                         <h2 class="tituls-pasakums">Title1</h2>
-                        <p class="novertejums">Novērtējums: <span id="novertejums3" class="novertejums-sk">10</span></p>
-                        <p class="cilveki">Cilvēki: <span id="cilveki3" class="cilveki-sk">10</span></p>
+                        <p class="novertejums">{{__('main.Novērtējums')}}: <span id="novertejums3" class="novertejums-sk">10</span></p>
+                        <p class="cilveki">{{__('main.Cilvēki')}}: <span id="cilveki3" class="cilveki-sk">10</span></p>
                         <ul>
                             <li class="pasakumu-list-preview-attels">
                                 <div>
-                                    bilde seit
+                                {{__('main.bilde seit')}}
                                 </div>
                             </li>
                             <li class="mainpage-apraksts">
-                                <h4>Apraksts</h4>
+                                <h4>{{__('main.Apraksts')}}</h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero ea commodi ducimus tenetur consectetur at dignissimos! Neque deserunt quas eos.</p>
                             </li>
                         </ul>
@@ -108,22 +108,21 @@
         </div>
         <div id="about-div">
             <div id="about-content-group">
-            <h2 class="about-content">Par mums</h2>
+            <h2 class="about-content">{{__('main.Par mums')}}</h2>
             <p class="about-content">
-                Mājaslapu veidoja LU DF 1. kursa studenti Tīmekļa Tehnoloģijas II eksāmenam. 
+                {{__('main.CREATED')}}
             </p>
             <p class="about-content">
-                Dotajā mājaslapā cilvēki ir spējīgi pievienot, kā arī pieteikties, pasākumiem, kuri var iekļauties dažādās aktivitāšu kategorijās.
+            {{__('main.REASON')}}
             </p>
             <p class="about-content">
-            Jāpiemin, ka lietotāju darbību ierobežo tas, kura loma viņiem ir piešķirta.
-                
+            {{__('main.RESTRICTIONS')}}
             </p>
             <p class="about-content">
-                Lai orientētos šajā mājaslapā, vēlams izmantot navigācijas sadaļas dotās saites, kuras aizvedīs uz citām šī projekta lapām. 
+            {{__('main.ORIENTATING')}} 
             </p>
             <p class="about-content">
-            Jauku dienu!
+            {{__('main.Goodbye')}} 
             </p>
             </div>
         </div>

@@ -14,7 +14,7 @@
     </div> -->
     <div id="admin-panel-content">
         <div id="admin-lietotaju-saraksts" class="admin-content-element">
-            <h2 class="admin-sarakstu-title">LIETOTĀJI</h2>
+            <h2 class="admin-sarakstu-title">{{__('admina-panel.users')}}</h2>
             @foreach ($errors->all() as $message) {
                     <strong>{{ $message }}</strong><br>
                 }
@@ -22,11 +22,11 @@
             <div class="admin-table">
             <table class="table-content-admin">
                 <tr>
-                    <th>Username</th>
-                    <th>Roles</th>
-                    <th>Remove role</th>
-                    <th>Add role</th>
-                    <th>Ban</th>
+                    <th>{{__('admina-panel.Username')}}</th>
+                    <th>{{__('admina-panel.Roles')}}</th>
+                    <th>{{__('admina-panel.Remove role')}}</th>
+                    <th>{{__('admina-panel.Add role')}}</th>
+                    <th>{{__('admina-panel.Ban')}}</th>
                 </tr>
                     @foreach($lietotaji as $lietotajs)
                         <tr>
@@ -41,7 +41,7 @@
                                         <input type="hidden" name="userid" id="userid" value="{{ $lietotajs['user.id'] }}"></input>
                                         <input type="hidden" name="lomaid" id="lomaid" value="{{ $lietotajs['roles'][0]['lomaid'] }}"></input>
                                         <input type="hidden" name="action" id="action" value="false"></input>
-                                        <input type="submit" name="submit" id="submit" value="Remove role"></input>
+                                        <input type="submit" name="submit" id="submit" value="{{__('admina-panel.Remove role')}}"></input>
                                     </form>
                                     
                                 @endif
@@ -69,7 +69,7 @@
                                             <option value ="{{ $lomaadd['id'] }}">{{ $lomaadd['nosaukums'] }}</option>
                                         @endforeach
                                         </select>
-                                        <input type="submit" name="submit" id="submit" value="Add role"></input>
+                                        <input type="submit" name="submit" id="submit" value="{{__('admina-panel.Add role')}}"></input>
                                     </form>
                                 @endif
                                 </td>
@@ -78,9 +78,9 @@
                                         @csrf
                                         <input type="hidden" name="id" id="id" value="{{ $lietotajs['user.id'] }}"></input>
                                         @if($lietotajs['banned_status'] == false)
-                                        <input type="submit" name="submit" id="submit" value="Ban"></input>
+                                        <input type="submit" name="submit" id="submit" value="{{__('admina-panel.Ban')}}"></input>
                                         @else
-                                        <input type="submit" name="submit" id="submit" value="Unban"></input>
+                                        <input type="submit" name="submit" id="submit" value="{{__('admina-panel.Unban')}}"></input>
                                         @endif
                                     </form>
                                 </td>
@@ -96,7 +96,7 @@
                                         <input type="hidden" name="userid" id="userid" value="{{ $lietotajs['user.id'] }}"></input>
                                         <input type="hidden" name="lomaid" id="lomaid" value="{{ $lietotajs['roles'][$i]['lomaid'] }}"></input>
                                         <input type="hidden" name="action" id="action" value="false"></input>
-                                        <input type="submit" name="submit" id="submit" value="Remove role"></input>
+                                        <input type="submit" name="submit" id="submit" value="{{__('admina-panel.Remove role')}}"></input>
                                     </form>
                                 @endif
                                 </td>
@@ -107,17 +107,17 @@
             </div>
         </div>
         <div id="admin-pasakumu-saraksts" class="admin-content-element">
-            <h2 class="admin-sarakstu-title">PASĀKUMI</h2>
+            <h2 class="admin-sarakstu-title">{{__('admina-panel.PASĀKUMI')}}</h2>
             <div class="admin-table">
             <table class="table-content-admin">
                 <tr>
-                    <th>Autors</th>
-                    <th>Nosaukums</th>
-                    <th>Apraksts</th>
-                    <th>Vieta</th>
-                    <th>Attels</th>
-                    <th>Apstiprināt</th>
-                    <th>Noraidīt</th>
+                    <th>{{__('admina-panel.Autors')}}</th>
+                    <th>{{__('admina-panel.Nosaukums')}}</th>
+                    <th>{{__('admina-panel.Apraksts')}}</th>
+                    <th>{{__('admina-panel.Vieta')}}</th>
+                    <th>{{__('admina-panel.Attels')}}</th>
+                    <th>{{__('admina-panel.Apstiprināt')}}</th>
+                    <th>{{__('admina-panel.Noraidīt')}}</th>
                 </tr>
                 @foreach($pasakumi as $pasakums)
                     <tr>
@@ -132,7 +132,7 @@
                                     @csrf
                                     <input type="hidden" name="id" id="id" value="{{ $pasakums['id'] }}"></input>
                                     <input type="hidden" name="status" id="status" value="true"></input>
-                                    <input type="submit" name="submit" id="submit" value="Apstiprināt"></input>
+                                    <input type="submit" name="submit" id="submit" value="{{__('admina-panel.Apstiprināt')}}"></input>
                                 </form>
                         </td>
                         <td>
@@ -141,7 +141,7 @@
                                     @csrf
                                     <input type="hidden" name="id" id="id" value="{{ $pasakums['id'] }}"></input>
                                     <input type="hidden" name="status" id="status" value="false"></input>
-                                    <input type="submit" name="submit" id="submit" value="Noraidīt"></input>
+                                    <input type="submit" name="submit" id="submit" value="{{__('admina-panel.Noraidīt')}}"></input>
                                 </form>
                         </td>
                     </tr>
@@ -150,14 +150,14 @@
             </div>
         </div>
         <div id="admin-komentaru-saraksts" class="admin-content-element">
-            <h2 class="admin-sarakstu-title">KOMENTĀRI</h2>
+            <h2 class="admin-sarakstu-title">{{__('admina-panel.KOMENTĀRI')}}</h2>
             <div class="admin-table">
             <table class="table-content-admin">
                 <tr>
-                    <th>Autors</th>
-                    <th>Teksts</th>
-                    <th>Apstiprināt</th>
-                    <th>Noraidīt</th>
+                    <th>{{__('admina-panel.Autors')}}</th>
+                    <th>{{__('admina-panel.Teksts')}}</th>
+                    <th>{{__('admina-panel.Apstiprināt')}}</th>
+                    <th>{{__('admina-panel.Noraidīt')}}</th>
                 </tr>
                 @foreach($komentari as $komentars)
                     <tr>
@@ -169,7 +169,7 @@
                                     @csrf
                                     <input type="hidden" name="id" id="id" value="{{ $komentars['id'] }}"></input>
                                     <input type="hidden" name="status" id="status" value="true"></input>
-                                    <input type="submit" name="submit" id="submit" value="Apstiprināt"></input>
+                                    <input type="submit" name="submit" id="submit" value="{{__('admina-panel.Apstiprināt')}}"></input>
                                 </form>
                         </td>
                         <td>
@@ -178,7 +178,7 @@
                                     @csrf
                                     <input type="hidden" name="id" id="id" value="{{ $komentars['id'] }}"></input>
                                     <input type="hidden" name="status" id="status" value="false"></input>
-                                    <input type="submit" name="submit" id="submit" value="Noraidīt"></input>
+                                    <input type="submit" name="submit" id="submit" value="{{__('admina-panel.Noraidīt')}}"></input>
                                 </form>
                         </td>
                     </tr>

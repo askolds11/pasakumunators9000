@@ -6,7 +6,7 @@
 <div id="edit-pasakums">
     <div id="editot-pasakumu">
             <div id="form">
-            <h2 id="publicet-jaunu-pasakumu-title">REDIĢĒT PASĀKUMU</h2>
+            <h2 id="publicet-jaunu-pasakumu-title">{{__('editevent.REDIĢĒT PASĀKUMU')}}</h2>
            
             <form method="POST"
             action="{{action([App\Http\Controllers\PasakumsController::class, 'update'], $pasakums['id']) }}" enctype="multipart/form-data">
@@ -40,7 +40,7 @@
                 <input type="number" step="0.01" id="cena" name="cena" value="{{ old('cena', $pasakums['cena'])}}" class="form-control @error('cena') is-invalid @enderror">
                 <x-error-validation-msg-comp name='cena' /><br>
                 
-                <label for="">Kategorija</label><br>
+                <label for="">{{__('editevent.Kategorija')}}</label><br>
                 <select id="kategorija[]" name="kategorija[]" multiple>
                     @foreach($kategorijas as $kat)
                         <option value ="{{ $kat['id'] }}" @php
@@ -53,7 +53,7 @@
                 </select>
 
                 <div id="publicet-pasakumu-div">
-                    <input type="submit" value="Pabeigt reģidēšanu" id="publicet-pasakumu">
+                    <input type="submit" value="{{__('editevent.Pabeigt reģidēšanu')}}" id="publicet-pasakumu">
                 </div>
                
             </form>

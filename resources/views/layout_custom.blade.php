@@ -14,17 +14,17 @@
 </head>
 <body>
     <header id="header-project-name"> 
-        <p>Pasākumunators9000</p>
+        <p>{{__('layout.project')}}</p>
     </header>
     <nav id="navbar">
         <!-- PIE LINKA, KURŠ AKTĪVS, BŪT IEKRĀSOTAM 
         vajag js https://www.w3schools.com/howto/howto_js_active_element.asp
     -->
         <ul class="nav-links">
-            <li><a href="{{ url('/mainpage') }}">JAUNUMI</a></li> <!-- Ved uz jaunumi *****tehniski, šī pati lapa -->
-            <li><a href="{{ url('/filter') }}">FILTRĒT</a></li></li> <!-- Ved uz filtrēšanas lapu, proti, lapa, kurā lietotājs būs spējīgs meklēt sev tīkamus  -->
-            <li><a href="{{ url('/new_pasakums') }}">PIEVIENOT PASĀKUMU</a></li>
-            <li><a href="{{ url('/adminpanel') }}" >ADMINA PANELIS</a>
+            <li><a href="{{ url('/mainpage') }}">{{__('layout.JAUNUMI')}}</a></li> <!-- Ved uz jaunumi *****tehniski, šī pati lapa -->
+            <li><a href="{{ url('/filter') }}">{{__('layout.FILTRĒT')}}</a></li></li> <!-- Ved uz filtrēšanas lapu, proti, lapa, kurā lietotājs būs spējīgs meklēt sev tīkamus  -->
+            <li><a href="{{ url('/new_pasakums') }}">{{__('layout.PIEVIENOT PASĀKUMU')}}</a></li>
+            <li><a href="{{ url('/adminpanel') }}" >{{__('layout.ADMINA PANELIS')}}</a>
             
             </li>
             
@@ -34,12 +34,12 @@
         <button>
         @if (Route::has('login'))
                     @auth
-                    <a href="{{ url('/dashboard') }}" class="navbar-button">KONTA SADAĻA</a>
+                    <a href="{{ url('/dashboard') }}" class="navbar-button">{{__('layout.KONTA SADAĻA')}}</a>
                     @else
-                        <a href="{{ route('login') }}" class="navbar-button">LOG IN</a>
+                        <a href="{{ route('login') }}" class="navbar-button">{{__('layout.LOG IN')}}</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="navbar-button">REĢISTRĒTIES</a>
+                            <a href="{{ route('register') }}" class="navbar-button">{{__('layout.REĢISTRĒTIES')}}</a>
                         @endif
                     @endauth
                 </div>
@@ -58,7 +58,7 @@
     </script>
 
     <footer id="footer">
-        <p>Veidoja: Askolds Bērziņš, Johans Justs Eris, Aleksejs Romaņuks</p>
-        <p>&copy Copyright AskoldsJustsAleksejs inc.</p>
+        <p>{{__('layout.createdby')}} </p>
+        <p>{{__('layout.copyright')}} </p>
     </footer>
 </body>
