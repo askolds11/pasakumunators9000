@@ -1,0 +1,1079 @@
+/* id # and class . */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+
+/* STYLES SAISTĪBĀ AR VISU LAPU VAI ATSEVIŠĶIEM TAGIEM: */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+li, a, button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: black;
+    text-decoration: none;
+    border: none;
+    /* background-color: white; */
+}
+button {
+    background-color: white;
+}
+
+/* #logout-button {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    bacl
+} */
+
+
+
+/* 
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px, 10px;
+    background-color: white;
+    
+
+}
+.nav-links {
+    list-style: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+
+}
+.nav-links li {
+    display: inline-block;
+    padding: 0px 20px;
+    /* background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 0px 0px 30px 30px; */
+/* }
+
+.nav-links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav-links li a:hover {
+    color: rgba(110, 218, 109, 1);
+    /* font-size: 110%; */
+/* }
+
+.nav-links li a:active {
+    color: blue;
+}  */
+.novertejums {
+    margin: 10px 10px 10px 0px;
+    /* border: 1px solid gold; */
+    /* background-color: rgba(255, 255, 0, 0.5); */
+    background-color: white;
+    border: 1px solid grey;
+    width: max-content;
+    border-radius: 10px;
+    padding: 4px;
+}
+.novertejums-sk {
+    border: 1px solid white;
+}
+
+#form textarea  {
+    /* resize: vertical; */
+    max-height: 200px;
+    
+    /* resize: horizontal; */
+    max-width: 300px;
+    
+}
+#post-komentaru textarea{
+    max-height: 600px;
+    max-width: 1200px;
+}
+
+
+   
+/* ERROR */
+
+.invalid-feedback {
+    color: rgba(255, 0, 0, 0.7);
+}
+/* HEADER */
+#header-project-name{
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    color: black;
+    background-color: rgba(110, 218, 109, 1);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* border: 1px solid red; */
+    /* height: 140px; */
+    
+
+}
+/* NAVIGATION BAR  */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px, 10px;
+    background-color: white;
+    
+
+}
+.nav-links {
+    list-style: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+
+}
+.nav-links li {
+    display: inline-block;
+    padding: 0px 20px;
+    /* background-color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 0px 0px 30px 30px; */
+}
+
+.nav-links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav-links li a:hover {
+    color: rgba(110, 218, 109, 1);
+    /* font-size: 110%; */
+}
+
+.nav-links li a:active {
+    color: blue;
+}
+
+
+.navbar-button {
+    margin-right: 20px;
+    transition: all 0.3s ease 0s;
+}
+.navbar-button:hover {
+    color: rgba(110, 218, 109, 1);
+    /* font-size: 110%; */
+}
+.navbar-button:active {
+    color: blue;
+}
+/* #admin-panel-link {
+    display: none;
+} */
+
+/* #navbar button {
+    float: right;
+    padding-right: 20px;
+} */
+
+.deadspace {
+    /* border:5px solid red; */
+    height:1000px;
+    width:100px;
+    background-color: rgb(70, 70, 70);
+}
+#left-deadspace {
+    float:left;
+}
+#right-deadspace {
+    float:right;
+}
+
+
+/* BODY */
+body {
+    background-color:  rgba(234, 234, 234, 1);
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* CONTNENT */
+
+/* MAINPAGE */
+
+.cilveki {
+    border: 1px solid grey;
+    width: max-content;
+    background-color: white;
+    border-radius: 10px;
+    padding: 4px;
+    margin-bottom: 10px;
+}
+#mainpage-contnet-parent {
+    margin-top: 10px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+#atlasit-pasakumus-title {
+    width: max-content;
+
+}
+#izveleties-atlasi-form {
+    background-color: rgba(234, 234, 234, 1);
+    padding: 5px;
+    border-radius:  0px 20px 20px 0px;
+    width: max-content;
+    margin: 5px 5px 10px 10px;
+   
+}
+.atlasi-buttons {
+    background-color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 10px;
+    transition: all 0.3s ease 0s;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.atlasi-buttons:hover {
+    background-color: rgba(110, 218, 109, 1);
+}
+.atlasi-buttons:active {
+    background-color: rgb(142, 148, 142);;
+}
+#mainpage-pasakumi ul li {
+    list-style: none;
+}
+#mainpage-komentari ul li {
+    list-style: none;
+}
+
+
+
+
+
+#mainpage-title-sadalijums {
+        display: flex;    
+}
+#pasakumi-title-mainpage {
+    float: left;
+    width: 65%;
+    /* border: 1px solid red; */
+    background-color: rgba(110, 218, 109, 1);
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#komentari-title-mainpage {
+    float: left;
+    width: 35%;
+    /* border: 1px solid red; */
+    background-color: skyblue;
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+
+
+
+
+#pasakumi-x-komentari {
+    display: flex;
+    /* border: 1px solid red; */
+    /* background-color: whitesmoke; */
+
+}
+#mainpage-pasakumi {
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 10px;
+    float: left;
+    width: 65%;
+    margin:10px;
+}
+#mainpage-komentari {
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 10px;    
+    float: left;
+    width: 35%;
+    margin:10px;
+    
+
+}
+
+.pasakumu-list-preview-items {
+    width: max-content;
+    display: flex;
+    /* width: 700px; */
+    /* border: 5px solid red; */
+    /* border: 1px solid red; */
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    /* width: 600px; */
+    /* height: 600px; */
+    /* border:1px solid grey; */
+}
+
+.pasakumu-list-preview-pasakuma {
+    /* height: max-content; */
+    background-color:whitesmoke;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 20px 20px 20px 20px;
+    padding: 0px 10px  10px  10px ;
+    
+}
+.preview-komentari {
+    background-color: rgba(212, 212, 212, 0.5);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 5px;
+}
+
+hr {    
+    margin-bottom: 8px;
+}
+.tituls-pasakums {
+    background-color: rgba(110, 218, 109, 1);
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+    margin-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-top: 5px;
+    
+}
+.tituls-pasakums a {
+    /* background-color: rgba(110, 218, 109, 1); */
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 30px;
+    /* padding: 10px; */
+    transition: all 0.3s ease 0s;
+
+}
+
+.tituls-pasakums a:hover {
+    color: blue;
+}
+ 
+.tituls-pasakums a:active {
+    color: black;
+}
+ 
+.pasakumu-list-preview-attels div img {
+    border: 1px solid grey;
+    border-radius: 5px;
+    width: 200px;
+    height: 200px;
+   
+}
+
+
+
+
+
+
+#about-us-section {
+    border: 1px solid red;
+    width:100%;
+}
+
+
+
+#about-div {
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin: 0px 10px 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+}
+.about-content {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+/*
+
+
+
+
+
+
+
+#pasakumi-title-mainpage {
+    float: left;
+    width: 60%;
+    border: 1px solid red;
+    background-color: rgba(110, 218, 109, 1);
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#komentari-title-mainpage {
+    float: left;
+    width: 40%;
+    border: 1px solid red;
+    background-color: skyblue;
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#pasakumu-section {
+    width: 50%;
+    float:left;
+    border: 1px solid red;
+}
+#mainpage-pasakumi-komentari {
+    width: 50%;
+    float:left;
+    border: 1px solid red;
+} */
+
+/* FILTER LAPAI */
+#show-filter-list p{
+    margin: 10px;
+    font-size: 30px;
+    color: rgba(255, 0, 0, 0.7);
+    border: 1px solid grey;
+    background-color: white;
+    padding: 4px;
+    width: max-content;
+    border-radius: 10px;
+}
+#filter-content-group {
+    margin-left: 150px;
+    margin-right: 150px;
+}
+#filter-content-group{
+    display: flex;
+
+}
+#filter-title {
+    background-color: rgba(110, 218, 109, 1);
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+}
+#filter-pasakumu {
+    float: left;
+    width: 20%;
+    height: max-content;
+    border: 1px solid grey;
+    border-radius: 10px;
+    background-color: white;
+    margin:10px;
+    padding: 10px;
+    
+}
+#show-filter-list {
+    /* border: 10px solid white; */
+    
+    float: left;
+    width: 80%;
+    height: max-content;
+    
+}
+.filter-content-child {
+    display: inline-block;
+}
+#filter-link-to-show-pasakums:hover {
+    color: blue;
+}
+
+
+#filter-button-meklet {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    background-color: rgb(146, 148, 147);
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 5px;
+    transition: all 0.3s ease 0s;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#filter-button-meklet:hover {
+    background-color: rgba(110, 218, 109, 1);
+}
+
+#filter-button-meklet:active {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#filter-result-title {
+    border-radius: 10px 10px 10px 10px;
+    padding: 5px;
+    text-align: center;
+    background-color: skyblue;
+    width: max-content;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+
+
+}
+
+#filter-table-list {
+    border: 1px solid grey;
+    background-color: white;
+    border-radius: 10px;
+    margin:10px;
+    padding: 10px;
+
+}
+
+#filter-table-heading {
+    background-color: goldenrod;
+
+
+
+}
+#filter-table-list tr {
+  background-color: whitesmoke;
+  
+    
+}
+/* NEW_PASAKUMA LAPAI */
+#parent-new-pasakums, #edit-pasakums {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 5px solid red; */
+    /* background-color: white; */
+    /* max-width: 200px; */
+}
+
+#izveidot-jaunu-pasakumus, #editot-pasakumu{
+    border: 1px solid grey;
+    background-color: white;
+    border-radius:10px;
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+/* #form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#form input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+#publicet-jaunu-pasakumu-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(110, 218, 109, 1);
+    border-radius: 10px 10px 10px 10px;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#publicet-pasakumu-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#publicet-pasakumu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(146, 148, 147);
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 5px;
+    transition: all 0.3s ease 0s;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+
+
+
+#publicet-pasakumu:hover {
+    background-color:  rgba(110, 218, 109, 1);
+}
+#publicet-pasakumu:active {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+
+/* SHOW_PASAKUMU */
+#content-show-pasakuma-group {
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+#post-komentaru-button {
+    background-color: rgb(146, 148, 147);
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 5px;
+    transition: all 0.3s ease 0s;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+#post-komentaru-button:hover {
+    background-color: rgba(110, 218, 109, 1);
+}
+
+#post-komentaru-button:active {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+#content-show-pasakuma-group {
+    display: flex;
+}
+#show_pasakums {
+    float: left;
+    width: 40%;
+    height: max-content;
+    background-color: white;
+    border-radius: 20px;
+    margin: 10px 10px 10px 10px;
+    padding: 4px 4px 4px 4px;
+    /* border: 1px solid red; */
+} 
+
+#attels-preview-show-pasakums-galerija {
+    float: left;
+    width: 60%;
+    height: max-content;
+    background-color: white;
+    border-radius: 20px;
+    margin: 10px 10px 10px 10px;
+    padding: 4px 4px 4px 4px;
+}
+#attels-preview-show-pasakums-reklama {
+    float: left;
+    width: 60%;
+    height: max-content;
+    background-color: white;
+    border-radius: 20px;
+    margin: 10px 10px 10px 10px;
+    padding: 4px 4px 4px 4px;
+}
+#attels-preview-show-pasakuma-reklama-title {
+    background-color: rgb(255, 217, 0);
+    border-radius: 10px;
+    text-align: center;
+}
+
+#reklama-img {
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    border-radius: 3px;
+    border: 1px solid grey;
+    
+    
+}
+#attels-child-reklama {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.show-content-child {
+    display: inline-block;
+    border: 1px solid grey;
+}
+#show_pasakums_komentari {
+    border: 1px solid grey;
+}
+
+#show_pasakums_komentari {
+    /* float: left; */
+    /* width: 60%; */
+    
+    height: max-content;
+    background-color: white;
+    border-radius: 20px;
+    margin: 10px 10px 10px 10px;
+    padding: 4px 4px 4px 4px;
+    margin-left: 160px;
+    margin-right: 150px;
+}
+
+
+
+#show_pasakums_komentari ul li{
+    list-style: none;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    padding: 2px 2px 2px 2px;
+    /* border-radius: 20px;
+    margin: 10px 10px 10px 10px;
+    padding: 5px 5px 5px 5px;      */
+}
+
+
+
+
+
+#title-show-pasakums {
+    background-color: rgba(110, 218, 109, 1);
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+}
+
+#title-show-pasakums-komentari {
+    background-color: skyblue;
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+
+}
+
+#attels-preview-show-pasakuma-galerija-title {
+
+    background-color: rgba(239, 247, 0, 0.8);
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+#attels-child {
+    width: max-content;
+    margin: 10px;
+    /* border-radius: 3px; */
+    /* border: 1px solid grey; */
+}
+
+#show_pasakums ul li {
+    list-style: none;
+}
+.show-pasakuma-info {
+    margin: 2px 2px 2px 2px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    padding: 2px 2px 2px 2px;
+}
+
+
+#show-user-name-pasakums-publicetajs p {
+    color: rgba(0, 0, 0, 0.5);
+    
+}
+#show-user-name-pasakums-publicetajs {
+    display: flex;
+    /* border: 1px solid red; */
+    background-color: whitesmoke;
+    
+    border-radius: 10px;
+    margin-bottom: 5px;
+    padding: 2px 2px 2px 2px;
+}
+
+#show-pasākuma-details {
+    float: left;
+    width: 50%;
+    /* height: max-content; */
+}
+
+#show-edit-delete-link {
+    display: flex;
+    float: right;
+    width: 50%;
+    /* border: 1px solid red; */
+    /* height: max-content; */
+}
+#show-edit-link {
+    /* border: 1px solid red; */
+    float: left;
+    width: 50%;
+    /* border: 1px solid red; */
+    font-size: 10px;
+    height: max-content;
+    width: max-content;
+    background-color: rgba(0, 128, 0, 0.7);
+    margin-right: 10px;
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
+    transition: all 0.3s ease 0s;
+}
+#group-of-data {
+    display: flex;
+}
+
+
+#show-delete-link {
+    border: 1px solid red;
+    float: left;
+    width: 50%;
+    /* border: 1px solid red; */
+    color: white;
+    font-size: 10px;
+    height: max-content;
+    width: max-content;
+    background-color: rgba(255, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 5px;
+    transition: all 0.3s ease 0s;
+}
+#show-edit-link:hover {
+    background-color: rgba(0, 128, 0, 1);
+}
+#show-delete-link:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+#pieteikties {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#button-pieteikties {
+    display: flex;
+    /* float: right; */
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(146, 148, 147);
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 5px;
+    transition: all 0.3s ease 0s;
+}
+
+#button-pieteikties:hover {
+    background-color:  rgba(110, 218, 109, 1);
+}
+#button-pieteikties:active {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+#pievienot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#pievienot-attelu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(146, 148, 147);
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 5px;
+    transition: all 0.3s ease 0s;
+}
+#attela-form-galerija input {
+    border-style: none;
+    border-radius: 10px;
+    border: 1px solid grey;
+    background-color: white;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+
+#attels-preview-show-pasakuma-galerija-pievienot-attelu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(146, 148, 147);
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 5px;
+    transition: all 0.3s ease 0s;
+}
+
+#attels-preview-show-pasakuma-galerija-pievienot-attelu:hover {
+    background-color:  rgba(110, 218, 109, 1);
+}
+
+#attels-preview-show-pasakuma-galerija-pievienot-attelu:active {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+#pievienot {
+    float: left;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+} 
+
+
+.show-user-name-koments-info p {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* ADMINPANEL */
+#izvelne-sarakstam {
+    margin-left: 15px;
+}
+#admina-panel-all {
+    margin-left: 150px;
+    margin-right: 150px;
+}
+.admin-content-element {
+    background-color: white;
+    border: 1px solid grey;
+    margin:10px;
+    border-radius: 10px;
+}
+
+.admin-sarakstu-title {
+    background-color: rgba(110, 218, 109, 1);
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+    width: max-content;
+    margin: 10px 0px 0px 10px;
+    padding: 4px 4px 4px 4px;
+}
+.admin-table {
+    border: 1px solid grey;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    margin: 10px;
+
+
+}
+.table-content-admin tr td{
+    /* border:1px solid grey; */
+    background-color: rgb(226, 226, 226);
+    margin: 10px;
+}
+
+/* .button-admins-all input{
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 4px;
+} */
+.button-admins-all select{
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid grey;
+}
+
+/* EDIT PASAKUMS */
+/* #edit-pasakums {
+    margin-left: 150px;
+    margin-right: 150px;
+} */
+
+
+/* DASHBOARD */
+#dashboard-content {
+    margin: auto;
+    width: 50%;
+    /* border: 3px solid green; */
+    padding: 10px;
+    margin-top: 13%;
+    /* width:100%;
+    display: ;
+    width: max-content;
+    margin-left:  20%;
+    margin-right:  20%;
+    margin-top: 10%; */
+    /* align-items: center; */
+    /* margin-top: 200px; */
+    /* align-items: center; */
+    /* border: 1px solid red; */
+    
+}
+#dashboard-content-group {
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin: 0px 10px 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid grey;
+}
+
+.dashboard-content-item {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* FOOTER */
+
+#footer {
+    position: sticky;
+    font-family: 'Roboto', sans-serif;  
+    background-color: grey;
+    position: sticky;
+    top:100%;
+    padding: 10px 10px 10px 10px;
+    text-align: center; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

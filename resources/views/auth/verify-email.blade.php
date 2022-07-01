@@ -1,3 +1,8 @@
+@extends('layout_custom')
+
+@section('title', 'Verify-email')
+
+@section('content')
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
@@ -37,3 +42,4 @@
         </div>
     </x-auth-card>
 </x-guest-layout>
+@endsection

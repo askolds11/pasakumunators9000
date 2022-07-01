@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use App\Models\LietotajsLoma;
+use Illuminate\Support\Facades\DB;
 
 class RegisteredUserController extends Controller
 {
@@ -34,7 +36,7 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:255', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
@@ -49,6 +51,14 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+
+        $lietotajsloma = new LietotajsLoma();
+        $lietotajsloma->users_id = Auth::user()->id;
+        $lietotajsloma->loma_id = DB::table('loma')
+                                    ->where('nosaukums', 'lietotajs')
+                                    ->get('id')->first()->id;
+        $lietotajsloma->save();
+
+        return redirect('mainpage');
     }
 }

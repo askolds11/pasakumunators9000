@@ -1,17 +1,26 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+@extends('layout_dashboard')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
-                </div>
+@section('title', 'Reset')
+
+@section('content')
+<div id="dashboard-content">
+        <div id="about-div">
+            <div id="about-content-group">
+                <h2 class="about-content">{{__('dash.login')}}  - {{ Auth::user()->name }}!</h2>
+                <h2 class="about-content">{{__('dash.thankyouforvisit')}}! :D</h2>
+                
+                <!-- <a href="route('logout')">LOG OUT</a> -->
+                <!-- <x-responsive-nav-link :href="route('logout')"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        {{ __('Log Out') }}
+                </x-responsive-nav-link> -->
+            
             </div>
         </div>
-    </div>
-</x-app-layout>
+    
+
+</div>
+@endsection
+
+
