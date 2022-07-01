@@ -202,6 +202,15 @@ body {
 /* CONTNENT */
 
 /* MAINPAGE */
+
+.cilveki {
+    border: 1px solid grey;
+    width: max-content;
+    background-color: white;
+    border-radius: 10px;
+    padding: 4px;
+    margin-bottom: 10px;
+}
 #mainpage-contnet-parent {
     margin-top: 10px;
     margin-left: 150px;
@@ -310,6 +319,8 @@ body {
     margin-left: 10px;
     margin-right: 10px;
     border-radius: 10px;
+    /* width: 600px; */
+    /* height: 600px; */
     /* border:1px solid grey; */
 }
 
@@ -334,14 +345,44 @@ body {
 hr {    
     margin-bottom: 8px;
 }
-
 .tituls-pasakums {
     background-color: rgba(110, 218, 109, 1);
     border-radius: 10px 10px 10px 10px;
     text-align: center;
     margin-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-top: 5px;
+    
+}
+.tituls-pasakums a {
+    /* background-color: rgba(110, 218, 109, 1); */
+    border-radius: 10px 10px 10px 10px;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 30px;
+    /* padding: 10px; */
+    transition: all 0.3s ease 0s;
+
 }
 
+.tituls-pasakums a:hover {
+    color: blue;
+}
+
+.tituls-pasakums a:active {
+    color: black;
+}
+
+.pasakumu-list-preview-attels div img {
+    border: 1px solid grey;
+    border-radius: 5px;
+    height: 200px;
+    width: 200px;
+    width: max-content;
+    /* height: fit-content; */
+}
 
 
 
@@ -413,6 +454,16 @@ hr {
 } */
 
 /* FILTER LAPAI */
+#show-filter-list p{
+    margin: 10px;
+    font-size: 30px;
+    color: rgba(255, 0, 0, 0.7);
+    border: 1px solid grey;
+    background-color: white;
+    padding: 4px;
+    width: max-content;
+    border-radius: 10px;
+}
 #filter-content-group {
     margin-left: 150px;
     margin-right: 150px;
