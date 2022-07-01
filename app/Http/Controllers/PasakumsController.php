@@ -187,7 +187,6 @@ class PasakumsController extends Controller
         $pasakums = $pasakums[0];
 
         $kategorijas = Kategorija::select('id', 'nosaukums')->get()->toArray();
-        dd(compact('pasakums', 'kategorijas'));
         return view('edit_pasakums', compact('pasakums', 'kategorijas'));
     }
 
@@ -202,24 +201,15 @@ class PasakumsController extends Controller
     {
         $pasakums = Pasakums::findOrFail($id);
 
-        $nosaukums = $request->nosaukums;
-        $apraksts = $request->apraksts;
-        $datums = $request->datums;
-        $norises_ilgums = $request->norises_ilgums;
-        $norises_vieta = $request->norises_vieta;
-        $cena = $request->cena;
-        $kategorija = $request->kategorija;
-        $attels = $request->attels;
-
         $rules = array(
-            'nosaukums' => 'required|string|min:1|max:50',
-            'apraksts' => 'required|string|min:1|max:500',
-            'datums' => 'required|date_format:Y-m-d H:i|after:1 hour',
-            'norises_ilgums' => 'required|integer|min:0',
-            'norises_vieta' => 'required|string|min:1|max:100',
-            'cena' => 'required|min:0|max:999.99',
+            'nosaukums' => 'nullable|string|min:1|max:50',
+            'apraksts' => 'nullable|string|min:1|max:500',
+            'datums' => 'nullable|date_format:"Y-m-d\TH:i"|after:1 hour',
+            'norises_ilgums' => 'nullable|integer|min:0',
+            'norises_vieta' => 'nullable|string|min:1|max:100',
+            'cena' => 'nullable|numeric|min:0|max:999.99',
+            'kategorija' => 'nullable|min:1',
             'kategorija.*' => 'required|exists:kategorija,id|integer',
-            'attels' => 'required|mimes:jpeg,jpg,png,gif,svg|max:10000'
         );
         $this->validate($request, $rules);
 
@@ -229,11 +219,19 @@ class PasakumsController extends Controller
         $pasakums->norises_ilgums = $request->norises_ilgums;
         $pasakums->norises_vieta = $request->norises_vieta;
         $pasakums->cena = $request->cena;
-        $pasakums->veidotajs_id = Auth::user()->id; //may be different - checking which user
-        $pasakums->attels_id = $attels->id;
         $pasakums->save();
 
-        return redirect('pasakums/' . $pasakums->id); //not sure if id exists
+        $pagkat = PasakumsKategorija::where('pasakums_id', '=', $id)->get();
+        foreach($pagkat as $pkat) $pkat->delete();
+        foreach($request->kategorija as $kat)
+        {
+            $kateg = new PasakumsKategorija();
+            $kateg->pasakums_id = $pasakums->id;
+            $kateg->kategorija_id = $kat;
+            $kateg->save();
+        }
+
+        return redirect('pasakums/' . $pasakums->id);
     }
 
     public function showFilter() 
