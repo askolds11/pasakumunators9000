@@ -56,6 +56,9 @@ Route::patch('pasakums/{pasakums}', [PasakumsController::class, 'update']
 Route::delete('pasakums/{pasakums}', [PasakumsController::class, 'destroy']
         )->middleware(['auth', 'role:pasakumu_veidotajs']);
 
+Route::post('pasakums/novertet', [PasakumsController::class, 'novertet']
+        )->middleware(['auth']);
+
 //ADMIN PANEL
 Route::get('adminpanel', [AdminPanelController::class, 'index']
         )->middleware(['auth', 'role:administrators']);

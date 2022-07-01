@@ -98,14 +98,42 @@
             </li>
             <li id="apraksts-show-pasakums" class="show-pasakuma-info">
                 <h3>
+                    Novērtējums
+                </h3>
+                <p > 
+                    {{ round($pasakums['novertejums'],1) }}
+                </p>
+            </li>
+            <li id="apraksts-show-pasakums" class="show-pasakuma-info">
+                <h3>
                     Pieteikušies
                 </h3>
                 <p > 
                     {{ $pasakums['pieteikusies'] }}
                 </p>
             </li>
+            @if(Auth::check())
+            <li id="apraksts-show-pasakums" class="show-pasakuma-info">
+                <h3>
+                    Tavs novērtējums
+                </h3>
+                @if($pasakums['tavsnovertejums'] == -1)
+                    Nav
+                @else
+                    {{ $pasakums['tavsnovertejums'] }}
+                @endif
+            </li>
+
+            <li id="apraksts-show-pasakums" class="show-pasakuma-info">
+                <form method="POST" action="{{action([App\Http\Controllers\PasakumsController::class, 'novertet']) }}">
+                    @csrf
+                    <input type="hidden" name="pasakums_id" id="pasakums_id" value="{{ $pasakums['id'] }}" />
+                    <input type="number" name="novertejums" id="novertejums"min="0" max="10" step="1"
+                    @if($pasakums['tavsnovertejums'] != -1) value="{{ $pasakums['tavsnovertejums'] }}" @else value="5" @endif></input>
+                    <input type="submit" name="iesniegt" value="Novērtēt" />
+                </form>
+            </li>
             <li id="pieteikties">
-                @if(Auth::check())
                 <button id="button-pieteikties" onclick="window.location.href='/pasakums/{{ $pasakums['id'] }}/pieteikties'">
                         @if($pasakums['pieteicies'] == false)
                             Pieteikties
@@ -113,8 +141,8 @@
                             Atteikties
                         @endif
                 </button>
-                @endif
             </li>
+            @endif
         </ul>
         
        
