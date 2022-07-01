@@ -21,10 +21,17 @@
         vajag js https://www.w3schools.com/howto/howto_js_active_element.asp
     -->
         <ul class="nav-links">
-            <li><a href="{{ url('/mainpage') }}">JAUNUMI</a></li> <!-- Ved uz jaunumi *****tehniski, šī pati lapa -->
-            <li><a href="{{ url('/filter') }}">FILTRĒT</a></li></li> <!-- Ved uz filtrēšanas lapu, proti, lapa, kurā lietotājs būs spējīgs meklēt sev tīkamus  -->
-            <li><a href="{{ url('/new_pasakums') }}">PIEVIENOT PASĀKUMU</a></li>
-            <li><a href="{{ url('/adminpanel') }}">ADMINA PANELIS</a></li>
+            <li><a href="{{ url('/mainpage') }}">{{__('layout_dashboard.JAUNUMI')}}</a></li> <!-- Ved uz jaunumi *****tehniski, šī pati lapa -->
+            <li><a href="{{ url('/filter') }}">{{__('layout_dashboard.FILTRĒT')}}</a></li></li> <!-- Ved uz filtrēšanas lapu, proti, lapa, kurā lietotājs būs spējīgs meklēt sev tīkamus  -->
+            <li><a href="{{ url('/new_pasakums') }}">{{__('layout_dashboard.PIEVIENOT PASĀKUMU')}}</a></li>
+            <li><a href="{{ url('/adminpanel') }}">{{__('layout_dashboard.ADMINA PANELIS')}}</a></li>
+            <li id="lang-lv-eng">
+                <a href="" id="LV">LV</a>
+                <a href="" id="ENG">ENG</a>
+
+            </li>
+            
+
 
             
         </ul>
@@ -66,7 +73,7 @@
     </script>
 
     <footer id="footer">
-        <p>Veidoja: Askolds Bērziņš, Johans Justs Eris, Aleksejs Romaņuks</p>
-        <p>&copy Copyright AskoldsJustsAleksejs inc.</p>
+        <p>{{__('layout_dashboard.createdby')}}</p>
+        <p> {{__('layout_dashboard.copyright')}}</p>
     </footer>
 </body>

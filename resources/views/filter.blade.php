@@ -61,7 +61,7 @@
         <div id="show-filter-list" class="filter-content-child">
             
                 @if (count($pasakumi)==0)
-                    <p>Netika atrasti pasākumi.</p>
+                    <p>{{__('filter.Netika atrasti pasākumi')}}.</p>
                 @else
                 <div id="filter-table-list">
                     <h3 id="filter-result-title">{{__('filter.FILTRĒŠANAS REZULTĀTI')}}</h3>

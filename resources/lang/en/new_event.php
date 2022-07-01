@@ -63,7 +63,23 @@ return [
     'Boulings' => 'Bouling',
     
     'Meklēt' => 'Search',
-    'Netika atrasti pasākumi' => 'No events were found',
+    'REDIĢĒT PASĀKUMU' => 'EDIT EVENT',
+    'Pabeigt reģidēšanu' => 'Complete editing',
+    'project' => 'Eventador9000',
+    'JAUNUMI' => 'NEWS',
+    'FILTRĒT' => 'FILTER',
+    'PIEVIENOT PASĀKUMU' => 'ADD EVENT',
+    'ADMINA PANELIS' => 'ADMIN ROOM',
+    'KONTA SADAĻA' => 'ACCOUNTS',
+    'LOG IN' => 'LOG IN',
+    'REĢISTRĒTIES' => 'SIGN UP',
+    'createdby' => 'Produced by: Askolds Bērzins, Johans Just Eris, Aleksejs Romanuks',
+    'copyright' => '&copy Copyright AskoldsJustsAleksejs inc.',
+    'PUBLICĒT JAUNU PASĀKUMU' => 'PUBLISH NEW EVENT',
+    'Publicēt pasākumu' => 'publish event',
+    '' => '',
+    '' => '',
+
 
 
 
