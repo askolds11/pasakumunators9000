@@ -131,7 +131,6 @@
                     if(a.pieteikusies == b.pieteikusies) return a.id < b.id;
                     else return a.pieteikusies < b.pieteikusies;
                 });
-                console.log(pasakumi);
                 let x = document.getElementById("pirmais-pasakums");
                 let y = x.getElementsByClassName("tituls-pasakums");
                 y[0].innerHTML = pasakumi[0].nosaukums;
@@ -164,7 +163,6 @@
                     if(a.novertejums == b.novertejums) return a.id < b.id;
                     else return parseFloat(a.novertejums) < parseFloat(b.novertejums);
                 });
-                console.log(pasakumi);
                 let x = document.getElementById("pirmais-pasakums");
                 let y = x.getElementsByClassName("tituls-pasakums");
                 y[0].innerHTML = pasakumi[0].nosaukums;
@@ -199,7 +197,6 @@
                     if(d1 == d2) return a.id < b.id;
                     else return d1 < d2;
                 });
-                console.log(pasakumi);
                 let x = document.getElementById("pirmais-pasakums");
                 let y = x.getElementsByClassName("tituls-pasakums");
                 y[0].innerHTML = pasakumi[0].nosaukums;
