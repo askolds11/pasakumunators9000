@@ -30,7 +30,16 @@
         </ul>
         <button>
             <!-- <l class="navbar-button">Lietotāja vārds</l> -->
-            <a href="{{ url('/dashboard') }}" class="navbar-button">KONTA SADAĻA</a>
+            <!-- <a href="{{ url('/dashboard') }}" class="navbar-button">KONTA SADAĻA</a> -->
+            <form method="POST" action="{{ route('logout') }}" class="navbar-button" id="log-out-link">
+                            @csrf
+
+                            <x-dropdown-link :href="route('logout')"
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                {{ __('Log Out') }}
+                            </x-dropdown-link>
+                        </form>
                     <!-- @if (Route::has('login'))
                     @auth
                     <a href="{{ url('/dashboard') }}" class="navbar-button">KONTA SADAĻA</a>
