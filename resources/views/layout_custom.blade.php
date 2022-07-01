@@ -64,6 +64,6 @@
 
     <footer id="footer">
         <p>{{__('layout.createdby')}} </p>
-        <p>{{__('layout.copyright')}} </p>
+        <p>&copy {{__('layout.copyright')}} </p>
     </footer>
 </body>

@@ -74,7 +74,7 @@ return [
     'LOG IN' => 'LOG IN',
     'REĢISTRĒTIES' => 'SIGN UP',
     'createdby' => 'Produced by: Askolds Bērzins, Johans Just Eris, Aleksejs Romanuks',
-    'copyright' => '&copy Copyright AskoldsJustsAleksejs inc.',
+    'copyright' => 'Copyright AskoldsJustsAleksejs inc.',
     '' => '',
     '' => '',
     '' => '',

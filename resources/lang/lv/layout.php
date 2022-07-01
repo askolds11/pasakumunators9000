@@ -73,7 +73,7 @@ return [
     'LOG IN' => 'IENĀKT KONTĀ',
     'REĢISTRĒTIES' => 'REĢISTRĒTIES',
     'createdby' => 'Veidoja: Askolds Bērziņš, Johans Justs Eris, Aleksejs Romaņuks',
-    'copyright' => '&copy Copyright AskoldsJustsAleksejs inc.',
+    'copyright' => ' Copyright AskoldsJustsAleksejs inc.',
     '' => '',
     '' => '',
     '' => '',
