@@ -41,7 +41,7 @@ return [
     'Datums līdz' => 'Date to',
     'Norises ilgums' => 'Duration',
     'No' => 'From',
-    'Līdz' => 'Tos',
+    'Līdz' => 'To',
     'Cena' => 'Price',
     'Kategorijas' => 'Categories',
     'FILTRĒŠANAS REZULTĀTI' => 'Filter results',
