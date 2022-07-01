@@ -310,7 +310,9 @@ body {
 }
 
 .pasakumu-list-preview-items {
+    width: max-content;
     display: flex;
+    /* width: 700px; */
     /* border: 5px solid red; */
     /* border: 1px solid red; */
     background-color: white;
@@ -378,10 +380,9 @@ hr {
 .pasakumu-list-preview-attels div img {
     border: 1px solid grey;
     border-radius: 5px;
-    height: 200px;
     width: 200px;
-    width: max-content;
-    /* height: fit-content; */
+    height: 200px;
+   
 }
 
 
