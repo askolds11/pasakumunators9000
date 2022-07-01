@@ -26,7 +26,7 @@
                             @endphp
                         </p>
                     </div>
-                    @if($pasakums['veidotajs_id'] == Auth::user()->id)
+                    @if(Auth::check() && $pasakums['veidotajs_id'] == Auth::user()->id)
                     <div id=show-edit-delete-link>
                         <a href="{{ url('pasakums/'.$pasakums['id'].'/edit') }}" id="show-edit-link">EDIT</a>
                         <form method="POST"
@@ -129,6 +129,7 @@
                 @endforeach
             </div>
             <div id="pievienot">
+                @if(Auth::check() && $pasakums['veidotajs_id'] == Auth::user()->id)
                 <form method="POST"
                     action="{{action([App\Http\Controllers\AttelsController::class, 'store']) }}" enctype="multipart/form-data" id="attela-form-galerija">
                     @csrf
@@ -150,6 +151,7 @@
 
                     <input type="submit" value="Pievienot attēlu" id="attels-preview-show-pasakuma-galerija-pievienot-attelu"> <!--id="publicet-pasakumu"-->
                 </form>
+                @endif
 
             </div>
             

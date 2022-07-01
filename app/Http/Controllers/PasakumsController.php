@@ -371,8 +371,8 @@ class PasakumsController extends Controller
         LietotajsPasakums::where('pasakums_id', $id)->delete();
         PasakumsKategorija::where('pasakums_id', $id)->delete();
         Novertejums::where('pasakums_id', $id)->delete();
-        Pasakums::findOrFail($id)->delete();
         Attels::where('pasakums_id', $id)->delete();
+        Pasakums::findOrFail($id)->delete();
         return redirect('mainpage');
     }
 }
