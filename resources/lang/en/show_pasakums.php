@@ -85,8 +85,8 @@ return [
     'Komentāri' => 'Comments',
     'Rakstiet savu komentāru šeit...' => 'Add your comments here...',
     'Post' => 'Post',
-    '' => '',
-    '' => '',
+    'Novērtējums' => 'Rating',
+    'Tavs novērtējums' => 'Your assesment',
     '' => '',
 
 
