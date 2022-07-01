@@ -21,10 +21,10 @@
         vajag js https://www.w3schools.com/howto/howto_js_active_element.asp
     -->
         <ul class="nav-links">
-            <li><a href="{{ url('/mainpage') }}">JAUNUMI</a></li> <!-- Ved uz jaunumi *****tehniski, šī pati lapa -->
-            <li><a href="{{ url('/filter') }}">FILTRĒT</a></li></li> <!-- Ved uz filtrēšanas lapu, proti, lapa, kurā lietotājs būs spējīgs meklēt sev tīkamus  -->
-            <li><a href="{{ url('/new_pasakums') }}">PIEVIENOT PASĀKUMU</a></li>
-            <li><a href="{{ url('/adminpanel') }}" >ADMINA PANELIS</a>
+            <li><a href="{{ url('/mainpage') }}">{{__('layout.JAUNUMI')}}</a></li> <!-- Ved uz jaunumi *****tehniski, šī pati lapa -->
+            <li><a href="{{ url('/filter') }}">{{__('layout.FILTRĒT')}}</a></li></li> <!-- Ved uz filtrēšanas lapu, proti, lapa, kurā lietotājs būs spējīgs meklēt sev tīkamus  -->
+            <li><a href="{{ url('/new_pasakums') }}">{{__('layout.PIEVIENOT PASĀKUMU')}}</a></li>
+            <li><a href="{{ url('/adminpanel') }}" >{{__('layout.ADMINA PANELIS')}}</a>
             
             </li>
             

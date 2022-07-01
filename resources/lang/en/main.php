@@ -43,7 +43,11 @@ return [
     'ORIENTATING' => 'To navigate this website, it is recommended to use the links provided in the navigation section, which will take you to other pages of this project.',
     'Goodbye' => 'Have a nice day!',
 
-    '' => '',
+    'Cilvēki' => 'People',
+    'Atlasīt pasākumus' => 'Select events',
+    'Populārākie' => 'Popular',
+    'Vislabākie' => 'Best',
+    'Jaunākie' => 'Fresh',
     '' => '',
     '' => '',
 

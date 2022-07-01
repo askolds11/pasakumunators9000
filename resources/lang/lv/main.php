@@ -42,6 +42,11 @@ return [
     'ORIENTATING' => 'Lai orientētos šajā mājaslapā, vēlams izmantot navigācijas sadaļas dotās saites, kuras aizvedīs uz citām šī projekta lapām.',
     'Goodbye' => 'Jauku dienu!',
 
+    'Cilvēki' => 'Cilvēki',
+    'Atlasīt pasākumus' => 'Atlasīt pasākumus',
+    'Populārākie' => 'Populārākie',
+    'Vislabākie' => 'Vislabākie',
+    'Jaunākie' => 'Jaunākie',
     '' => '',
     '' => '',
     '' => '',
