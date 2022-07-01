@@ -147,7 +147,15 @@ class PasakumsController extends Controller
         {
             $pasakums['pieteicies'] = true;
         }
-
+        if(Auth::check())
+        {
+            $tavsnovertejums = Novertejums::where('pasakums_id', '=', $id)->where('users_id','=',Auth::user()->id)->get()->first();
+            if(empty($tavsnovertejums))
+            {
+                $pasakums['tavsnovertejums'] = -1;
+            }
+            else $pasakums['tavsnovertejums'] = $tavsnovertejums->novertejums;
+        }
         $pasakums['pieteikusies'] = count(LietotajsPasakums::where('pasakums_id', '=', $id)->get());
         $pasakums['novertejums'] = Novertejums::where('pasakums_id', '=', $pasakums['id'])->groupBy('novertejums')->avg('novertejums');
 
@@ -160,7 +168,6 @@ class PasakumsController extends Controller
                             ->orderBy('komentars.id', 'desc')
                             ->select('komentars.created_at', 'users.name as username', 'teksts')
                             ->get()->toArray();
-
         return view('show_pasakums', compact('pasakums', 'komentari'));
     }
 
@@ -219,6 +226,7 @@ class PasakumsController extends Controller
         $pasakums->norises_ilgums = $request->norises_ilgums;
         $pasakums->norises_vieta = $request->norises_vieta;
         $pasakums->cena = $request->cena;
+        $pasakums->approved_status = false;
         $pasakums->save();
 
         $pagkat = PasakumsKategorija::where('pasakums_id', '=', $id)->get();
@@ -372,5 +380,30 @@ class PasakumsController extends Controller
         Attels::where('pasakums_id', $id)->delete();
         Pasakums::findOrFail($id)->delete();
         return redirect('mainpage');
+    }
+
+    public function novertet(Request $request)
+    {
+        $rules = array(
+            'pasakums_id' => 'required|exists:pasakums,id|integer',
+            'novertejums' => 'required|min:0|max:10|integer'
+        );
+        $this->validate($request, $rules);
+
+        $result = Novertejums::where('pasakums_id','=',$request->pasakums_id)->where('users_id', '=', Auth::user()->id)->get()->first();
+        if($result == null)
+        {
+            $novertejums = new Novertejums();
+            $novertejums->pasakums_id = $request->pasakums_id;
+            $novertejums->users_id = Auth::user()->id;
+            $novertejums->novertejums = $request->novertejums;
+            $novertejums->save();
+        }
+        else
+        {
+            $result->novertejums = $request->novertejums;
+            $result->save();
+        }
+        return redirect('pasakums/' . $request->pasakums_id);
     }
 }
