@@ -45,7 +45,7 @@
         <ul>
             <li id="apraksts-show-pasakums" class="show-pasakuma-info">
                 <h3>
-                    Apraksts
+                    {{__('show_pasakums.Apraksts')}}
                 </h3>
                 <p>
                     {{ $pasakums['apraksts'] }}
@@ -53,7 +53,7 @@
             </li>
             <li id="apraksts-show-pasakums" class="show-pasakuma-info">
                 <h3>
-                    Datums
+                {{__('show_pasakums.Datums')}}
                 </h3>
                 <p>
                         @php 
@@ -64,7 +64,7 @@
             </li>
             <li id="apraksts-show-pasakums" class="show-pasakuma-info">
                 <h3>
-                    Norises ilgums
+                {{__('show_pasakums.Norises ilgums')}}
                 </h3>
                 <p>
                     @php
@@ -80,7 +80,7 @@
             </li>
             <li id="apraksts-show-pasakums" class="show-pasakuma-info">
                 <h3>
-                    Cena
+                {{__('show_pasakums.Cena')}}
                 </h3>
                 <p>
                     {{ $pasakums['cena'] }}
@@ -88,7 +88,7 @@
             </li>
             <li id="apraksts-show-pasakums" class="show-pasakuma-info">
                 <h3>
-                    Kategorija
+                {{__('show_pasakums.Kategorija')}}
                 </h3>
                 <p > 
                     @foreach($pasakums['kategorijas'] as $kategorija)
@@ -98,7 +98,7 @@
             </li>
             <li id="apraksts-show-pasakums" class="show-pasakuma-info">
                 <h3>
-                    Pieteikušies
+                {{__('show_pasakums.Pieteikušies')}}
                 </h3>
                 <p > 
                     {{ $pasakums['pieteikusies'] }}
@@ -108,9 +108,9 @@
                 @if(Auth::check())
                 <button id="button-pieteikties" onclick="window.location.href='/pasakums/{{ $pasakums['id'] }}/pieteikties'">
                         @if($pasakums['pieteicies'] == false)
-                            Pieteikties
+                        {{__('show_pasakums.Pieteikties')}}
                         @else
-                            Atteikties
+                        {{__('show_pasakums.Atteikties')}}
                         @endif
                 </button>
                 @endif
@@ -121,7 +121,7 @@
         
     </div>
     <div id="attels-preview-show-pasakums-galerija"  class="show-content-child">
-            <h3 id="attels-preview-show-pasakuma-galerija-title">Attēlu galerija</h3>
+            <h3 id="attels-preview-show-pasakuma-galerija-title">{{__('show_pasakums.Attēlu galerija')}}</h3>
             
             <div id="attels-child">
                 @foreach($pasakums['atteli'] as $attels)
@@ -134,22 +134,22 @@
                     action="{{action([App\Http\Controllers\AttelsController::class, 'store']) }}" enctype="multipart/form-data" id="attela-form-galerija">
                     @csrf
                 
-                    <label for="apraksts">Apraksts</label><br>
+                    <label for="apraksts">{{__('show_pasakums.Apraksts')}}</label><br>
                     <input type="text" id="apraksts" name="apraksts" value="{{ old('apraksts')}}" class="form-control @error('apraksts') is-invalid @enderror">
                     <x-error-validation-msg-comp name='apraksts' /> <br>
 
-                    <label for="apraksts">Datums</label><br>
+                    <label for="apraksts">{{__('show_pasakums.Datums')}}</label><br>
                     <input type="date" id="datums" name="datums" value="{{ old('datums')}}" class="form-control @error('datums') is-invalid @enderror">
                     <x-error-validation-msg-comp name='datums' /> <br>
 
                     <input type="hidden" id="pasakums_id" name="pasakums_id" value="{{ $pasakums['id']}}" />
 
-                    <label for="attels">Attēls</label>
+                    <label for="attels">{{__('show_pasakums.Attēls')}}</label>
                     <br>
                     <input type="file" name="attels" id="attels" value="{{ old('attels') }}" class="form-control @error('attels') is-invalid @enderror">
                     <x-error-validation-msg-comp name='attels' /><br>
 
-                    <input type="submit" value="Pievienot attēlu" id="attels-preview-show-pasakuma-galerija-pievienot-attelu"> <!--id="publicet-pasakumu"-->
+                    <input type="submit" value="{{__('show_pasakums.Pievienot attēlu')}}" id="attels-preview-show-pasakuma-galerija-pievienot-attelu"> <!--id="publicet-pasakumu"-->
                 </form>
                 @endif
 
@@ -157,7 +157,7 @@
             
     </div>
     <div id="attels-preview-show-pasakums-reklama"  class="show-content-child">
-            <h3 id="attels-preview-show-pasakuma-reklama-title">Attēlu galerija</h3>
+            <h3 id="attels-preview-show-pasakuma-reklama-title">{{__('show_pasakums.Attēlu galerija')}}</h3>
             
             <div id="attels-child-reklama">
                 <img src="{{ url($pasakums['picture']) }}" width="100" id="reklama-img"/>
@@ -177,7 +177,7 @@
 
 
 <div id="show_pasakums_komentari">
-        <h3 id="title-show-pasakums-komentari">Komentāri</h3>
+        <h3 id="title-show-pasakums-komentari">{{__('show_pasakums.Komentāri')}}</h3>
             <ul>
                 @foreach($komentari as $komentars)
                 <li class="show-user-name-koments">
@@ -207,9 +207,9 @@
                     <form method="POST" action="{{action([App\Http\Controllers\KomentarsController::class, 'store']) }}">
                         @csrf
                         <input type="hidden" id="pasakums_id" name="pasakums_id" value="{{ $pasakums['id'] }}" />
-                        <textarea id="teksts" name="teksts" rows="20" cols="70" placeholder="Rakstiet savu komentāru šeit...">{{ old('teksts') }}</textarea>
+                        <textarea id="teksts" name="teksts" rows="20" cols="70" placeholder="{{__('show_pasakums.Rakstiet savu komentāru šeit...')}}">{{ old('teksts') }}</textarea>
                         <br>
-                        <input type="submit" value="Post" id="post-komentaru-button">
+                        <input type="submit" value="{{__('show_pasakums.Post')}}" id="post-komentaru-button">
                     </form>
                 </li>
 </div>
