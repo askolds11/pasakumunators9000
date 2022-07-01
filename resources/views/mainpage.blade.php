@@ -20,6 +20,8 @@
                 <div id="pirmais-pasakums" class="pasakumu-list-preview-items">
                     <div class="pasakumu-list-preview-pasakuma">
                         <h2 class="tituls-pasakums">Title1</h2>
+                        <p class="novertejums">Novērtējus: <td class="novertejums-sk">10</td></p>
+                        
                         <ul>
                             <li class="pasakumu-list-preview-attels">
                                 <div>
@@ -36,6 +38,7 @@
                 <div id="otrais-pasakums" class="pasakumu-list-preview-items">
                     <div class="pasakumu-list-preview-pasakuma">
                         <h2 class="tituls-pasakums">Title1</h2>
+                        <p class="novertejums">Novērtējus: <td class="novertejums-sk">10</td></p>
                         <ul>
                             <li class="pasakumu-list-preview-attels">
                                 <div>
@@ -52,6 +55,7 @@
                 <div id="tresais-pasakums" class="pasakumu-list-preview-items">
                 <div class="pasakumu-list-preview-pasakuma">
                         <h2 class="tituls-pasakums">Title1</h2>
+                        <p class="novertejums">Novērtējus: <td class="novertejums-sk">10</td></p>
                         <ul>
                             <li class="pasakumu-list-preview-attels">
                                 <div>

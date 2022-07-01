@@ -69,6 +69,19 @@ nav {
 .nav-links li a:active {
     color: blue;
 }  */
+.novertejums {
+    margin: 10px 10px 10px 0px;
+    /* border: 1px solid gold; */
+    /* background-color: rgba(255, 255, 0, 0.5); */
+    background-color: white;
+    border: 1px solid grey;
+    width: max-content;
+    border-radius: 10px;
+    padding: 4px;
+}
+.novertejums-sk {
+    border: 1px solid white;
+}
 
 #form textarea  {
     /* resize: vertical; */
