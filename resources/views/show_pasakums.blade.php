@@ -7,7 +7,7 @@
 
 
     <div id="show_pasakums" class="show-content-child">    
-        <h2 id="title-show-pasakums">Title</h2>
+        <h2 id="title-show-pasakums">{{ $pasakums['nosaukums'] }}</h2>
         <ul>
             <li id="show-user-name-pasakums-publicetajs">
                 <div id="group-of-data">

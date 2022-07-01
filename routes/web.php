@@ -39,13 +39,22 @@ Route::get('/filter', [PasakumsController::class, 'showFilter']);
 Route::post('/filter', [PasakumsController::class, 'filter']);
 
 // PASĀKUMA IZVEIDES LAPA
-Route::resource('pasakums', PasakumsController::class, ['except' => ['create', 'index', 'store']]);
+Route::resource('pasakums', PasakumsController::class, ['except' => ['create', 'index', 'store', 'edit', 'update', 'destroy']]);
 Route::get('pasakumi', [PasakumsController::class, 'index']);
 Route::get('new_pasakums', [PasakumsController::class, 'create']
         )->middleware(['auth', 'role:pasakumu_veidotajs']);
 Route::post('new_pasakums', [PasakumsController::class, 'store']
         )->middleware(['auth', 'role:pasakumu_veidotajs']);
-        
+
+Route::get('pasakums/{pasakums}/edit', [PasakumsController::class, 'edit']
+        )->middleware(['auth', 'role:pasakumu_veidotajs']);
+Route::put('pasakums/{pasakums}', [PasakumsController::class, 'update']
+        )->middleware(['auth', 'role:pasakumu_veidotajs']);
+Route::patch('pasakums/{pasakums}', [PasakumsController::class, 'update']
+        )->middleware(['auth', 'role:pasakumu_veidotajs']);
+
+Route::delete('pasakums/{pasakums}', [PasakumsController::class, 'destroy']
+        )->middleware(['auth', 'role:pasakumu_veidotajs']);
 
 //ADMIN PANEL
 Route::get('adminpanel', [AdminPanelController::class, 'index']
