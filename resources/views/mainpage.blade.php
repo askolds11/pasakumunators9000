@@ -11,7 +11,7 @@
                 <button class="atlasi-buttons" onclick="pasakumi('jaunakie')">Jaunākie</button>
             </div> -->
         <div id="mainpage-title-sadalijums">
-            <h2 id="pasakumi-title-mainpage">PASĀKUMI + tā veids!!</h2>
+            <h2 id="pasakumi-title-mainpage">PASĀKUMI</h2>
             <h3 id="komentari-title-mainpage">KOMENTĀRI</h3>
 
         </div>
