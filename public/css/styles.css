@@ -508,7 +508,7 @@ hr {
     
 }
 /* NEW_PASAKUMA LAPAI */
-#parent-new-pasakums {
+#parent-new-pasakums, #edit-pasakums {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -517,7 +517,7 @@ hr {
     /* max-width: 200px; */
 }
 
-#izveidot-jaunu-pasakumus{
+#izveidot-jaunu-pasakumus, #editot-pasakumu{
     border: 1px solid grey;
     background-color: white;
     border-radius:10px;
