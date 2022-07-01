@@ -4,12 +4,12 @@
 
 @section('content')
     <div id="mainpage-contnet-parent">
-        <!-- <div id=izveleties-atlasi-form>
+        <div id=izveleties-atlasi-form>
                 <h3 id="atlasit-pasakumus-title">Atlasīt pasākumus</h3>
                 <button class="atlasi-buttons" onclick="pasakumi('popularakie')">Populārākie</button>
                 <button class="atlasi-buttons" onclick="pasakumi('labakie')">Vislabākie</button>
                 <button class="atlasi-buttons" onclick="pasakumi('jaunakie')">Jaunākie</button>
-            </div> -->
+            </div>
         <div id="mainpage-title-sadalijums">
             <h2 id="pasakumi-title-mainpage">{{__('main.PASĀKUMI')}}</h2>
             <h3 id="komentari-title-mainpage">{{__('main.KOMENTĀRI')}}</h3>
@@ -20,8 +20,9 @@
                 <div id="pirmais-pasakums" class="pasakumu-list-preview-items">
                     <div class="pasakumu-list-preview-pasakuma">
                         <h2 class="tituls-pasakums">Title1</h2>
-                        <p class="novertejums">{{__('main.Novērtējums')}}: <td class="novertejums-sk">10</td></p>
-                        
+                        <p class="novertejums">Novērtējums: <span id="novertejums1" class="novertejums-sk">10</span></p>
+                        <p class="cilveki">Cilvēki: <span id="cilveki1" class="cilveki-sk">10</span></p>
+
                         <ul>
                             <li class="pasakumu-list-preview-attels">
                                 <div>
@@ -38,7 +39,9 @@
                 <div id="otrais-pasakums" class="pasakumu-list-preview-items">
                     <div class="pasakumu-list-preview-pasakuma">
                         <h2 class="tituls-pasakums">Title1</h2>
-                        <p class="novertejums">{{__('main.Novērtējums')}}: <td class="novertejums-sk">10</td></p>
+                        <p class="novertejums">Novērtējums: <span id="novertejums2" class="novertejums-sk">10</span></p>
+                        <p class="cilveki">Cilvēki: <span id="cilveki2" class="cilveki-sk">10</span></p>
+
                         <ul>
                             <li class="pasakumu-list-preview-attels">
                                 <div>
@@ -55,7 +58,8 @@
                 <div id="tresais-pasakums" class="pasakumu-list-preview-items">
                 <div class="pasakumu-list-preview-pasakuma">
                         <h2 class="tituls-pasakums">Title1</h2>
-                        <p class="novertejums">{{__('main.Novērtējums')}}: <td class="novertejums-sk">10</td></p>
+                        <p class="novertejums">Novērtējums: <span id="novertejums3" class="novertejums-sk">10</span></p>
+                        <p class="cilveki">Cilvēki: <span id="cilveki3" class="cilveki-sk">10</span></p>
                         <ul>
                             <li class="pasakumu-list-preview-attels">
                                 <div>
@@ -134,64 +138,84 @@
                     if(a.pieteikusies == b.pieteikusies) return a.id < b.id;
                     else return a.pieteikusies < b.pieteikusies;
                 });
+                let url = "{{ url('/')}}";
                 let x = document.getElementById("pirmais-pasakums");
                 let y = x.getElementsByClassName("tituls-pasakums");
-                y[0].innerHTML = pasakumi[0].nosaukums;
+                y[0].innerHTML = '<a href='+url+'/pasakums'+pasakumi[0].id+'>'+pasakumi[0].nosaukums+'</a>';
                 y = x.getElementsByClassName("pasakumu-list-preview-attels");
-                let url = "{{ url('/')}}";
                 y[0].innerHTML = '<div> <img src="' + url + '/' + pasakumi[0]['picture'] + '" width="100"/> </div>';
                 y = x.getElementsByClassName("mainpage-apraksts")[0].children[1];
                 y.innerHTML = pasakumi[0].apraksts;
+                y = document.getElementById("novertejums1");
+                y.innerHTML = Number(pasakumi[0].novertejums).toFixed(1);
+                y = document.getElementById("cilveki1");
+                y.innerHTML = pasakumi[0].pieteikusies;
 
                 x = document.getElementById("otrais-pasakums");
                 y = x.getElementsByClassName("tituls-pasakums");
-                y[0].innerHTML = pasakumi[1].nosaukums;
+                y[0].innerHTML = '<a href='+url+'/pasakums'+pasakumi[1].id+'>'+pasakumi[1].nosaukums+'</a>';
                 y = x.getElementsByClassName("pasakumu-list-preview-attels");
-                url = "{{ url('/')}}";
                 y[0].innerHTML = '<div> <img src="' + url + '/' + pasakumi[1]['picture'] + '" width="100"/> </div>';
                 y = x.getElementsByClassName("mainpage-apraksts")[0].children[1];
                 y.innerHTML = pasakumi[1].apraksts;
+                y = document.getElementById("novertejums2");
+                y.innerHTML = Number(pasakumi[1].novertejums).toFixed(1);
+                y = document.getElementById("cilveki2");
+                y.innerHTML = pasakumi[1].pieteikusies;
 
                 x = document.getElementById("tresais-pasakums");
                 y = x.getElementsByClassName("tituls-pasakums");
-                y[0].innerHTML = pasakumi[2].nosaukums;
+                y[0].innerHTML = '<a href='+url+'/pasakums'+pasakumi[2].id+'>'+pasakumi[2].nosaukums+'</a>';
                 y = x.getElementsByClassName("pasakumu-list-preview-attels");
-                url = "{{ url('/')}}";
                 y[0].innerHTML = '<div> <img src="' + url + '/' + pasakumi[2]['picture'] + '" width="100"/> </div>';
                 y = x.getElementsByClassName("mainpage-apraksts")[0].children[1];
                 y.innerHTML = pasakumi[2].apraksts;
+                y = document.getElementById("novertejums3");
+                y.innerHTML = Number(pasakumi[2].novertejums).toFixed(1);
+                y = document.getElementById("cilveki3");
+                y.innerHTML = pasakumi[2].pieteikusies;
             }
             else if(mode == 'labakie') {
                 pasakumi.sort(function(a,b) {
                     if(a.novertejums == b.novertejums) return a.id < b.id;
                     else return parseFloat(a.novertejums) < parseFloat(b.novertejums);
                 });
+                let url = "{{ url('/')}}";
                 let x = document.getElementById("pirmais-pasakums");
                 let y = x.getElementsByClassName("tituls-pasakums");
-                y[0].innerHTML = pasakumi[0].nosaukums;
+                y[0].innerHTML = '<a href='+url+'/pasakums'+pasakumi[0].id+'>'+pasakumi[0].nosaukums+'</a>';
                 y = x.getElementsByClassName("pasakumu-list-preview-attels");
-                let url = "{{ url('/')}}";
                 y[0].innerHTML = '<div> <img src="' + url + '/' + pasakumi[0]['picture'] + '" width="100"/> </div>';
                 y = x.getElementsByClassName("mainpage-apraksts")[0].children[1];
                 y.innerHTML = pasakumi[0].apraksts;
+                y = document.getElementById("novertejums1");
+                y.innerHTML = Number(pasakumi[0].novertejums).toFixed(1);
+                y = document.getElementById("cilveki1");
+                y.innerHTML = pasakumi[0].pieteikusies;
 
                 x = document.getElementById("otrais-pasakums");
                 y = x.getElementsByClassName("tituls-pasakums");
-                y[0].innerHTML = pasakumi[1].nosaukums;
+                y[0].innerHTML = '<a href='+url+'/pasakums'+pasakumi[1].id+'>'+pasakumi[1].nosaukums+'</a>';
                 y = x.getElementsByClassName("pasakumu-list-preview-attels");
-                url = "{{ url('/')}}";
                 y[0].innerHTML = '<div> <img src="' + url + '/' + pasakumi[1]['picture'] + '" width="100"/> </div>';
                 y = x.getElementsByClassName("mainpage-apraksts")[0].children[1];
                 y.innerHTML = pasakumi[1].apraksts;
+                y = document.getElementById("novertejums2");
+                y.innerHTML = Number(pasakumi[1].novertejums).toFixed(1);
+                y = document.getElementById("cilveki2");
+                y.innerHTML = pasakumi[1].pieteikusies;
 
                 x = document.getElementById("tresais-pasakums");
                 y = x.getElementsByClassName("tituls-pasakums");
-                y[0].innerHTML = pasakumi[2].nosaukums;
+                y[0].innerHTML = '<a href='+url+'/pasakums'+pasakumi[2].id+'>'+pasakumi[2].nosaukums+'</a>';
                 y = x.getElementsByClassName("pasakumu-list-preview-attels");
-                url = "{{ url('/')}}";
                 y[0].innerHTML = '<div> <img src="' + url + '/' + pasakumi[2]['picture'] + '" width="100"/> </div>';
                 y = x.getElementsByClassName("mainpage-apraksts")[0].children[1];
                 y.innerHTML = pasakumi[2].apraksts;
+                y = document.getElementById("novertejums3");
+                y.innerHTML = Number(pasakumi[2].novertejums).toFixed(1);
+                y = document.getElementById("cilveki3");
+                y.innerHTML = pasakumi[2].pieteikusies;
             }
             else if(mode == 'jaunakie') {
                 pasakumi.sort(function(a,b) {
@@ -200,32 +224,42 @@
                     if(d1 == d2) return a.id < b.id;
                     else return d1 < d2;
                 });
+                let url = "{{ url('/')}}";
                 let x = document.getElementById("pirmais-pasakums");
                 let y = x.getElementsByClassName("tituls-pasakums");
-                y[0].innerHTML = pasakumi[0].nosaukums;
+                y[0].innerHTML = '<a href='+url+'/pasakums'+pasakumi[0].id+'>'+pasakumi[0].nosaukums+'</a>';
                 y = x.getElementsByClassName("pasakumu-list-preview-attels");
-                let url = "{{ url('/')}}";
                 y[0].innerHTML = '<div> <img src="' + url + '/' + pasakumi[0]['picture'] + '" width="100"/> </div>';
                 y = x.getElementsByClassName("mainpage-apraksts")[0].children[1];
                 y.innerHTML = pasakumi[0].apraksts;
+                y = document.getElementById("novertejums1");
+                y.innerHTML = Number(pasakumi[0].novertejums).toFixed(1);
+                y = document.getElementById("cilveki1");
+                y.innerHTML = pasakumi[0].pieteikusies;
 
                 x = document.getElementById("otrais-pasakums");
                 y = x.getElementsByClassName("tituls-pasakums");
-                y[0].innerHTML = pasakumi[1].nosaukums;
+                y[0].innerHTML = '<a href='+url+'/pasakums'+pasakumi[1].id+'>'+pasakumi[1].nosaukums+'</a>';
                 y = x.getElementsByClassName("pasakumu-list-preview-attels");
-                url = "{{ url('/')}}";
                 y[0].innerHTML = '<div> <img src="' + url + '/' + pasakumi[1]['picture'] + '" width="100"/> </div>';
                 y = x.getElementsByClassName("mainpage-apraksts")[0].children[1];
                 y.innerHTML = pasakumi[1].apraksts;
+                y = document.getElementById("novertejums2");
+                y.innerHTML = Number(pasakumi[1].novertejums).toFixed(1);
+                y = document.getElementById("cilveki2");
+                y.innerHTML = pasakumi[1].pieteikusies;
 
                 x = document.getElementById("tresais-pasakums");
                 y = x.getElementsByClassName("tituls-pasakums");
-                y[0].innerHTML = pasakumi[2].nosaukums;
+                y[0].innerHTML = '<a href='+url+'/pasakums'+pasakumi[2].id+'>'+pasakumi[2].nosaukums+'</a>';
                 y = x.getElementsByClassName("pasakumu-list-preview-attels");
-                url = "{{ url('/')}}";
                 y[0].innerHTML = '<div> <img src="' + url + '/' + pasakumi[2]['picture'] + '" width="100"/> </div>';
                 y = x.getElementsByClassName("mainpage-apraksts")[0].children[1];
                 y.innerHTML = pasakumi[2].apraksts;
+                y = document.getElementById("novertejums3");
+                y.innerHTML = Number(pasakumi[2].novertejums).toFixed(1);
+                y = document.getElementById("cilveki3");
+                y.innerHTML = pasakumi[2].pieteikusies;
             }
         }
     </script>
