@@ -25,9 +25,9 @@
             <li><a href="{{ url('/filter') }}">FILTRĒT</a></li></li> <!-- Ved uz filtrēšanas lapu, proti, lapa, kurā lietotājs būs spējīgs meklēt sev tīkamus  -->
             <li><a href="{{ url('/new_pasakums') }}">PIEVIENOT PASĀKUMU</a></li>
             <li><a href="{{ url('/adminpanel') }}">ADMINA PANELIS</a></li>
-            <li>
-                <a href="">LV</a>
-                <a href="">ENG</a>
+            <li id="lang-lv-eng">
+                <a href="" id="LV">LV</a>
+                <a href="" id="ENG">ENG</a>
 
             </li>
             
