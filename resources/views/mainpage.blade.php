@@ -141,7 +141,7 @@
                 let url = "{{ url('/')}}";
                 let x = document.getElementById("pirmais-pasakums");
                 let y = x.getElementsByClassName("tituls-pasakums");
-                y[0].innerHTML = '<a href='+url+'/pasakums'+pasakumi[0].id+'>'+pasakumi[0].nosaukums+'</a>';
+                y[0].innerHTML = '<a href='+url+'/pasakums/'+pasakumi[0].id+'>'+pasakumi[0].nosaukums+'</a>';
                 y = x.getElementsByClassName("pasakumu-list-preview-attels");
                 y[0].innerHTML = '<div> <img src="' + url + '/' + pasakumi[0]['picture'] + '" width="100"/> </div>';
                 y = x.getElementsByClassName("mainpage-apraksts")[0].children[1];
@@ -153,7 +153,7 @@
 
                 x = document.getElementById("otrais-pasakums");
                 y = x.getElementsByClassName("tituls-pasakums");
-                y[0].innerHTML = '<a href='+url+'/pasakums'+pasakumi[1].id+'>'+pasakumi[1].nosaukums+'</a>';
+                y[0].innerHTML = '<a href='+url+'/pasakums/'+pasakumi[1].id+'>'+pasakumi[1].nosaukums+'</a>';
                 y = x.getElementsByClassName("pasakumu-list-preview-attels");
                 y[0].innerHTML = '<div> <img src="' + url + '/' + pasakumi[1]['picture'] + '" width="100"/> </div>';
                 y = x.getElementsByClassName("mainpage-apraksts")[0].children[1];
@@ -165,7 +165,7 @@
 
                 x = document.getElementById("tresais-pasakums");
                 y = x.getElementsByClassName("tituls-pasakums");
-                y[0].innerHTML = '<a href='+url+'/pasakums'+pasakumi[2].id+'>'+pasakumi[2].nosaukums+'</a>';
+                y[0].innerHTML = '<a href='+url+'/pasakums/'+pasakumi[2].id+'>'+pasakumi[2].nosaukums+'</a>';
                 y = x.getElementsByClassName("pasakumu-list-preview-attels");
                 y[0].innerHTML = '<div> <img src="' + url + '/' + pasakumi[2]['picture'] + '" width="100"/> </div>';
                 y = x.getElementsByClassName("mainpage-apraksts")[0].children[1];
@@ -183,7 +183,7 @@
                 let url = "{{ url('/')}}";
                 let x = document.getElementById("pirmais-pasakums");
                 let y = x.getElementsByClassName("tituls-pasakums");
-                y[0].innerHTML = '<a href='+url+'/pasakums'+pasakumi[0].id+'>'+pasakumi[0].nosaukums+'</a>';
+                y[0].innerHTML = '<a href='+url+'/pasakums/'+pasakumi[0].id+'>'+pasakumi[0].nosaukums+'</a>';
                 y = x.getElementsByClassName("pasakumu-list-preview-attels");
                 y[0].innerHTML = '<div> <img src="' + url + '/' + pasakumi[0]['picture'] + '" width="100"/> </div>';
                 y = x.getElementsByClassName("mainpage-apraksts")[0].children[1];
@@ -195,7 +195,7 @@
 
                 x = document.getElementById("otrais-pasakums");
                 y = x.getElementsByClassName("tituls-pasakums");
-                y[0].innerHTML = '<a href='+url+'/pasakums'+pasakumi[1].id+'>'+pasakumi[1].nosaukums+'</a>';
+                y[0].innerHTML = '<a href='+url+'/pasakums/'+pasakumi[1].id+'>'+pasakumi[1].nosaukums+'</a>';
                 y = x.getElementsByClassName("pasakumu-list-preview-attels");
                 y[0].innerHTML = '<div> <img src="' + url + '/' + pasakumi[1]['picture'] + '" width="100"/> </div>';
                 y = x.getElementsByClassName("mainpage-apraksts")[0].children[1];
@@ -207,7 +207,7 @@
 
                 x = document.getElementById("tresais-pasakums");
                 y = x.getElementsByClassName("tituls-pasakums");
-                y[0].innerHTML = '<a href='+url+'/pasakums'+pasakumi[2].id+'>'+pasakumi[2].nosaukums+'</a>';
+                y[0].innerHTML = '<a href='+url+'/pasakums/'+pasakumi[2].id+'>'+pasakumi[2].nosaukums+'</a>';
                 y = x.getElementsByClassName("pasakumu-list-preview-attels");
                 y[0].innerHTML = '<div> <img src="' + url + '/' + pasakumi[2]['picture'] + '" width="100"/> </div>';
                 y = x.getElementsByClassName("mainpage-apraksts")[0].children[1];
@@ -227,7 +227,7 @@
                 let url = "{{ url('/')}}";
                 let x = document.getElementById("pirmais-pasakums");
                 let y = x.getElementsByClassName("tituls-pasakums");
-                y[0].innerHTML = '<a href='+url+'/pasakums'+pasakumi[0].id+'>'+pasakumi[0].nosaukums+'</a>';
+                y[0].innerHTML = '<a href='+url+'/pasakums/'+pasakumi[0].id+'>'+pasakumi[0].nosaukums+'</a>';
                 y = x.getElementsByClassName("pasakumu-list-preview-attels");
                 y[0].innerHTML = '<div> <img src="' + url + '/' + pasakumi[0]['picture'] + '" width="100"/> </div>';
                 y = x.getElementsByClassName("mainpage-apraksts")[0].children[1];
@@ -239,7 +239,7 @@
 
                 x = document.getElementById("otrais-pasakums");
                 y = x.getElementsByClassName("tituls-pasakums");
-                y[0].innerHTML = '<a href='+url+'/pasakums'+pasakumi[1].id+'>'+pasakumi[1].nosaukums+'</a>';
+                y[0].innerHTML = '<a href='+url+'/pasakums/'+pasakumi[1].id+'>'+pasakumi[1].nosaukums+'</a>';
                 y = x.getElementsByClassName("pasakumu-list-preview-attels");
                 y[0].innerHTML = '<div> <img src="' + url + '/' + pasakumi[1]['picture'] + '" width="100"/> </div>';
                 y = x.getElementsByClassName("mainpage-apraksts")[0].children[1];
@@ -251,7 +251,7 @@
 
                 x = document.getElementById("tresais-pasakums");
                 y = x.getElementsByClassName("tituls-pasakums");
-                y[0].innerHTML = '<a href='+url+'/pasakums'+pasakumi[2].id+'>'+pasakumi[2].nosaukums+'</a>';
+                y[0].innerHTML = '<a href='+url+'/pasakums/'+pasakumi[2].id+'>'+pasakumi[2].nosaukums+'</a>';
                 y = x.getElementsByClassName("pasakumu-list-preview-attels");
                 y[0].innerHTML = '<div> <img src="' + url + '/' + pasakumi[2]['picture'] + '" width="100"/> </div>';
                 y = x.getElementsByClassName("mainpage-apraksts")[0].children[1];

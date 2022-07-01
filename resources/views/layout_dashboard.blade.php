@@ -25,6 +25,13 @@
             <li><a href="{{ url('/filter') }}">{{__('layout_dashboard.FILTRĒT')}}</a></li></li> <!-- Ved uz filtrēšanas lapu, proti, lapa, kurā lietotājs būs spējīgs meklēt sev tīkamus  -->
             <li><a href="{{ url('/new_pasakums') }}">{{__('layout_dashboard.PIEVIENOT PASĀKUMU')}}</a></li>
             <li><a href="{{ url('/adminpanel') }}">{{__('layout_dashboard.ADMINA PANELIS')}}</a></li>
+            <li id="lang-lv-eng">
+                <a href="" id="LV">LV</a>
+                <a href="" id="ENG">ENG</a>
+
+            </li>
+            
+
 
             
         </ul>

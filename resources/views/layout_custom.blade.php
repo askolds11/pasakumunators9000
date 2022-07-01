@@ -27,7 +27,12 @@
             <li><a href="{{ url('/adminpanel') }}" >{{__('layout.ADMINA PANELIS')}}</a>
             
             </li>
-            
+            <li id="lang-lv-eng">
+                <a href="" id="LV">LV</a>
+                <a href="" id="ENG">ENG</a>
+
+            </li>
+           
 <!-- id="admin-panel-link" -->
             
         </ul>
